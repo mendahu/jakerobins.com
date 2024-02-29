@@ -1,0 +1,16 @@
+.tag {
+  --border-color: var(--tag-color-dark);
+  --background-color: var(--tag-color-light);
+
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  border-radius: 1rem;
+  padding: 0.25rem 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tag {
+    --border-color: var(--tag-color-light);
+    --background-color: var(--tag-color-dark);
+  }
+}

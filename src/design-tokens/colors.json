@@ -4,15 +4,35 @@
   "items": [
     {
       "name": "Dark",
-      "value": "#030303"
+      "value": "#0B0F1E"
     },
     {
       "name": "Light",
-      "value": "#ffffff"
+      "value": "#FEFCFD"
     },
     {
-      "name": "Primary",
-      "value": "#02394A"
+      "name": "Green",
+      "value": "#15A0A2"
+    },
+    {
+      "name": "Dark Green",
+      "value": "#0E6B6C"
+    },
+    {
+      "name": "Red",
+      "value": "#C50737"
+    },
+    {
+      "name": "Dark Red",
+      "value": "#760421"
+    },
+    {
+      "name": "Purple",
+      "value": "#AA86AC"
+    },
+    {
+      "name": "Dark Purple",
+      "value": "#5F4261"
     }
   ]
 }

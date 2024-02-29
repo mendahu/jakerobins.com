@@ -1,3 +1,4 @@
+import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import postcss from "postcss";
 import postcssJs from "postcss-js";
@@ -21,8 +22,6 @@ const fontWeight = tokensToTailwind(textWeightTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
 const fontLeading = tokensToTailwind(textLeadingTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
-
-import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{html,js,jsx,mdx,njk,twig,vue,astro}"],

@@ -1,0 +1,100 @@
+:root {
+  --color-background: theme(colors.light);
+  --color-text: theme(colors.dark);
+  --color-purple-heavy: theme(colors.dark-purple);
+  --color-purple-light: theme(colors.purple);
+  --color-green-heavy: theme(colors.dark-green);
+  --color-green-light: theme(colors.green);
+  --color-red-heavy: theme(colors.dark-red);
+  --color-red-light: theme(colors.red);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: theme(colors.dark);
+    --color-text: theme(colors.light);
+    --color-purple-heavy: theme(colors.purple);
+    --color-purple-light: theme(colors.dark-purple);
+    --color-green-heavy: theme(colors.green);
+    --color-green-light: theme(colors.dark-green);
+    --color-red-heavy: theme(colors.red);
+    --color-red-light: theme(colors.dark-red);
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: theme(fontFamily.base);
+  font-size: theme(fontSize.step-00);
+  letter-spacing: 0.25px;
+  --wrapper-max-width: 768px;
+}
+
+/* Copy */
+p,
+li,
+blockquote,
+small {
+  max-width: 72ch;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  max-width: 18ch;
+  font-weight: theme(fontWeight.bold);
+  font-family: theme(fontFamily.heading);
+}
+
+h4 {
+  font-size: theme(fontSize.step-1);
+}
+
+h3 {
+  font-size: theme(fontSize.step-2);
+}
+
+h2 {
+  font-size: theme(fontSize.step-3);
+}
+
+h1 {
+  font-size: theme(fontSize.step-4);
+}
+
+@media (max-width: 500px) {
+  h4 {
+    font-size: theme(fontSize.step-0);
+  }
+
+  h3 {
+    font-size: theme(fontSize.step-1);
+  }
+
+  h2 {
+    font-size: theme(fontSize.step-2);
+  }
+
+  h1 {
+    font-size: theme(fontSize.step-3);
+  }
+}
+
+/* Links */
+a {
+  text-decoration-thickness: 0.2em;
+}
+
+a:link {
+  color: var(--color-green-heavy);
+}
+
+a:visited {
+  color: var(--color-purple-heavy);
+}
+
+a:hover {
+  color: var(--color-red-heavy);
+}

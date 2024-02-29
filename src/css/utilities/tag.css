@@ -1,0 +1,14 @@
+.tag-space {
+  --tag-color-dark: theme(colors.dark-purple);
+  --tag-color-light: theme(colors.purple);
+}
+
+.tag-mexico {
+  --tag-color-dark: theme(colors.dark-green);
+  --tag-color-light: theme(colors.green);
+}
+
+.tag-dev {
+  --tag-color-dark: theme(colors.dark-red);
+  --tag-color-light: theme(colors.red);
+}

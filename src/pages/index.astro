@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import FeaturedPost from "../components/FeaturedPost.astro";
 ---
 
 <Layout title="Home - jakerobins.com">
-  <header class="[ wrapper ]">
-    <h1>jakerobins.com</h1>
+  <header class="[ flow ]">
+    <h1 class="[ uppercase ]">jakerobins.com</h1>
+    <p>
+      Scattered thoughts about space exploration, web development, and life in
+      Mexico.
+    </p>
   </header>
-  <main class="[ wrapper ] [ flow ]">
-    <div>1</div>
-    <div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+  <main class="">
+    <FeaturedPost />
   </main>
-  <footer class="[ wrapper ]">Footer</footer>
 </Layout>

@@ -5,14 +5,12 @@
     {
       "name": "Base",
       "description": "System fonts for body copy and globally set text.",
-      "value": [
-        "Inter",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "sans-serif"
-      ]
+      "value": ["Helvetica Neue", "Tahoma", "sans-serif"]
+    },
+    {
+      "name": "Heading",
+      "description": "System fonts for headings",
+      "value": ["neue-haas-grotesk-display", "Tahoma", "sans-serif"]
     }
   ]
 }
