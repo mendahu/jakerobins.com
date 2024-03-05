@@ -1,0 +1,20 @@
+/* bar hover effect  */
+.bar-hover-link {
+  &:hover::before,
+  &:focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    width: 1.5rem;
+    height: 100%;
+  }
+
+  &:hover::before {
+    background: var(--bar-hover-link-color, var(--color-red-light));
+  }
+
+  &:focus::before {
+    background: var(--bar-hover-link-color, var(--color-green-light));
+  }
+}

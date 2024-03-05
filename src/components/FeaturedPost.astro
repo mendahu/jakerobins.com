@@ -13,8 +13,11 @@ interface Props {
 const { title, slug, publishedAt, description } = Astro.props;
 ---
 
-<a href=`posts/${slug}`>
-  <article class=`[ featured-post ] [ tag-${tagType} ]`>
+<a
+  href=`/blog/${slug}`
+  class=`[ tag-${tagType} clear-link-styles bar-hover-link ]`
+>
+  <article class=`[ featured-post ] [  ]`>
     <img
       src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/02/im1-landing.jpg?resize=1200%2C655&ssl=1"
       alt=""

@@ -9,7 +9,7 @@
   --color-red-light: theme(colors.red);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-background: theme(colors.dark);
     --color-text: theme(colors.light);
@@ -20,7 +20,7 @@
     --color-red-heavy: theme(colors.red);
     --color-red-light: theme(colors.dark-red);
   }
-}
+} */
 
 body {
   background-color: var(--color-background);
@@ -43,7 +43,7 @@ small {
 h1,
 h2,
 h3 {
-  max-width: 18ch;
+  max-width: 24ch;
   font-weight: theme(fontWeight.medium);
   font-family: theme(fontFamily.heading);
   letter-spacing: 0.75px;
@@ -85,7 +85,23 @@ h1 {
 
 /* Links */
 a {
-  text-decoration-thickness: 0.2em;
+  position: relative;
+  text-decoration-thickness: 0.1em;
+  padding-inline: 2px;
+  --link-background-color: #0000;
+  --rotation: 1deg;
+
+  &::before {
+    content: "";
+    background: var(--link-background-color);
+    position: absolute;
+    top: -0.2rem;
+    left: -0.2rem;
+    width: calc(100% + 0.4rem);
+    height: calc(100% + 0.4rem);
+    z-index: -1;
+    rotate: var(--rotation);
+  }
 }
 
 a:link {
@@ -96,6 +112,15 @@ a:visited {
   color: var(--color-purple-heavy);
 }
 
+a:focus {
+  outline: none;
+  text-decoration: none;
+  color: var(--color-background);
+  --link-background-color: var(--color-green-light);
+}
+
 a:hover {
-  color: var(--color-red-heavy);
+  text-decoration: none;
+  color: var(--color-background);
+  --link-background-color: var(--color-red-light);
 }

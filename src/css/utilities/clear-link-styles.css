@@ -1,0 +1,25 @@
+/* Prevents normal anchor state styling */
+.clear-link-styles {
+  text-decoration: none;
+  color: var(--color-text);
+  --rotation: 0deg;
+  padding-inline: 0px;
+
+  &:link {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  &:hover {
+    text-decoration: none;
+    color: var(--color-text);
+    --link-background-color: #0000;
+  }
+  &:visited {
+    text-decoration: none;
+    color: var(--color-text);
+    --link-background-color: #0000;
+  }
+  &:focus {
+    --link-background-color: #0000;
+  }
+}

@@ -1,6 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import FeaturedPost from "../components/FeaturedPost.astro";
+import Layout from "../../layouts/Layout.astro";
+import FeaturedPost from "../../components/FeaturedPost.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 
 const storyblokApi = useStoryblokApi();
@@ -14,12 +14,12 @@ const [featuredPost, ...posts] = data.stories;
 console.log(featuredPost);
 ---
 
-<Layout title="Home - jakerobins.com">
+<Layout title="Blog - jakerobins.com">
   <header class="[ flow ]">
-    <h1>JakeRobins.com</h1>
+    <h1>Blog</h1>
     <p>
-      Scattered thoughts about space exploration, web development, and life in
-      Mexico.
+      Scattered <a href="/">thoughts</a> about space exploration, web development,
+      and life in Mexico.
     </p>
   </header>
   <main class="">
