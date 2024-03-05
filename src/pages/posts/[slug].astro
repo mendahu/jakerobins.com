@@ -1,0 +1,33 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const sbApi = useStoryblokApi();
+
+  const { data } = await sbApi.get("cdn/stories/", {
+    // content_type: "posts",
+    version: import.meta.env.DEV ? "draft" : "published",
+  });
+
+  const stories = Object.values(data.stories);
+
+  return stories.map((story) => {
+    return {
+      params: { slug: story.slug },
+    };
+  });
+}
+
+const sbApi = useStoryblokApi();
+const { slug } = Astro.params;
+const { data } = await sbApi.get(`cdn/stories/posts/${slug}`, {
+  version: import.meta.env.DEV ? "draft" : "published",
+});
+
+const story = data.story;
+---
+
+<Layout title=`${story.name} - jakerobins.com` `>
+  <h1>{story.name}</h1>
+</Layout>

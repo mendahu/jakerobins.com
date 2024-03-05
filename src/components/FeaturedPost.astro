@@ -1,19 +1,28 @@
 ---
 import Tag from "./Tag.astro";
 
-const tagType = "mexico";
+const tagType = "dev";
+
+interface Props {
+  slug: string;
+  title: string;
+  publishedAt: string;
+  description: string;
+}
+
+const { title, slug, publishedAt, description } = Astro.props;
 ---
 
-<article class=`[ featured-post ] [ tag-${tagType} ]`>
-  <img
-    src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/02/im1-landing.jpg?resize=1200%2C655&ssl=1"
-    alt=""
-  />
-  <h2>On Space and Success</h2>
-  <p><time datetime="2024-02-29">Feb 29th, 2024</time> - <Tag>Space</Tag></p>
-  <p>
-    Description. This is a <a href="/">visited link</a> and this is an <a
-      href="https://www.bananapants.com">Unvisited link</a
-    >. This is a <a>linkless link</a>.
-  </p>
-</article>
+<a href=`posts/${slug}`>
+  <article class=`[ featured-post ] [ tag-${tagType} ]`>
+    <img
+      src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/02/im1-landing.jpg?resize=1200%2C655&ssl=1"
+      alt=""
+    />
+    <h2>{title}</h2>
+    <p><time datetime={publishedAt}>{publishedAt}</time> - <Tag>Space</Tag></p>
+    <p>
+      {description}
+    </p>
+  </article>
+</a>

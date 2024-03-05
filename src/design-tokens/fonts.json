@@ -10,7 +10,7 @@
     {
       "name": "Heading",
       "description": "System fonts for headings",
-      "value": ["neue-haas-grotesk-display", "Tahoma", "sans-serif"]
+      "value": ["neue-haas-unica", "Tahoma", "sans-serif"]
     }
   ]
 }

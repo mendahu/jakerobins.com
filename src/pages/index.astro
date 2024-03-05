@@ -1,17 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FeaturedPost from "../components/FeaturedPost.astro";
+import { useStoryblokApi } from "@storyblok/astro";
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get("cdn/stories/", {
+  version: import.meta.env.DEV ? "draft" : "published",
+});
+
+const [featuredPost, ...posts] = data.stories;
+
+console.log(featuredPost);
 ---
 
 <Layout title="Home - jakerobins.com">
   <header class="[ flow ]">
-    <h1 class="[ uppercase ]">jakerobins.com</h1>
+    <h1>JakeRobins.com</h1>
     <p>
       Scattered thoughts about space exploration, web development, and life in
       Mexico.
     </p>
   </header>
   <main class="">
-    <FeaturedPost />
+    <FeaturedPost
+      slug={featuredPost.slug}
+      title={featuredPost.name}
+      publishedAt={featuredPost.publishedAt}
+      description={featuredPost.content.description}
+    />
   </main>
 </Layout>

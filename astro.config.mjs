@@ -10,7 +10,7 @@ export default defineConfig({
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
-        // Add your components here
+        post: "storyblok/Post",
       },
       apiOptions: {
         region: "us",
