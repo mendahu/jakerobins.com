@@ -1,6 +1,7 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../layouts/Layout.astro";
+import Post from "../../storyblok/Post.astro";
 
 export async function getStaticPaths() {
   const sbApi = useStoryblokApi();
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 
 const sbApi = useStoryblokApi();
 const { slug } = Astro.params;
-const { data } = await sbApi.get(`cdn/stories/posts/${slug}`, {
+const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
   version: import.meta.env.DEV ? "draft" : "published",
 });
 
@@ -29,5 +30,7 @@ const story = data.story;
 ---
 
 <Layout title=`${story.name} - jakerobins.com` `>
-  <h1>{story.name}</h1>
+  <main>
+    <Post story={story} />
+  </main>
 </Layout>

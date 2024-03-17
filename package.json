@@ -7,7 +7,9 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pull-components": "storyblok pull-components --space 1018994",
+    "generate-sb-types": "storyblok-generate-ts source=./components.1018994.json target=./component-types-sb"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.5",
@@ -18,6 +20,7 @@
     "clean-css": "^5.3.3",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.5",
+    "date-fns": "^3.3.1",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.0.1",
@@ -31,6 +34,7 @@
   "devDependencies": {
     "prettier": "^3.2.5",
     "prettier-config-standard": "^7.0.0",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "storyblok-generate-ts": "^2.0.2"
   }
 }

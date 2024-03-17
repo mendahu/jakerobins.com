@@ -14,7 +14,7 @@
     background: var(--bar-hover-link-color, var(--color-red-light));
   }
 
-  &:focus::before {
+  &:focus-visible::before {
     background: var(--bar-hover-link-color, var(--color-green-light));
   }
 }

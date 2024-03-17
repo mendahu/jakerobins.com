@@ -1,9 +1,0 @@
-.featured-post {
-  position: relative;
-}
-
-@media (prefers-color-scheme: dark) {
-  .featured-post {
-    --before-color: var(--tag-color-light);
-  }
-}

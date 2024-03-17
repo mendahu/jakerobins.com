@@ -1,0 +1,83 @@
+{
+  "components": [
+    {
+      "name": "category",
+      "display_name": null,
+      "created_at": "2024-03-17T15:31:01.093Z",
+      "updated_at": "2024-03-17T15:47:31.582Z",
+      "id": 148050,
+      "schema": {
+        "name": {
+          "type": "text",
+          "key": "name",
+          "pos": 0
+        },
+        "hue": {
+          "type": "text",
+          "display_name": "Hue",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "category",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "post",
+      "display_name": null,
+      "created_at": "2024-02-27T15:03:33.994Z",
+      "updated_at": "2024-03-17T15:39:38.321Z",
+      "id": 141768,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "category": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal_stories",
+          "folder_slug": "blog/categories",
+          "filter_content_type": [
+            "category"
+          ],
+          "pos": 1
+        },
+        "description": {
+          "type": "text",
+          "pos": 2
+        },
+        "cover": {
+          "type": "asset",
+          "pos": 3
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "post",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null
+    }
+  ]
+}

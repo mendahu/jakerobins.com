@@ -1,6 +1,7 @@
 :root {
   --color-background: theme(colors.light);
   --color-text: theme(colors.dark);
+  --color-text-inverse: theme(colors.light);
   --color-purple-heavy: theme(colors.dark-purple);
   --color-purple-light: theme(colors.purple);
   --color-green-heavy: theme(colors.dark-green);
@@ -28,7 +29,7 @@ body {
   font-family: theme(fontFamily.base);
   font-size: theme(fontSize.step-00);
   letter-spacing: 0.25px;
-  --wrapper-max-width: 768px;
+  --wrapper-max-width: 660px;
 }
 
 /* Copy */
@@ -36,7 +37,7 @@ p,
 li,
 blockquote,
 small {
-  max-width: 72ch;
+  max-width: 65ch;
 }
 
 /* Headings */
@@ -89,7 +90,6 @@ a {
   text-decoration-thickness: 0.1em;
   padding-inline: 2px;
   --link-background-color: #0000;
-  --rotation: 1deg;
 
   &::before {
     content: "";
@@ -100,7 +100,6 @@ a {
     width: calc(100% + 0.4rem);
     height: calc(100% + 0.4rem);
     z-index: -1;
-    rotate: var(--rotation);
   }
 }
 
@@ -112,15 +111,16 @@ a:visited {
   color: var(--color-purple-heavy);
 }
 
-a:focus {
-  outline: none;
+a:focus-visible {
+  /* outline: none; */
+  outline-width: 0px;
   text-decoration: none;
-  color: var(--color-background);
+  color: var(--color-text-inverse);
   --link-background-color: var(--color-green-light);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--color-background);
+  color: var(--color-text-inverse);
   --link-background-color: var(--color-red-light);
 }

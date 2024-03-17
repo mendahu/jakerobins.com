@@ -1,31 +1,44 @@
 ---
-import Tag from "./Tag.astro";
+import { format } from "date-fns";
 
-const tagType = "dev";
+import Tag from "./Tag.astro";
 
 interface Props {
   slug: string;
   title: string;
   publishedAt: string;
   description: string;
+  category: {
+    name: string;
+    content: {
+      hue: string;
+    };
+  };
+  cover: Record<string, any>;
 }
 
-const { title, slug, publishedAt, description } = Astro.props;
+const placeholderPublicationDate = new Date();
+
+const publicationDate = format(
+  Astro.props.publishedAt ?? placeholderPublicationDate,
+  "PPp"
+);
 ---
 
 <a
-  href=`/blog/${slug}`
-  class=`[ tag-${tagType} clear-link-styles bar-hover-link ]`
+  href=`/blog/${Astro.props.slug}`
+  class=`[ clear-link-styles bar-hover-link ]`
+  style=`--tag-color: hsl(${Astro.props.category.content.hue}, 93%, 40%);`
 >
-  <article class=`[ featured-post ] [  ]`>
-    <img
-      src="https://i0.wp.com/spacenews.com/wp-content/uploads/2024/02/im1-landing.jpg?resize=1200%2C655&ssl=1"
-      alt=""
-    />
-    <h2>{title}</h2>
-    <p><time datetime={publishedAt}>{publishedAt}</time> - <Tag>Space</Tag></p>
+  <article class=`[ flow ]`>
+    <img src={Astro.props.cover.filename} alt={Astro.props.cover.alt} />
+    <h2>{Astro.props.title}</h2>
+    <p class="[ flow-inline ]">
+      <time datetime={publicationDate}>{publicationDate}</time>
+      <Tag>{Astro.props.category.name}</Tag>
+    </p>
     <p>
-      {description}
+      {Astro.props.description}
     </p>
   </article>
 </a>

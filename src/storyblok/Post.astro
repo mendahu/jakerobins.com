@@ -1,12 +1,13 @@
 ---
-import { storyblokEditable, renderRichText } from '@storyblok/astro'
+import { storyblokEditable, renderRichText } from "@storyblok/astro";
 
-const { blok } = Astro.props
-const content = renderRichText(blok.content)
+const { story } = Astro.props;
+console.log(story.content);
+const content = renderRichText(story.content.content);
 ---
 
-<article {...storyblokEditable(blok)}>
-  <h1>{blok.title}</h1>
-  <p>{blok.description}</p>
+<article {...storyblokEditable(story)} class="[ flow ]">
+  <h1>{story.name}</h1>
+  <img src={story.content.cover.filename} alt={story.content.cover.alt} />
   <Fragment set:html={content} />
 </article>
