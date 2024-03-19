@@ -1,13 +1,19 @@
 ---
-import { storyblokEditable, renderRichText } from "@storyblok/astro";
+import PostHeader from "../components/PostHeader.astro";
+import Byline from "../components/Byline.astro";
+import { storyblokEditable } from "@storyblok/astro";
+import RichTextRenderer from "@storyblok/astro/RichTextRenderer.astro";
 
 const { story } = Astro.props;
-console.log(story.content);
-const content = renderRichText(story.content.content);
 ---
 
 <article {...storyblokEditable(story)} class="[ flow ]">
-  <h1>{story.name}</h1>
-  <img src={story.content.cover.filename} alt={story.content.cover.alt} />
-  <Fragment set:html={content} />
+  <PostHeader
+    title={story.name}
+    src={story.content.cover.filename}
+    credit={story.content.cover.source}
+    alt={story.content.cover.alt}
+  />
+  <Byline publicationDate={story.published_at || story.created_at} />
+  <RichTextRenderer richTextData={story.content.content} />
 </article>

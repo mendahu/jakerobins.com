@@ -7,38 +7,38 @@
   "items": [
     {
       "name": "Step 00",
-      "min": 15,
-      "max": 16
+      "min": 14.4,
+      "max": 18
     },
     {
       "name": "Step 0",
       "min": 18,
-      "max": 20
+      "max": 24
     },
     {
       "name": "Step 1",
-      "min": 21.6,
-      "max": 25
+      "min": 22.5,
+      "max": 31.99
     },
     {
       "name": "Step 2",
-      "min": 25.92,
-      "max": 31.25
+      "min": 28.13,
+      "max": 42.65
     },
     {
       "name": "Step 3",
-      "min": 31.1,
-      "max": 39.06
+      "min": 25.16,
+      "max": 56.85
     },
     {
       "name": "Step 4",
-      "min": 39.06,
-      "max": 48.83
+      "min": 43.95,
+      "max": 75.78
     },
     {
       "name": "Step 5",
-      "min": 44.79,
-      "max": 61.04
+      "min": 54.93,
+      "max": 101.01
     }
   ]
 }

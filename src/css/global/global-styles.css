@@ -10,26 +10,12 @@
   --color-red-light: theme(colors.red);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: theme(colors.dark);
-    --color-text: theme(colors.light);
-    --color-purple-heavy: theme(colors.purple);
-    --color-purple-light: theme(colors.dark-purple);
-    --color-green-heavy: theme(colors.green);
-    --color-green-light: theme(colors.dark-green);
-    --color-red-heavy: theme(colors.red);
-    --color-red-light: theme(colors.dark-red);
-  }
-} */
-
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: theme(fontFamily.base);
-  font-size: theme(fontSize.step-00);
-  letter-spacing: 0.25px;
-  --wrapper-max-width: 660px;
+  font-size: var(--size-step-00);
+  --wrapper-max-width: 640px;
 }
 
 /* Copy */
@@ -43,29 +29,30 @@ small {
 /* Headings */
 h1,
 h2,
-h3 {
+h3,
+h4 {
   max-width: 24ch;
-  font-weight: theme(fontWeight.medium);
+  font-weight: var(--font-medium);
   font-family: theme(fontFamily.heading);
-  letter-spacing: 0.75px;
+  letter-spacing: -0.2rem;
 }
 
 h4 {
-  font-size: theme(fontSize.step-1);
+  font-size: var(--size-step-1);
 }
 
 h3 {
-  font-size: theme(fontSize.step-2);
+  font-size: var(--size-step-2);
 }
 
 h2 {
-  font-size: theme(fontSize.step-3);
+  font-size: var(--size-step-3);
 }
 
 h1 {
-  font-size: theme(fontSize.step-4);
+  font-size: var(--size-step-4);
 }
-
+/* 
 @media (max-width: 500px) {
   h4 {
     font-size: theme(fontSize.step-0);
@@ -82,45 +69,44 @@ h1 {
   h1 {
     font-size: theme(fontSize.step-3);
   }
-}
+} */
 
 /* Links */
 a {
-  position: relative;
   text-decoration-thickness: 0.1em;
   padding-inline: 2px;
-  --link-background-color: #0000;
 
-  &::before {
-    content: "";
-    background: var(--link-background-color);
-    position: absolute;
-    top: -0.2rem;
-    left: -0.2rem;
-    width: calc(100% + 0.4rem);
-    height: calc(100% + 0.4rem);
-    z-index: -1;
+  &:link {
+    color: var(--color-green-heavy);
+  }
+
+  &:visited {
+    color: var(--color-purple-heavy);
+  }
+
+  &:focus-visible,
+  &:hover {
+    text-decoration: none;
+    color: var(--color-text-inverse);
+    position: relative;
+    padding-block: 2px;
+  }
+
+  &:focus-visible {
+    outline-width: 0px;
+    background-color: var(--color-green-light);
+  }
+
+  &:hover {
+    background-color: var(--color-red-light);
   }
 }
 
-a:link {
-  color: var(--color-green-heavy);
-}
-
-a:visited {
+blockquote {
+  padding-inline-start: 2rem;
+  padding-inline-end: 1rem;
+  border-left: 0.5rem solid var(--color-purple-heavy);
+  font-style: italic;
   color: var(--color-purple-heavy);
-}
-
-a:focus-visible {
-  /* outline: none; */
-  outline-width: 0px;
-  text-decoration: none;
-  color: var(--color-text-inverse);
-  --link-background-color: var(--color-green-light);
-}
-
-a:hover {
-  text-decoration: none;
-  color: var(--color-text-inverse);
-  --link-background-color: var(--color-red-light);
+  font-size: 1.1rem;
 }

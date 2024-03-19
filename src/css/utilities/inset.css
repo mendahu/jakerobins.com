@@ -1,0 +1,23 @@
+.inset-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.inset-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.inset-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.inset-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

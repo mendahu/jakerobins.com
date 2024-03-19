@@ -1,0 +1,10 @@
+---
+import { format } from "date-fns";
+
+const publicationDate = format(Astro.props.publicationDate, "PPp");
+---
+
+<address>
+  <p>Jake Robins</p>
+  <time datetime={Astro.props.publicationDate}>{publicationDate}</time>
+</address>

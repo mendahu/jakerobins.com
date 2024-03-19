@@ -107,6 +107,7 @@ const config: Config = {
         }
 
         Object.keys(group).forEach((key) => {
+          console.log(`--${prefix}-${key}: ${group[key]};`);
           result += `--${prefix}-${key}: ${group[key]};`;
         });
       });
@@ -133,6 +134,7 @@ const config: Config = {
         }
 
         Object.keys(group).forEach((key) => {
+          console.log(`.${prefix}-${key}`, `${property}: ${group[key]}`);
           addUtilities({
             [`.${prefix}-${key}`]: postcssJs.objectify(
               postcss.parse(`${property}: ${group[key]}`)
