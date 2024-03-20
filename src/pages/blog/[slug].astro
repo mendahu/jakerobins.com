@@ -23,14 +23,18 @@ export async function getStaticPaths() {
 const sbApi = useStoryblokApi();
 const { slug } = Astro.params;
 const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
+  resolve_relations: "post.category",
   version: import.meta.env.DEV ? "draft" : "published",
 });
 
 const story = data.story;
+console.log(story);
 ---
 
 <Layout title=`${story.name} - jakerobins.com` `>
-  <main>
+  <main
+    style=`--color-category: hsl(${story.content.category.content.hue}, 19%, 32%);`
+  >
     <Post story={story} />
   </main>
 </Layout>

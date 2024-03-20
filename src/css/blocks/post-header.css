@@ -1,20 +1,21 @@
 .post-header {
-  background-color: var(--color-purple-heavy);
+  background-color: var(--color-category);
+}
+
+.post-header * {
+  color: var(--color-text-inverse);
+  background-color: var(--color-category);
 }
 
 .post-header > h1 {
-  background-color: var(--color-purple-heavy);
-  color: var(--color-text-inverse);
-  padding-block: 0.8rem;
+  padding-block: 0.6rem;
   margin-top: 0;
   padding-inline: var(--gutter);
 }
 
 .post-header figcaption {
-  background-color: var(--color-purple-heavy);
-  color: var(--color-text-inverse);
+  padding-block: 0.6rem;
   padding-inline: 1ch;
-  padding-block: 0.5rem;
   font-size: 0.8em;
 }
 
