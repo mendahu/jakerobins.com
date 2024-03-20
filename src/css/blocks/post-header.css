@@ -1,0 +1,29 @@
+.post-header {
+  background-color: var(--color-purple-heavy);
+}
+
+.post-header > h1 {
+  background-color: var(--color-purple-heavy);
+  color: var(--color-text-inverse);
+  padding-block: 0.8rem;
+  margin-top: 0;
+  padding-inline: var(--gutter);
+}
+
+.post-header figcaption {
+  background-color: var(--color-purple-heavy);
+  color: var(--color-text-inverse);
+  padding-inline: 1ch;
+  padding-block: 0.5rem;
+  font-size: 0.8em;
+}
+
+@media (min-width: 768px) {
+  .post-header > h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-inline: 1ch;
+    max-width: initial;
+  }
+}

@@ -53,23 +53,6 @@ h1 {
   font-size: var(--size-step-4);
 }
 /* 
-@media (max-width: 500px) {
-  h4 {
-    font-size: theme(fontSize.step-0);
-  }
-
-  h3 {
-    font-size: theme(fontSize.step-1);
-  }
-
-  h2 {
-    font-size: theme(fontSize.step-2);
-  }
-
-  h1 {
-    font-size: theme(fontSize.step-3);
-  }
-} */
 
 /* Links */
 a {
