@@ -1,0 +1,9 @@
+.main-expand {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 1rem;
+}
+
+.main-expand main {
+  flex-grow: 1;
+}

@@ -11,10 +11,10 @@
   }
 
   &:hover::before {
-    background: var(--bar-hover-link-color, var(--color-red-light));
+    background: var(--bar-hover-link-color, var(--color-category));
   }
 
   &:focus-visible::before {
-    background: var(--bar-hover-link-color, var(--color-green-light));
+    background: var(--bar-hover-link-color, var(--color-category));
   }
 }

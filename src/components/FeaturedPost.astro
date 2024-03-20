@@ -1,8 +1,6 @@
 ---
 import { format } from "date-fns";
 
-import Tag from "./Tag.astro";
-
 interface Props {
   slug: string;
   title: string;
@@ -28,14 +26,14 @@ const publicationDate = format(
 <a
   href=`/blog/${Astro.props.slug}`
   class=`[ clear-link-styles bar-hover-link ]`
-  style=`--tag-color: hsl(${Astro.props.category.content.hue}, 93%, 40%);`
+  style=`--color-category: hsl(${Astro.props.category.content.hue}, 19%, 32%);`
 >
   <article class=`[ flow ]`>
     <img src={Astro.props.cover.filename} alt={Astro.props.cover.alt} />
     <h2>{Astro.props.title}</h2>
     <p class="[ flow-inline ]">
       <time datetime={publicationDate}>{publicationDate}</time>
-      <Tag>{Astro.props.category.name}</Tag>
+      <span class="[ category-tag ]">{Astro.props.category.name}</span>
     </p>
     <p>
       {Astro.props.description}
