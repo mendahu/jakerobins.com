@@ -1,3 +1,5 @@
+import { siteConfig } from "../../config/config";
+
 export type HeadConfig = {
   title: string;
   description: string;
@@ -49,7 +51,7 @@ export type HeadConfig = {
 };
 
 export const defaultHeadConfig: HeadConfig = {
-  title: "jakerobins.com",
+  title: siteConfig.title,
   description: "Personal website for Jake Robins",
   meta: {
     charset: "utf-8",
@@ -79,21 +81,21 @@ export const defaultHeadConfig: HeadConfig = {
     themeColor: "#ffffff",
   },
   social: {
-    title: "jakerobins.com",
+    title: siteConfig.title,
     description: "Personal website for Jake Robins",
-    url: "https://jakerobins.com",
+    url: siteConfig.host,
     twitter: {
       card: "summary",
       site: "@jakerobins",
       creator: "@jakerobins",
-      image: "https://jakerobins.com/twitter-summary.jpg",
+      image: siteConfig.host + "/twitter-summary.jpg",
       alt: "A picture of Jake's Head floating in a space nebula.",
     },
     openGraph: {
-      url: "https://jakerobins.com",
+      url: siteConfig.host,
       type: "website",
       image: {
-        url: "https://jakerobins.com/opengraph-banner.png",
+        url: siteConfig.host + "/opengraph-banner.png",
         type: "image/jpeg",
         alt: "A picture of Jake's head floating in space, bursting from a nova",
         width: 600,

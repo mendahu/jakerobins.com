@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
+import { siteConfig } from "./src/config/config";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
@@ -23,4 +24,5 @@ export default defineConfig({
     "/": "/blog",
   },
   prefetch: true,
+  site: siteConfig.host,
 });

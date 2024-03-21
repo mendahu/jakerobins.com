@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { mergeHeadConfig } from "../../components/Head/headConfig";
+import { siteConfig } from "../../config/config";
+---
+
+<Layout headConfig={mergeHeadConfig({ title: "RSS - " + siteConfig.title })}>
+  <header class="[ flow ]">
+    <h1>RSS</h1>
+    <Breadcrumbs location="RSS" />
+    <p>
+      Use an old fashioned RSS feed to subscribe to new content here. Get served
+      authentic ad-free human-made drivel direct into your mind without any Big
+      Tech companies picking it out for you first.
+    </p>
+  </header>
+  <main class="[ flow ]"></main>
+</Layout>

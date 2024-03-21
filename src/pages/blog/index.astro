@@ -1,9 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import FeaturedPost from "../../components/FeaturedPost.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import type { PostStoryblok } from "../../../component-types-sb";
 import { mergeHeadConfig } from "../../components/Head/headConfig";
+import { siteConfig } from "../../config/config";
 
 const storyblokApi = useStoryblokApi();
 
@@ -16,12 +18,12 @@ const { data } = await storyblokApi.get("cdn/stories/", {
 const [featuredPost, ...posts] = data.stories as PostStoryblok[];
 ---
 
-<Layout headConfig={mergeHeadConfig({ title: "Blog - jakerobins.com" })}>
+<Layout headConfig={mergeHeadConfig({ title: "Blog - " + siteConfig.title })}>
   <header class="[ flow ]">
     <h1>Blog</h1>
+    <Breadcrumbs location="Blog" />
     <p>
-      Scattered thoughts about space exploration, web development, and life as a
-      Canadian in Mexico.
+      {siteConfig.description}
     </p>
   </header>
   <main class="[ flow ]">
