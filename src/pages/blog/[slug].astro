@@ -3,6 +3,10 @@ import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../layouts/Layout.astro";
 import Post from "../../storyblok/Post.astro";
 import type { PostStoryblok } from "../../../component-types-sb";
+import {
+  mergeHeadConfig,
+  type HeadConfig,
+} from "../../components/Head/headConfig";
 
 export async function getStaticPaths() {
   const sbApi = useStoryblokApi();
@@ -29,9 +33,55 @@ const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
 });
 
 const story = data.story;
+
+console.log(story);
+
+const headConfig: Partial<HeadConfig> = {
+  title: story.name + " - jakerobins.com",
+  description: story.content.description,
+  social: {
+    title: story.name,
+    description: story.content.description,
+    url: "https://jakerobins.com/blog/" + story.slug,
+    twitter: {
+      card: "summary_large_image",
+      site: "@jakerobins",
+      creator: "@jakerobins",
+      image: story.content.cover.filename,
+      alt: story.content.cover.alt,
+    },
+    openGraph: {
+      url: "https://jakerobins.com/blog/" + story.slug,
+      type: "article",
+      article: [
+        {
+          type: "published_time",
+          value: story.published_at || story.created_at,
+        },
+        {
+          type: "author",
+          value: "Jake Robins",
+        },
+        {
+          type: "section",
+          value: story.content.category.name,
+        },
+        {
+          type: "tag",
+          value: story.content.category.name,
+        },
+      ],
+      image: {
+        url: story.content.cover.filename,
+        alt: story.content.cover.alt,
+        type: "image/webp",
+      },
+    },
+  },
+};
 ---
 
-<Layout title=`${story.name} - jakerobins.com` `>
+<Layout headConfig={mergeHeadConfig(headConfig)}>
   <main
     style=`--color-category: hsl(${story.content.category.content.hue}, 19%, 32%);`
   >

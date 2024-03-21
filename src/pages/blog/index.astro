@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import FeaturedPost from "../../components/FeaturedPost.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import type { PostStoryblok } from "../../../component-types-sb";
+import { mergeHeadConfig } from "../../components/Head/headConfig";
 
 const storyblokApi = useStoryblokApi();
 
@@ -15,7 +16,7 @@ const { data } = await storyblokApi.get("cdn/stories/", {
 const [featuredPost, ...posts] = data.stories as PostStoryblok[];
 ---
 
-<Layout title="Blog - jakerobins.com">
+<Layout headConfig={mergeHeadConfig({ title: "Blog - jakerobins.com" })}>
   <header class="[ flow ]">
     <h1>Blog</h1>
     <p>

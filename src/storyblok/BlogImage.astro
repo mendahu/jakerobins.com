@@ -14,7 +14,12 @@ interface Props {
   target="_blank"
 >
   <figure class="[ relative invert-text gutter-2xs ]">
-    <img src={Astro.props.src} alt={Astro.props.alt} />
+    <img
+      src={Astro.props.src}
+      alt={Astro.props.alt}
+      title={Astro.props.title}
+      loading="lazy"
+    />
 
     <span class="[ inset-top-right category-tag ]"
       >{Astro.props.attribution}</span
