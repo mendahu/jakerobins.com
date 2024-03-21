@@ -29,7 +29,6 @@ import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRendere
     schema={{
       nodes: {
         image: (blok) => {
-          console.log(blok);
           return {
             component: BlogImage,
             props: {
