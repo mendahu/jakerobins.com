@@ -33,7 +33,9 @@ const publicationDate = format(
     <h2>{Astro.props.title}</h2>
     <p class="[ flow-inline ]">
       <time datetime={publicationDate}>{publicationDate}</time>
-      <span class="[ category-tag ]">{Astro.props.category.name}</span>
+      <span class="[ category-tag invert-text ]"
+        >{Astro.props.category.name}</span
+      >
     </p>
     <p>
       {Astro.props.description}

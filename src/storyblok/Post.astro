@@ -1,12 +1,14 @@
 ---
 import PostHeader from "../components/PostHeader.astro";
 import Byline from "../components/Byline.astro";
+import Blockquote from "../storyblok/Blockquote.astro";
+import BlogImage from "../storyblok/BlogImage.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { storyblokEditable } from "@storyblok/astro";
-import RichTextRenderer from "@storyblok/astro/RichTextRenderer.astro";
+import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 ---
 
-<article {...storyblokEditable(Astro.props.story)} class="[ flow ]">
+<article class="[ flow ]">
   <PostHeader
     title={Astro.props.story.name}
     src={Astro.props.story.content.cover.filename}
@@ -21,5 +23,41 @@ import RichTextRenderer from "@storyblok/astro/RichTextRenderer.astro";
     publicationDate={Astro.props.story.published_at ||
       Astro.props.story.created_at}
   />
-  <RichTextRenderer richTextData={Astro.props.story.content.content} />
+  <RichTextRenderer
+    class="[ flow ]"
+    content={Astro.props.story.content.content}
+    schema={{
+      nodes: {
+        image: (blok) => {
+          console.log(blok);
+          return {
+            component: BlogImage,
+            props: {
+              src: blok.attrs.src,
+              alt: blok.attrs.alt,
+              attribution: blok.attrs.copyright,
+              source: blok.attrs.source,
+              title: blok.attrs.title,
+            },
+          };
+        },
+        blockquote: (blok) => {
+          const bq = blok.content?.at(0);
+          const quote = bq?.content[0].text;
+
+          return {
+            component: Blockquote,
+            props: { quote },
+          };
+        },
+      },
+    }}
+    resolver={(blok) => {
+      return {
+        component: Blockquote,
+        props: { ...blok },
+      };
+    }}
+    {...storyblokEditable(Astro.props.story.content)}
+  />
 </article>

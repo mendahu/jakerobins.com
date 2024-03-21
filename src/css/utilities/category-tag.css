@@ -1,5 +1,4 @@
 .category-tag {
   background-color: var(--color-category);
-  color: var(--color-text-inverse);
   padding-inline: var(--gutter);
 }

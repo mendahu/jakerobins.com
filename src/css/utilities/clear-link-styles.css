@@ -1,25 +1,31 @@
 /* Prevents normal anchor state styling */
 .clear-link-styles {
   text-decoration: none;
-  color: var(--color-text);
-  --rotation: 0deg;
-  padding-inline: 0px;
+  color: unset;
 
   &:link {
     text-decoration: none;
-    color: var(--color-text);
+    color: unset;
   }
+
   &:hover {
     text-decoration: none;
-    color: var(--color-text);
-    --link-background-color: #0000;
+    color: unset;
+    background-color: unset;
   }
   &:visited {
     text-decoration: none;
-    color: var(--color-text);
-    --link-background-color: #0000;
+    color: unset;
+    background-color: unset;
   }
   &:focus {
-    --link-background-color: #0000;
+    text-decoration: none;
+    color: unset;
+    background-color: unset;
+  }
+  &:focus-visible {
+    text-decoration: none;
+    color: unset;
+    background-color: unset;
   }
 }

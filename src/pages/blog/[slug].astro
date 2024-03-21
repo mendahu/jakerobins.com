@@ -29,7 +29,7 @@ const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
 });
 
 const story = data.story;
-console.log(story);
+console.log(story.content);
 ---
 
 <Layout title=`${story.name} - jakerobins.com` `>

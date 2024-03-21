@@ -1,0 +1,38 @@
+---
+import { format } from "date-fns";
+
+interface Props {
+  quote: string;
+  attribution: string;
+  date?: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+}
+---
+
+<figure class="[ flow ]">
+  <blockquote>{Astro.props.quote}</blockquote>
+  <figcaption>
+    {Astro.props.attribution && "- " + Astro.props.attribution}{
+      Astro.props.sourceLabel &&
+        (Astro.props.sourceUrl ? (
+          <>
+            {", "}
+            <a href={Astro.props.sourceUrl}>{Astro.props.sourceLabel}</a>
+          </>
+        ) : (
+          ", " + Astro.props.sourceLabel
+        ))
+    }
+    {
+      Astro.props.date && (
+        <>
+          {" - "}
+          <time datetime="${Astro.props.date}">
+            {format(new Date(Astro.props.date), "PP")}
+          </time>
+        </>
+      )
+    }
+  </figcaption>
+</figure>

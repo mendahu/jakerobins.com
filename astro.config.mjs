@@ -11,6 +11,8 @@ export default defineConfig({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
         post: "storyblok/Post",
+        blockquote: "storyblok/Blockquote",
+        blogimage: "storyblok/BlogImage",
       },
       apiOptions: {
         region: "us",
