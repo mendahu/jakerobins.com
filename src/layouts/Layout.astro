@@ -6,8 +6,6 @@ import "../css/cube.css";
 interface Props {
   title: string;
 }
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +17,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/omo5gfi.css" />
-    <title>{title}</title>
+    <title>{Astro.props.title}</title>
   </head>
   <body class="[ flow-space-s wrapper flow main-expand ]">
     <slot />

@@ -1,19 +1,25 @@
 ---
 import PostHeader from "../components/PostHeader.astro";
 import Byline from "../components/Byline.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "@storyblok/astro/RichTextRenderer.astro";
-
-const { story } = Astro.props;
 ---
 
-<article {...storyblokEditable(story)} class="[ flow ]">
+<article {...storyblokEditable(Astro.props.story)} class="[ flow ]">
   <PostHeader
-    title={story.name}
-    src={story.content.cover.filename}
-    credit={story.content.cover.source}
-    alt={story.content.cover.alt}
+    title={Astro.props.story.name}
+    src={Astro.props.story.content.cover.filename}
+    credit={Astro.props.story.content.cover.source}
+    alt={Astro.props.story.content.cover.alt}
   />
-  <Byline publicationDate={story.published_at || story.created_at} />
-  <RichTextRenderer richTextData={story.content.content} />
+  <Breadcrumbs
+    crumbs={[{ label: "Blog", path: "/blog" }]}
+    location={Astro.props.story.name}
+  />
+  <Byline
+    publicationDate={Astro.props.story.published_at ||
+      Astro.props.story.created_at}
+  />
+  <RichTextRenderer richTextData={Astro.props.story.content.content} />
 </article>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  crumbs: {
+    label: string;
+    path: string;
+  }[];
+  location: string;
+}
+---
+
+<ol
+  vocab="https://schema.org/"
+  typeof="BreadcrumbList"
+  class="[ breadcrumbs ][ unstyled-list ]"
+>
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="/">
+      <span property="name">Home</span>
+    </a>
+    <meta property="position" content="1" />
+  </li>
+  {
+    Astro.props.crumbs.map((c, i) => {
+      return (
+        <li property="itemListElement" typeof="ListItem">
+          <a property="item" typeof="WebPage" href={c.path}>
+            <span property="name">{c.label}</span>
+          </a>
+          <meta property="position" content={(i + 2).toString()} />
+        </li>
+      );
+    })
+  }
+  <li property="itemListElement" typeof="ListItem">
+    <span property="name">{Astro.props.location}</span>
+    <meta
+      property="position"
+      content={(Astro.props.crumbs.length + 2).toString()}
+    />
+  </li>
+</ol>

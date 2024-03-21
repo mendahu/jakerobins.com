@@ -1,6 +1,10 @@
 ---
 import { format } from "date-fns";
 
+interface Props {
+  publicationDate: string;
+}
+
 const publicationDate = format(Astro.props.publicationDate, "PPp");
 ---
 
