@@ -18,7 +18,9 @@ interface Props {
         (Astro.props.sourceUrl ? (
           <>
             {", "}
-            <a href={Astro.props.sourceUrl}>{Astro.props.sourceLabel}</a>
+            <a href={Astro.props.sourceUrl} target="_blank">
+              {Astro.props.sourceLabel}
+            </a>
           </>
         ) : (
           ", " + Astro.props.sourceLabel
