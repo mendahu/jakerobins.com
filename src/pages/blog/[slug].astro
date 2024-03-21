@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const sbApi = useStoryblokApi();
 
   const { data } = await sbApi.get("cdn/stories/", {
-    // content_type: "posts",
+    content_type: "post",
     version: import.meta.env.DEV ? "draft" : "published",
   });
 
