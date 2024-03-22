@@ -88,14 +88,14 @@ export const defaultHeadConfig: HeadConfig = {
       card: "summary",
       site: "@jakerobins",
       creator: "@jakerobins",
-      image: siteConfig.host + "/twitter-summary.jpg",
+      image: siteConfig.host + "/twitter_summary.jpg",
       alt: "A picture of Jake's Head floating in a space nebula.",
     },
     openGraph: {
       url: siteConfig.host,
       type: "website",
       image: {
-        url: siteConfig.host + "/opengraph-banner.png",
+        url: siteConfig.host + "/opengraph_banner.png",
         type: "image/jpeg",
         alt: "A picture of Jake's head floating in space, bursting from a nova",
         width: 600,
