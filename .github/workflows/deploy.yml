@@ -16,6 +16,8 @@ permissions:
 
 jobs:
   build:
+    env:
+      STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
