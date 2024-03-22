@@ -10,35 +10,29 @@ import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTe
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
-  schema: {
-    nodes: {
-      image: (blok) => {
-        return {
-          component: BlogImage,
-          props: {
-            src: blok.attrs.src,
-            alt: blok.attrs.alt,
-            attribution: blok.attrs.copyright,
-            source: blok.attrs.source,
-            title: blok.attrs.title,
-          },
-        };
-      },
-      blockquote: (blok: any) => {
-        const bq = blok.content?.at(0);
-        const quote = bq?.content[0].text;
-
-        return {
-          component: Blockquote,
-          props: { quote },
-        };
-      },
-    },
-  },
-  resolver: (blok) => {
+  resolver: (blok: any) => {
+    if (blok.component === "blogimage") {
+      return {
+        component: BlogImage,
+        props: {
+          src: blok.src?.filename,
+          alt: blok.alt,
+          attribution: blok.copyright,
+          source: blok.source,
+          title: blok.title,
+        },
+      };
+    }
+    if (blok.component === "blockquote") {
+      return {
+        component: Blockquote,
+        props: { ...blok },
+      };
+    }
+    // fallback
     return {
-      component: Blockquote,
-      props: { ...blok },
+      component: "div",
+      children: blok.content,
     };
   },
   ...storyblokEditable(Astro.props.story.content),
