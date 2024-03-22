@@ -1,13 +1,39 @@
 import rss from "@astrojs/rss";
 import { siteConfig } from "../../config/config";
 import { useStoryblokApi } from "@storyblok/astro";
-import type { PostStoryblok } from "../../../component-types-sb";
+import type {
+  CategoryStoryblok,
+  PostStoryblok,
+} from "../../../component-types-sb";
+
+export async function getStaticPaths() {
+  const sbApi = useStoryblokApi();
+
+  const { data } = await sbApi.get("cdn/stories/", {
+    content_type: "category",
+    version: import.meta.env.DEV ? "draft" : "published",
+  });
+
+  const stories = Object.values(data.stories) as CategoryStoryblok[];
+
+  return stories.map((story) => {
+    return {
+      params: { slug: story.slug },
+      props: { uuid: story.uuid },
+    };
+  });
+}
 
 export async function GET(context: any) {
   const sbApi = useStoryblokApi();
 
   const { data } = await sbApi.get("cdn/stories/", {
-    // content_type: "posts",
+    content_type: "post",
+    filter_query: {
+      category: {
+        in: context.props.uuid,
+      },
+    },
     version: import.meta.env.DEV ? "draft" : "published",
   });
 

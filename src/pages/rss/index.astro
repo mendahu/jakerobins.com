@@ -1,8 +1,19 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { useStoryblokApi } from "@storyblok/astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { mergeHeadConfig } from "../../components/Head/headConfig";
 import { siteConfig } from "../../config/config";
+import type { CategoryStoryblok } from "../../../component-types-sb";
+
+const sbApi = useStoryblokApi();
+
+const { data } = await sbApi.get("cdn/stories/", {
+  content_type: "category",
+  version: import.meta.env.DEV ? "draft" : "published",
+});
+
+const stories = Object.values(data.stories) as CategoryStoryblok[];
 ---
 
 <Layout headConfig={mergeHeadConfig({ title: "RSS - " + siteConfig.title })}>
@@ -15,5 +26,35 @@ import { siteConfig } from "../../config/config";
       Tech companies picking it out for you first.
     </p>
   </header>
-  <main class="[ flow ]"></main>
+  <main class="[ flow ]">
+    <h2>Available Feeds</h2>
+    <ul class="[ clear-list-styles flow ]">
+      <li>
+        <a href="/rss/everything.xml" class="[ clear-link-styles ]">
+          <span
+            style="--color-category: hsl(0, 100%, 0%);"
+            class="[ category-tag invert-text ]"
+          >
+            Everything
+          </span>
+        </a>
+      </li>
+      {
+        stories.map((story) => {
+          return (
+            <li>
+              <a href={`/rss/${story.slug}.xml`} class="[ clear-link-styles ]">
+                <span
+                  style={`--color-category: hsl(${story.content.hue}, 19%, 32%);`}
+                  class="[ category-tag invert-text ]"
+                >
+                  {story.content.name}
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </main>
 </Layout>
