@@ -26,7 +26,6 @@ export async function getStaticPaths() {
 
 export async function GET(context: any) {
   const sbApi = useStoryblokApi();
-  console.log(context.props);
 
   const { data } = await sbApi.get("cdn/stories/", {
     content_type: "post",
