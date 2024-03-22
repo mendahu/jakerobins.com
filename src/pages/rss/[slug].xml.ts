@@ -19,13 +19,14 @@ export async function getStaticPaths() {
   return stories.map((story) => {
     return {
       params: { slug: story.slug },
-      props: { uuid: story.uuid },
+      props: { uuid: story.uuid, name: story.name },
     };
   });
 }
 
 export async function GET(context: any) {
   const sbApi = useStoryblokApi();
+  console.log(context.props);
 
   const { data } = await sbApi.get("cdn/stories/", {
     content_type: "post",
@@ -50,7 +51,7 @@ export async function GET(context: any) {
 
   return rss({
     // `<title>` field in output xml
-    title: siteConfig.title,
+    title: siteConfig.title + " - " + context.props.name,
     // `<description>` field in output xml
     description: siteConfig.description,
     // Pull in your project "site" from the endpoint context
