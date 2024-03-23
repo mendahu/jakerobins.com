@@ -56,7 +56,6 @@ const richTextProps = {
     location={Astro.props.story.name}
   />
   <Byline
-    client:load
     publicationDate={Astro.props.story.published_at ||
       Astro.props.story.created_at}
   />

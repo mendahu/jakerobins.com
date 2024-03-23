@@ -15,12 +15,7 @@ interface Props {
   cover: Record<string, any>;
 }
 
-const placeholderPublicationDate = new Date();
-
-const publicationDate = format(
-  Astro.props.publishedAt ?? placeholderPublicationDate,
-  "PPp"
-);
+const publicationDate = format(Astro.props.publishedAt, "PP");
 ---
 
 <a

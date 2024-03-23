@@ -5,10 +5,12 @@ interface Props {
   publicationDate: string;
 }
 
-const publicationDate = format(Astro.props.publicationDate, "PPp");
+const publicationDate = format(Astro.props.publicationDate, "PP");
 ---
 
 <address>
-  <p>Jake Robins</p>
-  <time datetime={Astro.props.publicationDate}>{publicationDate}</time>
+  <p>
+    Jake Robins - <time datetime={Astro.props.publicationDate}
+      >{publicationDate}</time>
+  </p>
 </address>
