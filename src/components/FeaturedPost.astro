@@ -15,13 +15,18 @@ interface Props {
   cover: Record<string, any>;
 }
 
-const publicationDate = format(Astro.props.publishedAt, "PP");
+const placeholderPublicationDate = new Date();
+
+const publicationDate = format(
+  Astro.props.publishedAt ?? placeholderPublicationDate,
+  "PP"
+);
 ---
 
 <a
   href=`/blog/${Astro.props.slug}`
   class=`[ clear-link-styles bar-hover-link ]`
-  style=`--color-category: hsl(${Astro.props.category.content.hue}, 19%, 32%);`
+  style=`--color-category: hsl(${Astro.props.category.content.hue}, 50%, 30%);`
   data-astro-prefetch="load"
 >
   <article class=`[ flow ]`>

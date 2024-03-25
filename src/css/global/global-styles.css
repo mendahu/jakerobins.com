@@ -34,7 +34,7 @@ h4 {
   max-width: 24ch;
   font-weight: var(--font-medium);
   font-family: theme(fontFamily.heading);
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.15rem;
 }
 
 h4 {
@@ -93,5 +93,24 @@ figure:has(blockquote) {
   & > figcaption {
     font-size: 1rem;
     font-style: normal;
+  }
+}
+
+pre.astro-code {
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+p,
+ul,
+ol {
+  & code {
+    /* fallback for no color-mix support */
+    background-color: hsl(0, 0%, 90%);
+    background: color-mix(in srgb, var(--color-category) 20%, transparent);
+    padding-inline: 0.5rem;
+    padding-block: 1px;
+    font-size: 0.95rem;
+    border-radius: 4px;
   }
 }

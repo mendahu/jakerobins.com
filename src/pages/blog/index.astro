@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import FeaturedPost from "../../components/FeaturedPost.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PostList from "../../components/PostList.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import { mergeHeadConfig } from "../../components/Head/headConfig";
 import { siteConfig } from "../../config/config";
@@ -14,7 +15,9 @@ const { data } = await storyblokApi.get("cdn/stories/", {
   version: import.meta.env.DEV ? "draft" : "published",
 });
 
-const [featuredPost] = data.stories;
+const [featuredPost, ...posts] = data.stories;
+
+console.log(posts);
 ---
 
 <Layout headConfig={mergeHeadConfig({ title: "Blog - " + siteConfig.title })}>
@@ -34,5 +37,6 @@ const [featuredPost] = data.stories;
       category={featuredPost.content?.category}
       cover={featuredPost.content?.cover}
     />
+    <PostList posts={posts} />
   </main>
 </Layout>

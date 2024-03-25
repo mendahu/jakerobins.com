@@ -3,6 +3,7 @@ import { format } from "date-fns";
 
 interface Props {
   publicationDate: string;
+  categoryName: string;
 }
 
 const publicationDate = format(Astro.props.publicationDate, "PP");
@@ -11,6 +12,8 @@ const publicationDate = format(Astro.props.publicationDate, "PP");
 <address>
   <p>
     Jake Robins - <time datetime={Astro.props.publicationDate}
-      >{publicationDate}</time>
+      >{publicationDate}</time
+    >
+    <span class="[ category-tag invert-text ]">{Astro.props.categoryName}</span>
   </p>
 </address>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+  publishedAt: string;
+  hue: string;
+}
+---
+
+<article style=`--color-category: hsl(${Astro.props.hue}, 50%, 30%);`>
+  {Astro.props.title}
+</article>

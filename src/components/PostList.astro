@@ -1,0 +1,23 @@
+---
+import type { PostStoryblok } from "../../component-types-sb";
+import PostListItem from "./PostListItem.astro";
+
+interface Props {
+  posts: PostStoryblok[];
+}
+---
+
+<div>
+  {
+    Astro.props.posts.map((p) => (
+      <PostListItem
+        title={p.name}
+        description={p.content?.description}
+        image={p.content?.cover.filename}
+        slug={p.slug}
+        publishedAt={p.published_at || p.created_at}
+        hue={p.content?.category.content.hue}
+      />
+    ))
+  }
+</div>

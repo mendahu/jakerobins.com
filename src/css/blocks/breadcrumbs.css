@@ -1,9 +1,15 @@
 .breadcrumbs {
   display: flex;
   gap: 0.5rem;
+  align-items: flex-start;
+
   & li {
+    position: relative;
+    margin-inline-start: 1rem;
     &:before {
       content: "/";
+      left: -1rem;
+      position: absolute;
     }
   }
 }

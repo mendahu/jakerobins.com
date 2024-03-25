@@ -7,9 +7,22 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
+import { Code } from "astro:components";
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
+  schema: {
+    nodes: {
+      code_block: ({ attrs, content }) => ({
+        component: Code, // native Astro Code component
+        props: {
+          lang: attrs.class?.split("-")[1],
+          theme: "dark-plus",
+          code: content?.[0].text,
+        },
+      }),
+    },
+  },
   resolver: (blok: any) => {
     if (blok.component === "blogimage") {
       return {
@@ -58,6 +71,7 @@ const richTextProps = {
   <Byline
     publicationDate={Astro.props.story.published_at ||
       Astro.props.story.created_at}
+    categoryName={Astro.props.story.content.category.name}
   />
   <RichTextRenderer {...richTextProps} />
 </article>
