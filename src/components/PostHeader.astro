@@ -9,10 +9,12 @@ interface Props {
 
 <header class="[ post-header ] [ full-bleed ]">
   <figure>
-    <img src={Astro.props.src} alt={Astro.props.alt} />
+    <img src={Astro.props.src} alt={Astro.props.alt} class="[ hero ]" />
     <figcaption class="[ inset-top-right gutter-2xs category-tag invert-text ]">
       {Astro.props.credit}
     </figcaption>
   </figure>
-  <h1 class="[ wrapper category-tag invert-text ]">{Astro.props.title}</h1>
+  <h1 class="[ wrapper category-tag invert-text ]">
+    <span>{Astro.props.title}</span>
+  </h1>
 </header>

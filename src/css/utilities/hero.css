@@ -1,0 +1,6 @@
+.hero {
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  max-height: var(--hero-height, 100vh);
+}
