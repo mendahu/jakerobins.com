@@ -1,14 +1,44 @@
 ---
+import { format } from "date-fns";
+
 interface Props {
   title: string;
   description: string;
-  image: string;
+  src: string;
+  alt: string;
   slug: string;
   publishedAt: string;
   hue: string;
+  category: string;
 }
+
+const placeholderPublicationDate = new Date();
+
+const publicationDate = format(
+  Astro.props.publishedAt ?? placeholderPublicationDate,
+  "PP"
+);
 ---
 
-<article style=`--color-category: hsl(${Astro.props.hue}, 50%, 30%);`>
-  {Astro.props.title}
-</article>
+<a
+  href={`/blog/${Astro.props.slug}`}
+  class="[ clear-link-styles bar-hover-link ]"
+  style=`--color-category: hsl(${Astro.props.hue}, 50%, 30%);`
+  data-astro-prefetch="hover"
+>
+  <article class="[ post-list-item ][ columns-two ]">
+    <div>
+      <img src={Astro.props.src} alt={Astro.props.alt} />
+    </div>
+    <div class="[ flow ]">
+      <h2>{Astro.props.title}</h2>
+      <p>
+        {publicationDate}
+      </p>
+      <p>
+        <span class="[ category-tag invert-text ]">{Astro.props.category}</span>
+      </p>
+      <p>{Astro.props.description}</p>
+    </div>
+  </article>
+</a>

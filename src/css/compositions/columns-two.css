@@ -1,0 +1,9 @@
+.columns-two {
+  display: flex;
+  gap: var(--gutter);
+
+  & * {
+    flex-basis: 50%;
+    flex-grow: 0;
+  }
+}

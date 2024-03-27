@@ -10,9 +10,11 @@ const publicationDate = format(Astro.props.publicationDate, "PP");
 ---
 
 <address>
-  <p>
-    Jake Robins - <time datetime={Astro.props.publicationDate}
-      >{publicationDate}</time
+  <p class="[ flow-inline ]">
+    <span
+      >Jake Robins - <time datetime={Astro.props.publicationDate}
+        >{publicationDate}</time
+      ></span
     >
     <span class="[ category-tag invert-text ]">{Astro.props.categoryName}</span>
   </p>
