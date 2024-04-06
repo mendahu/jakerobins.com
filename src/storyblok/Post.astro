@@ -9,6 +9,7 @@ import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { Code } from "astro:components";
+import Blogtable from "./Blogtable.astro";
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
@@ -53,6 +54,18 @@ const richTextBaseProps: RTProps = {
       return {
         component: Blockquote,
         props: { ...blok },
+      };
+    }
+    if (blok.component === "blogtable") {
+      return {
+        component: Blogtable,
+        props: {
+          title: blok.title,
+          thead: blok.content.thead.map((cell: any) => cell.value),
+          tbody: blok.content.tbody.map((row: any) =>
+            row.body.map((cell: any) => cell.value)
+          ),
+        },
       };
     }
     // fallback

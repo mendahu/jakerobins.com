@@ -114,3 +114,25 @@ ol {
     border-radius: 4px;
   }
 }
+
+table {
+  width: 100%;
+
+  & th {
+    text-align: left;
+    font-weight: var(--font-medium);
+  }
+
+  & tr > * + * {
+    padding-inline-start: 0.5rem;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  & caption {
+    text-align: left;
+    font-size: var(--size-step-1);
+    font-weight: var(--font-medium);
+    border-bottom: 3px solid var(--color-category, var(--color-text));
+  }
+}
