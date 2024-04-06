@@ -1,0 +1,24 @@
+---
+import BlogImage from "./BlogImage.astro";
+
+interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  attribution?: string;
+  source?: string;
+}
+---
+
+<a
+  href={Astro.props.source}
+  class="[ block clear-link-styles bar-hover-link ]"
+  target="_blank"
+>
+  <BlogImage
+    src={Astro.props.src}
+    alt={Astro.props.alt}
+    title={Astro.props.title}
+    attribution={Astro.props.attribution}
+  />
+</a>

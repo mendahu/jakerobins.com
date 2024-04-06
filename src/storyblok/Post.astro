@@ -3,6 +3,7 @@ import PostHeader from "../components/PostHeader.astro";
 import Byline from "../components/Byline.astro";
 import Blockquote from "../storyblok/Blockquote.astro";
 import BlogImage from "../storyblok/BlogImage.astro";
+import BlogLinkedImage from "../storyblok/BlogLinkedImage.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
@@ -25,8 +26,20 @@ const richTextBaseProps: RTProps = {
   },
   resolver: (blok: any) => {
     if (blok.component === "blogimage") {
+      if (!blok.source) {
+        return {
+          component: BlogImage,
+          props: {
+            src: blok.src?.filename,
+            alt: blok.alt,
+            title: blok.title,
+            attribution: blok.copyright,
+          },
+        };
+      }
+
       return {
-        component: BlogImage,
+        component: BlogLinkedImage,
         props: {
           src: blok.src?.filename,
           alt: blok.alt,

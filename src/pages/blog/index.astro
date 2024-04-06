@@ -2,10 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import FeaturedPost from "../../components/FeaturedPost.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import PostList from "../../components/PostList.astro";
+
 import { useStoryblokApi } from "@storyblok/astro";
 import { mergeHeadConfig } from "../../components/Head/headConfig";
 import { siteConfig } from "../../config/config";
+import PostListItem from "../../components/PostListItem.astro";
+import type { PostStoryblok } from "../../../component-types-sb";
 
 const storyblokApi = useStoryblokApi();
 
@@ -15,9 +17,7 @@ const { data } = await storyblokApi.get("cdn/stories/", {
   version: import.meta.env.DEV ? "draft" : "published",
 });
 
-const [featuredPost, ...posts] = data.stories;
-
-console.log(posts);
+const [featuredPost, ...posts] = data.stories as PostStoryblok[];
 ---
 
 <Layout headConfig={mergeHeadConfig({ title: "Blog - " + siteConfig.title })}>
@@ -37,6 +37,19 @@ console.log(posts);
       category={featuredPost.content?.category}
       cover={featuredPost.content?.cover}
     />
-    <PostList posts={posts} />
+    {
+      posts.map((p) => (
+        <PostListItem
+          title={p.name}
+          description={p.content?.description}
+          src={p.content?.cover.filename}
+          alt={p.content?.cover.alt}
+          slug={p.slug}
+          publishedAt={p.published_at || p.created_at}
+          hue={p.content?.category.content.hue}
+          category={p.content?.category.name}
+        />
+      ))
+    }
   </main>
 </Layout>

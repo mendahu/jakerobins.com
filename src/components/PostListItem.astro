@@ -22,13 +22,13 @@ const publicationDate = format(
 
 <a
   href={`/blog/${Astro.props.slug}`}
-  class="[ clear-link-styles bar-hover-link ]"
+  class="[ clear-link-styles bar-hover-link block ]"
   style=`--color-category: hsl(${Astro.props.hue}, 50%, 30%);`
   data-astro-prefetch="hover"
 >
   <article class="[ post-list-item ][ columns-two ]">
     <div>
-      <img src={Astro.props.src} alt={Astro.props.alt} />
+      <img class="[ square ]" src={Astro.props.src} alt={Astro.props.alt} />
     </div>
     <div class="[ flow ]">
       <h2>{Astro.props.title}</h2>
