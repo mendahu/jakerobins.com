@@ -73,8 +73,12 @@ const headConfig: Partial<HeadConfig> = {
         },
       ],
       image: {
-        url: "http" + story.content.cover.filename.slice(5) + "/m",
-        secure_url: story.content.cover.filename + "/m",
+        url:
+          "http" +
+          story.content.cover.filename.slice(5) +
+          "/m/1200x0/filters:format(webp)",
+        secure_url:
+          story.content.cover.filename + "/m/1200x0/filters:format(webp)",
         alt: story.content.cover.alt,
         type: "image/webp",
       },
