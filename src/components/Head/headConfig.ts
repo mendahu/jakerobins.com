@@ -41,6 +41,7 @@ export type HeadConfig = {
       article?: { type: string; value: string }[];
       image: {
         url: string;
+        secure_url: string;
         type: string;
         alt: string;
         width?: number;
@@ -95,7 +96,8 @@ export const defaultHeadConfig: HeadConfig = {
       url: siteConfig.host,
       type: "website",
       image: {
-        url: siteConfig.host + "/opengraph_banner.jpg",
+        url: "http" + siteConfig.host.slice(5) + "/opengraph_banner.jpg",
+        secure_url: siteConfig.host + "/opengraph_banner.jpg",
         type: "image/jpeg",
         alt: "A picture of Jake's head floating in space, bursting from a nova",
         width: 600,

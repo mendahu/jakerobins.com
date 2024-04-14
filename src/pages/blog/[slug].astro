@@ -35,6 +35,8 @@ const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
 
 const story = data.story;
 
+console.log(story.content.cover);
+
 const headConfig: Partial<HeadConfig> = {
   title: story.name + " - " + siteConfig.title,
   description: story.content.description,
@@ -71,7 +73,8 @@ const headConfig: Partial<HeadConfig> = {
         },
       ],
       image: {
-        url: story.content.cover.filename,
+        url: "http" + story.content.cover.filename.slice(5),
+        secure_url: story.content.cover.filename,
         alt: story.content.cover.alt,
         type: "image/webp",
       },
