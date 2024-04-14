@@ -1,0 +1,21 @@
+---
+interface Props {
+  anchor: string;
+  label: string;
+  x: number;
+  y: number;
+  index: number;
+}
+---
+
+<div
+  style={`--position-y:${Astro.props.y}%;--position-x:${Astro.props.x}%`}
+  class="[ image-annotation ][ absolute center ]"
+>
+  {/* prettier-ignore */}
+  <a
+    href={"#" + Astro.props.anchor}
+    class="[ clear-link-styles ]"
+    data-label={". " + Astro.props.label}>{Astro.props.index}</a
+  >
+</div>
