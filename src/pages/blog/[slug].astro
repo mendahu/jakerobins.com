@@ -73,8 +73,12 @@ const headConfig: Partial<HeadConfig> = {
         },
       ],
       image: {
-        url: "http" + story.content.cover.filename.slice(5),
-        secure_url: story.content.cover.filename,
+        url:
+          "http" +
+          story.content.cover.filename.slice(5) +
+          "/m/1200x630/filters:format(jpeg)",
+        secure_url:
+          story.content.cover.filename + "/m/1200x630/filters:format(jpeg)",
         alt: story.content.cover.alt,
         type: "image/jpeg",
         width: 1200,
