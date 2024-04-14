@@ -1,29 +1,43 @@
 ---
+import Image from "../components/Image.astro";
+
 interface Props {
   src: string;
   alt: string;
   title: string;
   attribution?: string;
+  source?: string;
+  annotations?: {
+    x: number;
+    y: number;
+    label: string;
+    anchor: string;
+  }[];
 }
 ---
 
-<figure class="[ relative invert-text gutter-2xs ]">
-  <img
-    src={Astro.props.src}
-    alt={Astro.props.alt}
-    title={Astro.props.title}
-    loading="lazy"
-  />
-
-  {
-    Astro.props.attribution && (
-      <span class="[ inset-top-right category-tag ]">
-        {Astro.props.attribution}
-      </span>
-    )
-  }
-
-  <figcaption class="[ inset-bottom-left category-tag ]">
-    {Astro.props.title}
-  </figcaption>
-</figure>
+{
+  Astro.props.source ? (
+    <a
+      href={Astro.props.source}
+      class="[ block clear-link-styles bar-hover-link ]"
+      target="_blank"
+    >
+      <Image
+        src={Astro.props.src}
+        alt={Astro.props.alt}
+        title={Astro.props.title}
+        attribution={Astro.props.attribution}
+        annotations={Astro.props.annotations}
+      />
+    </a>
+  ) : (
+    <Image
+      src={Astro.props.src}
+      alt={Astro.props.alt}
+      title={Astro.props.title}
+      attribution={Astro.props.attribution}
+      annotations={Astro.props.annotations}
+    />
+  )
+}

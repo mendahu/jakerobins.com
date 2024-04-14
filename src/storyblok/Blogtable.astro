@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  thead: string[];
+  tbody: string[][];
+}
+---
+
+<table>
+  <caption>{Astro.props.title}</caption>
+  <thead>
+    <tr>
+      {Astro.props.thead.map((val) => <th>{val}</th>)}
+    </tr>
+  </thead>
+  <tbody>
+    {
+      Astro.props.tbody.map((row) => (
+        <tr>
+          {row.map((val) => (
+            <td>{val}</td>
+          ))}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

@@ -1,0 +1,43 @@
+---
+import ImageAnnotation from "./ImageAnnotation.astro";
+
+interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  attribution?: string;
+  annotations?: {
+    x: number;
+    y: number;
+    label: string;
+    anchor: string;
+  }[];
+}
+---
+
+<figure class="[ relative invert-text gutter-2xs ]">
+  <img
+    src={Astro.props.src}
+    alt={Astro.props.alt}
+    title={Astro.props.title}
+    loading="lazy"
+  />
+
+  {
+    Astro.props.attribution && (
+      <span class="[ inset-top-right category-tag ]">
+        {Astro.props.attribution}
+      </span>
+    )
+  }
+
+  {
+    Astro.props.annotations?.map((a, i) => {
+      return <ImageAnnotation {...a} index={i + 1} />;
+    })
+  }
+
+  <figcaption class="[ inset-bottom-left category-tag ]">
+    {Astro.props.title}
+  </figcaption>
+</figure>

@@ -1,0 +1,34 @@
+.image-annotation {
+  --diameter: 2.5rem;
+  --radius: calc(var(--diameter) / 2);
+
+  background-color: var(--color-category);
+  border: 2px solid var(--color-background);
+  /* border-radius: var(--radius); */
+
+  left: var(--position-x, 0);
+  bottom: var(--position-y, 0);
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+
+  min-width: var(--diameter);
+  height: var(--diameter);
+
+  font-weight: bold;
+
+  &:hover {
+    padding-inline: calc(var(--radius) / 2);
+    transform: translateX(
+      clamp(
+        calc(var(--radius) - 100%),
+        calc(0% - var(--position-x)),
+        calc(0% - var(--radius))
+      )
+    );
+
+    & a::after {
+      text-wrap: nowrap;
+      content: attr(data-label);
+    }
+  }
+}

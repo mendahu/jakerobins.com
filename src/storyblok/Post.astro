@@ -3,12 +3,12 @@ import PostHeader from "../components/PostHeader.astro";
 import Byline from "../components/Byline.astro";
 import Blockquote from "../storyblok/Blockquote.astro";
 import BlogImage from "../storyblok/BlogImage.astro";
-import BlogLinkedImage from "../storyblok/BlogLinkedImage.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { Code } from "astro:components";
+import Blogtable from "./Blogtable.astro";
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
@@ -26,26 +26,15 @@ const richTextBaseProps: RTProps = {
   },
   resolver: (blok: any) => {
     if (blok.component === "blogimage") {
-      if (!blok.source) {
-        return {
-          component: BlogImage,
-          props: {
-            src: blok.src?.filename,
-            alt: blok.alt,
-            title: blok.title,
-            attribution: blok.copyright,
-          },
-        };
-      }
-
       return {
-        component: BlogLinkedImage,
+        component: BlogImage,
         props: {
           src: blok.src?.filename,
           alt: blok.alt,
+          title: blok.title,
           attribution: blok.copyright,
           source: blok.source,
-          title: blok.title,
+          annotations: blok.annotations,
         },
       };
     }
@@ -53,6 +42,18 @@ const richTextBaseProps: RTProps = {
       return {
         component: Blockquote,
         props: { ...blok },
+      };
+    }
+    if (blok.component === "blogtable") {
+      return {
+        component: Blogtable,
+        props: {
+          title: blok.title,
+          thead: blok.content.thead.map((cell: any) => cell.value),
+          tbody: blok.content.tbody.map((row: any) =>
+            row.body.map((cell: any) => cell.value)
+          ),
+        },
       };
     }
     // fallback
