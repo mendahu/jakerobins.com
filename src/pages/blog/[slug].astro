@@ -35,7 +35,11 @@ const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
 
 const story = data.story;
 
-console.log(story.content.cover);
+// Facebook blocks a-us so we need to replace it with a2-us
+// Big tech for the win
+const hostReplacer = (filename: string): string => {
+  return filename.replace("a-us.storyblok.com", "a2-us.storyblok.com");
+};
 
 const headConfig: Partial<HeadConfig> = {
   title: story.name + " - " + siteConfig.title,
@@ -75,10 +79,11 @@ const headConfig: Partial<HeadConfig> = {
       image: {
         url:
           "http" +
-          story.content.cover.filename.slice(5) +
+          hostReplacer(story.content.cover.filename).slice(5) +
           "/m/1200x630/filters:format(jpeg)",
         secure_url:
-          story.content.cover.filename + "/m/1200x630/filters:format(jpeg)",
+          hostReplacer(story.content.cover.filename) +
+          "/m/1200x630/filters:format(jpeg)",
         alt: story.content.cover.alt,
         type: "image/jpeg",
         width: 1200,
