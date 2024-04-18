@@ -37,6 +37,8 @@ const story = data.story;
 
 // Facebook blocks a-us so we need to replace it with a2-us
 // Big tech for the win
+// a2-us is an alternative url for the same host provided by
+// Storyblok support
 const hostReplacer = (filename: string): string => {
   return filename.replace("a-us.storyblok.com", "a2-us.storyblok.com");
 };
