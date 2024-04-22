@@ -83,7 +83,8 @@ const richTextProps = {
     location={Astro.props.story.name}
   />
   <Byline
-    publicationDate={Astro.props.story.published_at ||
+    publicationDate={Astro.props.story.first_published_at ||
+      Astro.props.story.published_at ||
       Astro.props.story.created_at}
     categoryName={Astro.props.story.content.category.name}
   />
