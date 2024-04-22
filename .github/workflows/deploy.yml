@@ -18,6 +18,7 @@ jobs:
   build:
     env:
       STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
+      PUBLIC_GA4_ID: ${{ secrets.PUBLIC_GA4_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git

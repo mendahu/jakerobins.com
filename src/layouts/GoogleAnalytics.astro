@@ -8,16 +8,18 @@ declare global {
 interface Props {
   ga4id: string;
 }
+
+const ga4id = Astro.props.ga4id;
 ---
 
 <script
   async
-  src=`https://www.googletagmanager.com/gtag/js?id=${Astro.props.ga4id}`
-></script>
-<script define:vars={{ ga4id: Astro.props.ga4id }} is:inline>
+  src=`https://www.googletagmanager.com/gtag/js?id=${ga4id}`
+  is:inline></script>
+<script define:vars={{ ga4id }} is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(...args) {
-    window.dataLayer.push(...args);
+    dataLayer.push(...args);
   }
   gtag("js", new Date());
 
