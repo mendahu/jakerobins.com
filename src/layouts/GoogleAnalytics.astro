@@ -1,0 +1,25 @@
+---
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+  }
+}
+
+interface Props {
+  ga4id: string;
+}
+---
+
+<script
+  async
+  src=`https://www.googletagmanager.com/gtag/js?id=${Astro.props.ga4id}`
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: any[]) {
+    window.dataLayer.push(...args);
+  }
+  gtag("js", new Date());
+
+  gtag("config", Astro.props.ga4id);
+</script>

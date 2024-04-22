@@ -34,6 +34,7 @@
     "vite": "^5.1.4"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.19",
     "prettier": "^3.2.5",
     "prettier-config-standard": "^7.0.0",
     "prettier-plugin-astro": "^0.13.0",
