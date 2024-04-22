@@ -14,12 +14,12 @@ interface Props {
   async
   src=`https://www.googletagmanager.com/gtag/js?id=${Astro.props.ga4id}`
 ></script>
-<script>
+<script define:vars={{ ga4id: Astro.props.ga4id }}>
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
+  function gtag(...args) {
     window.dataLayer.push(...args);
   }
   gtag("js", new Date());
 
-  gtag("config", Astro.props.ga4id);
+  gtag("config", ga4id);
 </script>
