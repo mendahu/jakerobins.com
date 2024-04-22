@@ -12,6 +12,8 @@ interface Props {
 }
 
 const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
+
+const ga4id = import.meta.env.PUBLIC_GA4_ID;
 ---
 
 <!doctype html>
@@ -19,7 +21,7 @@ const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
   <head>
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/omo5gfi.css" />
-    <GoogleAnalytics ga4id={import.meta.env.PUBLIC_GA4_ID} />
+    <GoogleAnalytics ga4id={ga4id} />
     <slot name="title" />
     <Head {...headConfig} />
   </head>

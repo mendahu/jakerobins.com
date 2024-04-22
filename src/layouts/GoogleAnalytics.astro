@@ -14,7 +14,7 @@ interface Props {
   async
   src=`https://www.googletagmanager.com/gtag/js?id=${Astro.props.ga4id}`
 ></script>
-<script define:vars={{ ga4id: Astro.props.ga4id }}>
+<script define:vars={{ ga4id: Astro.props.ga4id }} is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(...args) {
     window.dataLayer.push(...args);
