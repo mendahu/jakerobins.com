@@ -18,6 +18,8 @@ const { data } = await storyblokApi.get("cdn/stories/", {
 });
 
 const [featuredPost, ...posts] = data.stories as PostStoryblok[];
+
+console.log(posts[1]);
 ---
 
 <Layout headConfig={mergeHeadConfig({ title: "Blog - " + siteConfig.title })}>
@@ -32,7 +34,9 @@ const [featuredPost, ...posts] = data.stories as PostStoryblok[];
     <FeaturedPost
       slug={featuredPost.slug}
       title={featuredPost.name}
-      publishedAt={featuredPost.published_at}
+      publishedAt={featuredPost.first_published_at ||
+        featuredPost.published_at ||
+        featuredPost.created_at}
       description={featuredPost.content?.description}
       category={featuredPost.content?.category}
       cover={featuredPost.content?.cover}
@@ -45,7 +49,7 @@ const [featuredPost, ...posts] = data.stories as PostStoryblok[];
           src={p.content?.cover.filename}
           alt={p.content?.cover.alt}
           slug={p.slug}
-          publishedAt={p.published_at || p.created_at}
+          publishedAt={p.first_published_at || p.published_at || p.created_at}
           hue={p.content?.category.content.hue}
           category={p.content?.category.name}
         />
