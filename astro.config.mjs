@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
 import { siteConfig } from "./src/config/config";
+import partytown from "@astrojs/partytown";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
@@ -17,6 +18,11 @@ export default defineConfig({
       },
       apiOptions: {
         region: "us",
+      },
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
       },
     }),
   ],
