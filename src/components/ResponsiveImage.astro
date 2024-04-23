@@ -5,8 +5,10 @@ interface Props {
   title: string;
   lazy: boolean;
   fullBleed: boolean;
-  class: string;
+  class?: string;
 }
+
+const className = Astro.props.class || "";
 ---
 
 <picture>
@@ -59,7 +61,7 @@ interface Props {
   <source srcset={Astro.props.src + "/m/400x0/filters:format(webp)"} />
   <source srcset={Astro.props.src + "/m/400x0/filters:format(jpeg)"} />
   <img
-    class={Astro.props.class + " [ cover ]"}
+    class={className + " [ cover ]"}
     src={Astro.props.src + "/m/1200x0/filters:format(jpeg)"}
     alt={Astro.props.alt}
     title={Astro.props.title}
