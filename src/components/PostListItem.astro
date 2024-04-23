@@ -1,5 +1,6 @@
 ---
 import { format } from "date-fns";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
 interface Props {
   title: string;
@@ -28,7 +29,14 @@ const publicationDate = format(
 >
   <article class="[ post-list-item ][ columns-two ]">
     <div>
-      <img class="[ square ]" src={Astro.props.src} alt={Astro.props.alt} />
+      <ResponsiveImage
+        src={Astro.props.src}
+        alt={Astro.props.alt}
+        title={Astro.props.title}
+        lazy={true}
+        fullBleed={false}
+        class="[ square ]"
+      />
     </div>
     <div class="[ flow ]">
       <h2>{Astro.props.title}</h2>

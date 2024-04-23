@@ -1,5 +1,6 @@
 ---
 import ImageAnnotation from "./ImageAnnotation.astro";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
 interface Props {
   src: string;
@@ -16,11 +17,12 @@ interface Props {
 ---
 
 <figure class="[ relative invert-text gutter-2xs ]">
-  <img
-    src={Astro.props.src + "/m/filters:format(webp)"}
+  <ResponsiveImage
+    src={Astro.props.src}
     alt={Astro.props.alt}
     title={Astro.props.title}
-    loading="lazy"
+    lazy={true}
+    fullBleed={true}
   />
 
   {

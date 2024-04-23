@@ -1,4 +1,6 @@
 ---
+import ResponsiveImage from "./ResponsiveImage.astro";
+
 interface Props {
   src: string;
   alt: string;
@@ -9,9 +11,12 @@ interface Props {
 
 <header class="[ post-header ] [ full-bleed ]">
   <figure>
-    <img
-      src={Astro.props.src + "/m/filters:format(webp)"}
+    <ResponsiveImage
+      src={Astro.props.src}
       alt={Astro.props.alt}
+      title={Astro.props.title}
+      lazy={false}
+      fullBleed={true}
       class="[ hero ]"
     />
     <figcaption class="[ inset-top-right gutter-2xs category-tag invert-text ]">
