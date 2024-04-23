@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import storyblok from "@storyblok/astro";
 import { loadEnv } from "vite";
 import { siteConfig } from "./src/config/config";
+import sitemap from "@astrojs/sitemap";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 
@@ -17,6 +18,14 @@ export default defineConfig({
       },
       apiOptions: {
         region: "us",
+      },
+    }),
+    sitemap({
+      i18n: {
+        defaultLocale: "en",
+        locales: {
+          en: "en-CA",
+        },
       },
     }),
   ],

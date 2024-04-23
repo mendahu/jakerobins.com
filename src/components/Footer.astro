@@ -1,26 +1,17 @@
 ---
-import Email from "./_svg/Email.astro";
-import LinkedIn from "./_svg/LinkedIn.astro";
-import Bluesky from "./_svg/Bluesky.astro";
-import Github from "./_svg/Github.astro";
-import RSS from "./_svg/RSS.astro";
 import { siteConfig } from "../config/config";
 
 interface Props {}
 ---
 
-<footer class="[ flow-inline ]">
-  <a href={siteConfig.socials.github} class="[ clear-link-styles ]"
-    ><Github size="45" /></a
-  >
-  <a href={siteConfig.socials.linkedIn} class="[ clear-link-styles ]"
-    ><LinkedIn size="45" /></a
-  >
-  <a href={siteConfig.socials.email} class="[ clear-link-styles ]"
-    ><Email size="45" /></a
-  >
-  <a href={siteConfig.socials.bsky} class="[ clear-link-styles ]"
-    ><Bluesky size="45" /></a
-  >
-  <a href="/rss" class="[ clear-link-styles ]"><RSS size="45" /></a>
+<footer class="[ flow ]">
+  <h2>Contact/About</h2>
+  <ul>
+    <li><a href={siteConfig.socials.github}>Github</a></li>
+    <li><a href={siteConfig.socials.linkedIn}>LinkedIn</a></li>
+    <li><a href={siteConfig.socials.email}>Email</a></li>
+    <li><a href={siteConfig.socials.bsky}>Bluesky</a></li>
+    <li><a href="/rss">RSS</a></li>
+    <li><a href="/sitemap-index.xml">Sitemap</a></li>
+  </ul>
 </footer>
