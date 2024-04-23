@@ -4,24 +4,18 @@ declare global {
     dataLayer: Record<string, any>[];
   }
 }
-
-interface Props {
-  ga4id: string;
-}
-
-const ga4id = Astro.props.ga4id;
 ---
 
-<script
-  type="text/partytown"
-  async
-  src=`https://www.googletagmanager.com/gtag/js?id=${ga4id}`></script>
-<script type="text/partytown" define:vars={{ ga4id }}>
+<script async src=`https://www.googletagmanager.com/gtag/js?id=G-RKSHXBHGHW`
+></script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag() {
-    dataLayer.push(args);
+    // @ts-ignore
+    dataLayer.push(arguments);
   }
+  // @ts-ignore
   gtag("js", new Date());
-
-  gtag("config", ga4id);
+  // @ts-ignore
+  gtag("config", "G-RKSHXBHGHW");
 </script>
