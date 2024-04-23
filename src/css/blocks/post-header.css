@@ -1,5 +1,6 @@
 .post-header {
   background-color: var(--color-category);
+  --hero-height: 300px;
 
   & > h1 {
     margin-block-start: 0;
@@ -8,23 +9,17 @@
   & figcaption {
     font-size: 90%;
   }
-
-  & img {
-    --hero-height: 300px;
-  }
 }
 
 @media (min-width: 768px) {
   .post-header {
+    --hero-height: 550px;
+
     & > h1 {
       position: absolute;
       bottom: 0;
       left: 0;
       max-width: fit-content;
-    }
-
-    & img {
-      --hero-height: 550px;
     }
   }
 }

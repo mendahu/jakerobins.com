@@ -1,0 +1,68 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  lazy: boolean;
+  fullBleed: boolean;
+  class: string;
+}
+---
+
+<picture>
+  {
+    Astro.props.fullBleed && (
+      <>
+        <source
+          media="(min-width: 1200px)"
+          srcset={Astro.props.src + "/m/filters:format(webp)"}
+        />
+        <source
+          media="(min-width: 1200px)"
+          srcset={Astro.props.src + "/m/filters:format(jpeg)"}
+        />
+        <source
+          media="(min-width: 1000px)"
+          srcset={Astro.props.src + "/m/1200x0/filters:format(webp)"}
+        />
+        <source
+          media="(min-width: 1000px)"
+          srcset={Astro.props.src + "/m/1200x0/filters:format(jpeg)"}
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset={Astro.props.src + "/m/1000x0/filters:format(webp)"}
+        />
+        <source
+          media="(min-width: 800px)"
+          srcset={Astro.props.src + "/m/1000x0/filters:format(jpeg)"}
+        />
+        <source
+          media="(min-width: 600px)"
+          srcset={Astro.props.src + "/m/800x0/filters:format(webp)"}
+        />
+        <source
+          media="(min-width: 600px)"
+          srcset={Astro.props.src + "/m/800x0/filters:format(jpeg)"}
+        />
+      </>
+    )
+  }
+  <source
+    media="(min-width: 400px)"
+    srcset={Astro.props.src + "/m/600x0/filters:format(webp)"}
+  />
+  <source
+    media="(min-width: 400px)"
+    srcset={Astro.props.src + "/m/600x0/filters:format(jpeg)"}
+  />
+  <source srcset={Astro.props.src + "/m/400x0/filters:format(webp)"} />
+  <source srcset={Astro.props.src + "/m/400x0/filters:format(jpeg)"} />
+  <img
+    class={Astro.props.class + " [ cover ]"}
+    src={Astro.props.src + "/m/1200x0/filters:format(jpeg)"}
+    alt={Astro.props.alt}
+    title={Astro.props.title}
+    loading={Astro.props.lazy ? "lazy" : "eager"}
+  />
+</picture>
