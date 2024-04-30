@@ -9,6 +9,7 @@ import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRendere
 import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { Code } from "astro:components";
 import Blogtable from "./Blogtable.astro";
+import Blogvideo from "./Blogvideo.astro";
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
@@ -53,6 +54,17 @@ const richTextBaseProps: RTProps = {
           tbody: blok.content.tbody.map((row: any) =>
             row.body.map((cell: any) => cell.value)
           ),
+        },
+      };
+    }
+    if (blok.component === "blogvideo") {
+      return {
+        component: Blogvideo,
+        props: {
+          title: blok.title,
+          alt: blok.alt,
+          youtube_id: blok.youtube_id,
+          facade: blok.facade.filename,
         },
       };
     }

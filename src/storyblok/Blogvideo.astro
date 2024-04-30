@@ -1,0 +1,16 @@
+---
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+interface Props {
+  youtube_id: string;
+  title: string;
+  alt: string;
+  facade_url: string;
+}
+---
+
+<YouTube
+  id={Astro.props.youtube_id}
+  poster={Astro.props.facade_url}
+  title={Astro.props.title}
+/>

@@ -12,6 +12,7 @@
     "generate-sb-types": "storyblok-generate-ts source=./components.1018994.json target=./component-types-sb"
   },
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.5.2",
     "@astrojs/check": "^0.5.5",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.4",
