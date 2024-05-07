@@ -13,6 +13,7 @@ const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get("cdn/stories/", {
   content_type: "post",
+  sort_by: "first_published_at:desc",
   resolve_relations: "post.category",
   version: import.meta.env.DEV ? "draft" : "published",
 });
