@@ -10,6 +10,13 @@ import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTe
 import { Code } from "astro:components";
 import Blogtable from "./Blogtable.astro";
 import Blogvideo from "./Blogvideo.astro";
+import SVGMap from "../demos/SVGMap.astro";
+
+// These are mapping for live demo components used in one-off blog posts
+// The key will come in as content from the CMS, and the value is the component
+const demos: Record<string, any> = {
+  ["demo-svg-form-map"]: SVGMap,
+};
 
 const richTextBaseProps: RTProps = {
   content: Astro.props.story.content.content,
@@ -66,6 +73,12 @@ const richTextBaseProps: RTProps = {
           youtube_id: blok.youtube_id,
           facade: blok.facade.filename,
         },
+      };
+    }
+    if (blok.component === "blogdemo") {
+      return {
+        component: demos[blok.demoKey] || "div",
+        children: "Demo component",
       };
     }
     // fallback

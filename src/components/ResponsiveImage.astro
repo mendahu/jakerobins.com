@@ -9,6 +9,15 @@ interface Props {
 }
 
 const className = Astro.props.class || "";
+
+if (Astro.props.alt === "") {
+  throw new Error(
+    "Missing Alt Text for Image - " +
+      Astro.props.title +
+      " - " +
+      Astro.props.src
+  );
+}
 ---
 
 <picture>
