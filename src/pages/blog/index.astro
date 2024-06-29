@@ -32,7 +32,7 @@ const [featuredPost, ...posts] = data.stories as PostStoryblok[];
   <main class="[ flow flow-space-s ]">
     <FeaturedPost
       slug={featuredPost.slug}
-      title={featuredPost.name}
+      title={featuredPost.content?.title || featuredPost.name}
       publishedAt={featuredPost.first_published_at ||
         featuredPost.published_at ||
         featuredPost.created_at}
