@@ -12,34 +12,34 @@
     "generate-sb-types": "storyblok-generate-ts source=./components.1018994.json target=./component-types-sb"
   },
   "dependencies": {
-    "@astro-community/astro-embed-youtube": "^0.5.2",
+    "@astro-community/astro-embed-youtube": "^0.5.3",
     "@astrojs/check": "^0.9.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "@storyblok/astro": "^4.0.2",
+    "@storyblok/astro": "^5.0.2",
     "@types/postcss-js": "^4.0.4",
     "astro": "^4.15.4",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.20",
     "clean-css": "^5.3.3",
-    "concurrently": "^8.2.2",
-    "cssnano": "^6.0.5",
-    "date-fns": "^3.3.1",
-    "postcss": "^8.4.35",
+    "concurrently": "^9.0.0",
+    "cssnano": "^7.0.6",
+    "date-fns": "^3.6.0",
+    "postcss": "^8.4.45",
     "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.0.1",
+    "postcss-import": "^16.1.0",
     "postcss-import-ext-glob": "^2.1.1",
     "postcss-js": "^4.0.1",
     "slugify": "^1.6.6",
     "storyblok-rich-text-astro-renderer": "^2.2.0",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.3.3",
-    "vite": "^5.2.11"
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
   },
   "devDependencies": {
-    "@types/gtag.js": "^0.0.19",
-    "prettier": "^3.2.5",
+    "@types/gtag.js": "^0.0.20",
+    "prettier": "^3.3.3",
     "prettier-config-standard": "^7.0.0",
-    "prettier-plugin-astro": "^0.13.0",
-    "storyblok-generate-ts": "^2.0.2"
+    "prettier-plugin-astro": "^0.14.1",
+    "storyblok-generate-ts": "^2.1.0"
   }
 }
