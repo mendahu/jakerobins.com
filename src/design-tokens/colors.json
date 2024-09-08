@@ -33,6 +33,42 @@
     {
       "name": "Dark Purple",
       "value": "#5F4261"
+    },
+    {
+      "name": "Gray 100",
+      "value": "#eeeeee"
+    },
+    {
+      "name": "Gray 200",
+      "value": "#dddddd"
+    },
+    {
+      "name": "Gray 300",
+      "value": "#cccccc"
+    },
+    {
+      "name": "Gray 400",
+      "value": "#bbbbbb"
+    },
+    {
+      "name": "Gray 500",
+      "value": "#aaaaaa"
+    },
+    {
+      "name": "Gray 600",
+      "value": "#999999"
+    },
+    {
+      "name": "Gray 700",
+      "value": "#888888"
+    },
+    {
+      "name": "Gray 800",
+      "value": "#777777"
+    },
+    {
+      "name": "Gray 900",
+      "value": "#666666"
     }
   ]
 }
