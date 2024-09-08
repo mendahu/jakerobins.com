@@ -1,0 +1,36 @@
+---
+import { format } from "date-fns";
+import type { PostStoryblok } from "../../component-types-sb";
+
+interface Props {
+  title: string;
+  posts: PostStoryblok[];
+  thisSlug: string;
+}
+---
+
+<nav>
+  <details>
+    <summary>Part of a series: {Astro.props.title}</summary>
+    <ul>
+      {
+        Astro.props.posts.map((post) => {
+          if (post.slug === Astro.props.thisSlug) {
+            return (
+              <li>
+                <strong>{post.name}</strong> -{" "}
+                {format(new Date(post.first_published_at), "PPP")}
+              </li>
+            );
+          }
+          return (
+            <li>
+              <a href={post.slug}>{post.name}</a> -{" "}
+              {format(new Date(post.first_published_at), "PPP")}
+            </li>
+          );
+        })
+      }
+    </ul>
+  </details>
+</nav>

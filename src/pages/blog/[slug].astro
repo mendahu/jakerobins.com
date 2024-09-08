@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 const sbApi = useStoryblokApi();
 const { slug } = Astro.params;
 const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
-  resolve_relations: "post.category",
+  resolve_relations: ["post.category", "post.series"],
   version: import.meta.env.DEV ? "draft" : "published",
 });
 
@@ -100,6 +100,6 @@ const headConfig: Partial<HeadConfig> = {
   <main
     style=`--color-category: hsl(${story.content.category.content.hue}, 50%, 30%);`
   >
-    <Post story={story} />
+    <Post story={story} ň />
   </main>
 </Layout>
