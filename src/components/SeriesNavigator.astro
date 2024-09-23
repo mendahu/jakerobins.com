@@ -17,7 +17,7 @@ interface Props {
         Astro.props.posts.map((post) => {
           if (post.slug === Astro.props.thisSlug) {
             return (
-              <li>
+              <li aria-current="page">
                 <strong>{post.name}</strong> -{" "}
                 {format(new Date(post.first_published_at), "PPP")}
               </li>
