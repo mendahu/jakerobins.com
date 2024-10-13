@@ -8,11 +8,12 @@ interface Props {
 }
 ---
 
-<nav>
+<nav aria-label="Breadcrumbs">
   <ol
     vocab="https://schema.org/"
     typeof="BreadcrumbList"
     class="[ breadcrumbs ][ unstyled-list ]"
+    role="list"
   >
     <li property="itemListElement" typeof="ListItem">
       <a property="item" typeof="WebPage" href="/">
@@ -34,7 +35,7 @@ interface Props {
         })
     }
     <li property="itemListElement" typeof="ListItem">
-      <span property="name">{Astro.props.location}</span>
+      <a aria-current="page" property="name">{Astro.props.location}</a>
       <meta
         property="position"
         content={((Astro.props.crumbs?.length || 0) + 2).toString()}
