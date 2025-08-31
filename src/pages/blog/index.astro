@@ -3,22 +3,17 @@ import Layout from "../../layouts/Layout.astro";
 import FeaturedPost from "../../components/FeaturedPost.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 
-import { useStoryblokApi } from "@storyblok/astro";
 import { mergeHeadConfig } from "../../components/Head/headConfig";
 import { siteConfig } from "../../config/config";
 import PostListItem from "../../components/PostListItem.astro";
-import type { PostStoryblok } from "../../../component-types-sb";
+import { fetchAllPosts } from "../../storyblok/utils";
 
-const storyblokApi = useStoryblokApi();
-
-const { data } = await storyblokApi.get("cdn/stories/", {
-  content_type: "post",
+const allPosts = await fetchAllPosts({
+  resolve_relations: ["post.category"],
   sort_by: "first_published_at:desc",
-  resolve_relations: "post.category",
-  version: import.meta.env.DEV ? "draft" : "published",
 });
 
-const [featuredPost, ...posts] = data.stories as PostStoryblok[];
+const [featuredPost, ...posts] = allPosts;
 ---
 
 <Layout headConfig={mergeHeadConfig({ title: "Blog - " + siteConfig.title })}>

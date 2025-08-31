@@ -2,22 +2,15 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../layouts/Layout.astro";
 import Post from "../../storyblok/Post.astro";
-import type { PostStoryblok } from "../../../component-types-sb";
 import {
   mergeHeadConfig,
   type HeadConfig,
 } from "../../components/Head/headConfig";
 import { siteConfig } from "../../config/config";
+import { fetchAllPosts } from "../../storyblok/utils";
 
 export async function getStaticPaths() {
-  const sbApi = useStoryblokApi();
-
-  const { data } = await sbApi.get("cdn/stories/", {
-    content_type: "post",
-    version: import.meta.env.DEV ? "draft" : "published",
-  });
-
-  const stories = Object.values(data.stories) as PostStoryblok[];
+  const stories = await fetchAllPosts();
 
   return stories.map((story) => {
     return {
