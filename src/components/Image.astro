@@ -1,4 +1,5 @@
 ---
+import { randomUUID } from "node:crypto";
 import ImageAnnotation from "./ImageAnnotation.astro";
 import ResponsiveImage from "./ResponsiveImage.astro";
 
@@ -7,6 +8,7 @@ interface Props {
   alt: string;
   title: string;
   attribution?: string;
+  source?: string;
   annotations?: {
     x: number;
     y: number;
@@ -14,24 +16,32 @@ interface Props {
     anchor: string;
   }[];
 }
+
+const hasMeta = Boolean(Astro.props.attribution || Astro.props.source);
+const expandDialogId = randomUUID();
+const expandWebp = `${Astro.props.src}/m/2400x0/filters:format(webp)`;
+const expandJpeg = `${Astro.props.src}/m/2400x0/filters:format(jpeg)`;
 ---
 
-<figure class="[ relative invert-text gutter-2xs ]">
-  <ResponsiveImage
-    src={Astro.props.src}
-    alt={Astro.props.alt}
-    title={Astro.props.title}
-    lazy={true}
-    fullBleed={true}
-  />
-
-  {
-    Astro.props.attribution && (
-      <span class="[ inset-top-right category-tag ]">
-        {Astro.props.attribution}
-      </span>
-    )
-  }
+<figure
+  class="[ bg-gray-100 image-expand ] [ relative gutter-2xs flow ]"
+  data-image-expand
+  style="--flow-space: 0.5em;"
+>
+  <button
+    type="button"
+    class="image-expand__trigger"
+    data-dialog-target={expandDialogId}
+    aria-haspopup="dialog"
+    aria-label={`View larger image — ${Astro.props.title}`}
+  >
+    <ResponsiveImage
+      src={Astro.props.src}
+      alt={Astro.props.alt}
+      lazy={true}
+      fullBleed={true}
+    />
+  </button>
 
   {
     Astro.props.annotations?.map((a, i) => {
@@ -39,7 +49,73 @@ interface Props {
     })
   }
 
-  <figcaption class="[ inset-bottom-left category-tag ]">
+  <figcaption class="[ image-caption ]">
     {Astro.props.title}
+    {
+      hasMeta && (
+        <span class="">
+          {Astro.props.attribution && Astro.props.source && " · "}
+          Source:
+          {Astro.props.source && (
+            <a
+              href={Astro.props.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {Astro.props.attribution}
+            </a>
+          )}
+        </span>
+      )
+    }
   </figcaption>
+
+  <dialog
+    id={expandDialogId}
+    class="image-expand__dialog"
+    tabindex="-1"
+    aria-label={`${Astro.props.title} (full size)`}
+  >
+    <div
+      class="image-expand__scrim"
+      data-image-expand-close
+      aria-hidden="true"
+    />
+    <div class="image-expand__stage">
+      <div class="image-expand__frame">
+        <button
+          type="button"
+          class="image-expand__close"
+          data-image-expand-close
+          aria-label="Close expanded image"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            aria-hidden="true"
+            class="image-expand__close-icon"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              d="M4.5 4.5l9 9m0-9l-9 9"></path>
+          </svg>
+        </button>
+        <picture>
+          <source srcset={expandWebp} type="image/webp" />
+          <img
+            src={expandJpeg}
+            alt={Astro.props.alt}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
+    </div>
+  </dialog>
 </figure>

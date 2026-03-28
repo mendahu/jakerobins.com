@@ -1,0 +1,154 @@
+.image-expand__trigger {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+  text-align: start;
+}
+
+.image-expand__trigger:focus-visible {
+  outline: 2px solid var(--color-green-light);
+  outline-offset: 2px;
+}
+
+.image-expand__dialog:focus {
+  outline: none;
+}
+
+.image-expand__dialog {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.image-expand__dialog::backdrop {
+  background: color-mix(in srgb, var(--color-dark) 82%, transparent);
+}
+
+.image-expand__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  cursor: zoom-out;
+}
+
+.image-expand__stage {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-s);
+  pointer-events: none;
+}
+
+.image-expand__frame {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  pointer-events: auto;
+}
+
+.image-expand__frame picture,
+.image-expand__frame img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 2 * var(--space-s));
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.image-expand__close {
+  position: absolute;
+  top: var(--space-3xs);
+  right: var(--space-3xs);
+  z-index: 2;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--color-light) 35%, transparent);
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-dark) 55%, transparent);
+  color: var(--color-light);
+  cursor: pointer;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-dark) 40%, transparent);
+}
+
+.image-expand__close-icon {
+  display: block;
+}
+
+.image-expand__close:hover {
+  background-color: color-mix(in srgb, var(--color-dark) 72%, transparent);
+  border-color: color-mix(in srgb, var(--color-light) 50%, transparent);
+}
+
+.image-expand__close:focus-visible {
+  outline: 2px solid var(--color-green-light);
+  outline-offset: 3px;
+}
+
+/*
+ * Avoid overflow:hidden on html — it often jumps scroll to the top (especially
+ * on iOS). Pin body with the saved offset instead, then restore on close.
+ */
+html.image-expand-is-open body {
+  position: fixed;
+  top: calc(-1 * var(--image-expand-saved-scroll, 0px));
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .image-expand__dialog[open] .image-expand__stage {
+    animation: image-expand-stage-in 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .image-expand__dialog[open]::backdrop {
+    animation: image-expand-backdrop-in 0.2s ease-out both;
+  }
+}
+
+@keyframes image-expand-stage-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes image-expand-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

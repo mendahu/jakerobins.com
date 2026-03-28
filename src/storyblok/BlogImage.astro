@@ -16,28 +16,11 @@ interface Props {
 }
 ---
 
-{
-  Astro.props.source ? (
-    <a
-      href={Astro.props.source}
-      class="[ block clear-link-styles bar-hover-link ]"
-      target="_blank"
-    >
-      <Image
-        src={Astro.props.src}
-        alt={Astro.props.alt}
-        title={Astro.props.title}
-        attribution={Astro.props.attribution}
-        annotations={Astro.props.annotations}
-      />
-    </a>
-  ) : (
-    <Image
-      src={Astro.props.src}
-      alt={Astro.props.alt}
-      title={Astro.props.title}
-      attribution={Astro.props.attribution}
-      annotations={Astro.props.annotations}
-    />
-  )
-}
+<Image
+  src={Astro.props.src}
+  alt={Astro.props.alt}
+  title={Astro.props.title}
+  attribution={Astro.props.attribution}
+  source={Astro.props.source}
+  annotations={Astro.props.annotations}
+/>
