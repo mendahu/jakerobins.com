@@ -27,5 +27,8 @@ const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
   <body class="[ flow-space-m wrapper flow main-expand ]">
     <slot />
     <Footer />
+    <script>
+      import "../scripts/image-expand.ts";
+    </script>
   </body>
 </html>

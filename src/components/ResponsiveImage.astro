@@ -2,7 +2,7 @@
 interface Props {
   src: string;
   alt: string;
-  title: string;
+  title?: string;
   lazy: boolean;
   fullBleed: boolean;
   class?: string;
@@ -13,7 +13,7 @@ const className = Astro.props.class || "";
 if (Astro.props.alt === "") {
   throw new Error(
     "Missing Alt Text for Image - " +
-      Astro.props.title +
+      (Astro.props.title ?? "(no title)") +
       " - " +
       Astro.props.src
   );
@@ -73,7 +73,6 @@ if (Astro.props.alt === "") {
     class={className + " [ cover ]"}
     src={Astro.props.src + "/m/1200x0/filters:format(jpeg)"}
     alt={Astro.props.alt}
-    title={Astro.props.title}
     loading={Astro.props.lazy ? "lazy" : "eager"}
   />
 </picture>
