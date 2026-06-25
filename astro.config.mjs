@@ -34,4 +34,10 @@ export default defineConfig({
   },
   prefetch: true,
   site: siteConfig.host,
+  vite: {
+    optimizeDeps: {
+      include: ["astro/toolbar"],
+      exclude: ["@storyblok/astro/toolbarApp.ts"],
+    },
+  },
 });
