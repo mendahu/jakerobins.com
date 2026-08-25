@@ -114,10 +114,10 @@ The PostCSS plugin list and npm packages can stay in one `package.json`. Isolati
 ## Sitemap, RSS, and SEO
 
 - RSS stays under `/rss` and keeps using the blog `site` / title / description.
-- `@astrojs/sitemap` will include `/` once the redirect is gone. That is correct: the portfolio home should be in the sitemap.
+- `@astrojs/sitemap` includes `/`. The portfolio home should stay in the sitemap.
 - Use per-layout `<title>`, description, and OG tags. Do not reuse the blog tagline (“Scattered thoughts about space exploration…”) on portfolio pages.
 - Canonical URLs stay on `https://jakerobins.com` for both products.
 
 ## Accidental visits
 
-After the root is a portfolio, a reader who types the domain will not land on `/blog`. The holding page (see the PR plan) and later the real footer link are the way back. Do not restore the HTTP redirect once the portfolio is live.
+After the root is a portfolio, a reader who types the domain will not land on `/blog`. The holding page and footer links (Writing on `/`, Hire me on the blog) are the way between the two. Do not restore the HTTP redirect once the real portfolio is live.
