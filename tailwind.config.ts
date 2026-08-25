@@ -3,17 +3,17 @@ import plugin from "tailwindcss/plugin";
 import postcss from "postcss";
 import postcssJs from "postcss-js";
 
-import clampGenerator from "./src/css-utils/clamp-generator.js";
-import tokensToTailwind from "./src/css-utils/tokens-to-tailwind.js";
+import clampGenerator from "./src/blog/css-utils/clamp-generator.js";
+import tokensToTailwind from "./src/blog/css-utils/tokens-to-tailwind.js";
 
 // Raw design tokens
-import colorTokens from "./src/design-tokens/colors.json";
-import fontTokens from "./src/design-tokens/fonts.json";
-import spacingTokens from "./src/design-tokens/spacing.json";
-import textSizeTokens from "./src/design-tokens/text-sizes.json";
-import textLeadingTokens from "./src/design-tokens/text-leading.json";
-import textWeightTokens from "./src/design-tokens/text-weights.json";
-import viewportTokens from "./src/design-tokens/viewports.json";
+import colorTokens from "./src/blog/design-tokens/colors.json";
+import fontTokens from "./src/blog/design-tokens/fonts.json";
+import spacingTokens from "./src/blog/design-tokens/spacing.json";
+import textSizeTokens from "./src/blog/design-tokens/text-sizes.json";
+import textLeadingTokens from "./src/blog/design-tokens/text-leading.json";
+import textWeightTokens from "./src/blog/design-tokens/text-weights.json";
+import viewportTokens from "./src/blog/design-tokens/viewports.json";
 
 // Process design tokens
 const colors = tokensToTailwind(colorTokens.items);
@@ -24,7 +24,11 @@ const fontLeading = tokensToTailwind(textLeadingTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
 
 const config: Config = {
-  content: ["./src/**/*.{html,js,jsx,mdx,njk,twig,vue,astro}"],
+  content: [
+    "./src/blog/**/*.{html,js,jsx,mdx,njk,twig,vue,astro,ts}",
+    "./src/pages/blog/**/*.{astro,ts}",
+    "./src/pages/rss/**/*.{astro,ts}",
+  ],
   // Add color classes to safe list so they are always generated
   safelist: [],
   presets: [],

@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { siteConfig } from "../../config/config";
+import { siteConfig } from "../../blog/config/config";
 import { useStoryblokApi } from "@storyblok/astro";
 import type {
   CategoryStoryblok,

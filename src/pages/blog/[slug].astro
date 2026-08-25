@@ -1,13 +1,13 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
-import Layout from "../../layouts/Layout.astro";
-import Post from "../../storyblok/Post.astro";
+import Layout from "../../blog/layouts/Layout.astro";
+import Post from "../../blog/storyblok/Post.astro";
 import {
   mergeHeadConfig,
   type HeadConfig,
-} from "../../components/Head/headConfig";
-import { siteConfig } from "../../config/config";
-import { fetchAllPosts } from "../../storyblok/utils";
+} from "../../blog/components/Head/headConfig";
+import { siteConfig } from "../../blog/config/config";
+import { fetchAllPosts } from "../../blog/storyblok/utils";
 
 export async function getStaticPaths() {
   const stories = await fetchAllPosts();

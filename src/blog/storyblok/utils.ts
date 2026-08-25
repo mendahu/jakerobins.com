@@ -1,5 +1,5 @@
 import { useStoryblokApi } from "@storyblok/astro";
-import type { PostStoryblok } from "../../component-types-sb";
+import type { PostStoryblok } from "../../../component-types-sb";
 import type { ISbStoriesParams } from "storyblok-js-client";
 
 /**
