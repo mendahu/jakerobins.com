@@ -1,0 +1,14 @@
+---
+description: Two products on one domain — never share layouts, components, or CSS between blog and portfolio.
+alwaysApply: true
+---
+
+# Two sites on the apex
+
+This repo is a freelance **portfolio** (`/`) and a personal **blog** (`/blog`, `/rss`). They share a domain and an Astro deploy only.
+
+- `src/pages` is routes. Pages import from one tree: `src/portfolio/` or `src/blog/`.
+- Do not share layouts, components, CSS, design tokens, or fonts. Duplicate Head, footer, and analytics.
+- Cross-links are exits (Writing → `/blog`, later Work → `/`), not shared chrome.
+
+Full strategy: [docs/two-sites-on-apex.md](docs/two-sites-on-apex.md).

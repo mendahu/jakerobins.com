@@ -1,23 +1,31 @@
 ---
-import GoogleAnalytics from "./GoogleAnalytics.astro";
+// No imports from src/blog. Funnel UI lives only in src/portfolio/.
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head/Head.astro";
+import {
+  defaultHeadConfig,
+  type HeadConfig,
+} from "../components/Head/headConfig";
 import "../css/holding.css";
+import GoogleAnalytics from "./GoogleAnalytics.astro";
+
+interface Props {
+  headConfig?: HeadConfig;
+}
+
+const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Jake Robins — freelance developer</title>
-    <meta
-      name="description"
-      content="Freelance development by Jake Robins. Writing lives at /blog."
-    />
+    <meta name="generator" content={Astro.generator} />
     <GoogleAnalytics />
+    <Head {...headConfig} />
   </head>
   <body>
     <slot />
+    <Footer />
   </body>
 </html>

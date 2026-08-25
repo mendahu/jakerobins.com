@@ -35,3 +35,26 @@ a {
   text-decoration: underline;
   text-underline-offset: 0.12em;
 }
+
+footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+footer h2 {
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0 0 0.5rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  margin: 0.25rem 0;
+}
+

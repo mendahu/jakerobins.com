@@ -1,0 +1,11 @@
+---
+description: Blog tree — import only src/blog, use the blog layout and CSS, keep Tailwind content globs tight.
+globs: src/blog/**,src/pages/blog/**,src/pages/rss/**
+alwaysApply: false
+---
+
+# Blog code
+
+- Import only from `src/blog/` (plus `src/pages` for routes and root `component-types-sb`).
+- Use `src/blog/layouts/Layout.astro` and blog CSS (`styles.css`, `cube.css`). Do not import `src/portfolio/`.
+- Do not add portfolio paths to `tailwind.blog.config.ts` `content`. Do not use `src/**/*` as a Tailwind glob.
