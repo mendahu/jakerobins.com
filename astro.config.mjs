@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
-import { siteConfig } from "./src/config/config";
+import { siteConfig } from "./src/blog/config/config";
 import sitemap from "@astrojs/sitemap";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
@@ -12,9 +12,9 @@ export default defineConfig({
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,
       components: {
-        post: "storyblok/Post",
-        blockquote: "storyblok/Blockquote",
-        blogimage: "storyblok/BlogImage",
+        post: "blog/storyblok/Post",
+        blockquote: "blog/storyblok/Blockquote",
+        blogimage: "blog/storyblok/BlogImage",
       },
       apiOptions: {
         region: "us",

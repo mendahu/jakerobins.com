@@ -1,12 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import FeaturedPost from "../../components/FeaturedPost.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Layout from "../../blog/layouts/Layout.astro";
+import FeaturedPost from "../../blog/components/FeaturedPost.astro";
+import Breadcrumbs from "../../blog/components/Breadcrumbs.astro";
 
-import { mergeHeadConfig } from "../../components/Head/headConfig";
-import { siteConfig } from "../../config/config";
-import PostListItem from "../../components/PostListItem.astro";
-import { fetchAllPosts } from "../../storyblok/utils";
+import { mergeHeadConfig } from "../../blog/components/Head/headConfig";
+import { siteConfig } from "../../blog/config/config";
+import PostListItem from "../../blog/components/PostListItem.astro";
+import { fetchAllPosts } from "../../blog/storyblok/utils";
 
 const allPosts = await fetchAllPosts({
   resolve_relations: ["post.category"],

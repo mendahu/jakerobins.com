@@ -1,9 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../blog/layouts/Layout.astro";
 import { useStoryblokApi } from "@storyblok/astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { mergeHeadConfig } from "../../components/Head/headConfig";
-import { siteConfig } from "../../config/config";
+import Breadcrumbs from "../../blog/components/Breadcrumbs.astro";
+import { mergeHeadConfig } from "../../blog/components/Head/headConfig";
+import { siteConfig } from "../../blog/config/config";
 import type { CategoryStoryblok } from "../../../component-types-sb";
 
 const sbApi = useStoryblokApi();
