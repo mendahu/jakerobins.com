@@ -1,0 +1,23 @@
+---
+import GoogleAnalytics from "./GoogleAnalytics.astro";
+import "../css/holding.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>Jake Robins — freelance developer</title>
+    <meta
+      name="description"
+      content="Freelance development by Jake Robins. Writing lives at /blog."
+    />
+    <GoogleAnalytics />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
