@@ -1,0 +1,12 @@
+---
+description: Portfolio tree — import only src/portfolio; never blog CSS, CUBE, Typekit, or blog Tailwind.
+globs: src/portfolio/**,src/pages/index.astro
+alwaysApply: false
+---
+
+# Portfolio code
+
+- Import only from `src/portfolio/`. Do not import `src/blog/`.
+- Do not use blog CUBE classes, Typekit, or `src/blog/css`.
+- PostCSS must not run blog Tailwind on files under `src/portfolio/` (see `postcss.config.cjs`).
+- New funnel routes belong in `src/pages` as thin files that only import the portfolio layout.
