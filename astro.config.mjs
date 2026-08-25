@@ -29,9 +29,6 @@ export default defineConfig({
       },
     }),
   ],
-  redirects: {
-    "/": "/blog",
-  },
   prefetch: true,
   site: siteConfig.host,
   vite: {
