@@ -1,0 +1,45 @@
+---
+import { landing } from "../../content/landing";
+import Card from "../ui/Card.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import Tag from "../ui/Tag.astro";
+
+const { expertise } = landing;
+const headingId = "expertise-heading";
+---
+
+<section class="jr-section" id="expertise" aria-labelledby={headingId}>
+  <div class="jr-container jr-section__inner">
+    <SectionHeading index="04" title="Background and depth" id={headingId} />
+
+    <div class="jr-split" style="margin-bottom: var(--space-8);">
+      <div>
+        {
+          expertise.paragraphs.map((paragraph) => (
+            <p class="jr-lede" style="margin-bottom: var(--space-4);">
+              {paragraph}
+            </p>
+          ))
+        }
+        <ul class="jr-tags" style="margin-top: var(--space-6);">
+          {expertise.tags.map((tag) => <Tag label={tag} />)}
+        </ul>
+      </div>
+
+      <Card offset sunken>
+        <p class="jr-mono-label" style="margin-bottom: var(--space-4); color: var(--text-muted);">
+          Experience
+        </p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3);">
+          {
+            expertise.bullets.map((bullet) => (
+              <li style="padding-left: var(--space-4); border-left: 2px solid var(--claret-500);">
+                {bullet}
+              </li>
+            ))
+          }
+        </ul>
+      </Card>
+    </div>
+  </div>
+</section>

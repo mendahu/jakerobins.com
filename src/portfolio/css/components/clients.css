@@ -1,0 +1,208 @@
+.jr-section--clients {
+  padding-block: 0;
+  overflow-x: clip;
+}
+
+.jr-clients-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 36rem;
+}
+
+@supports (width: round(1px, 1px, 1px)) {
+  .jr-clients-split {
+    /* Left column width is an exact multiple of the tile — no clipped diamonds at the split. */
+    grid-template-columns: round(down, 50%, 15.75rem) 1fr;
+  }
+}
+
+/* —— Left: claret + chartreuse diamond weave —— */
+.jr-clients-pattern {
+  position: relative;
+  min-height: 100%;
+  background-color: var(--paper-100);
+  background-image: url("/portfolio/diamond-weave.svg");
+  background-repeat: repeat;
+  background-size: 15.75rem 15.75rem;
+  background-position: left bottom;
+}
+
+.jr-clients-pattern__index {
+  position: absolute;
+  bottom: var(--space-8);
+  left: var(--space-8);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--ink-950);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+/* —— Right: Swiss typography stack —— */
+.jr-clients-panel {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface-page);
+}
+
+.jr-clients-panel__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--section-y) var(--space-12);
+}
+
+.jr-clients-panel .jr-section-heading {
+  margin-bottom: var(--space-12);
+}
+
+.jr-clients-panel .jr-section-heading__index {
+  display: none;
+}
+
+.jr-testimonials-stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.jr-testimonials-stack__item {
+  margin: 0;
+}
+
+/* —— Minimal Swiss testimonial: text + padding only —— */
+.jr-testimonial {
+  margin: 0;
+}
+
+.jr-testimonial--swiss {
+  padding: var(--space-8) 0;
+  background: transparent;
+}
+
+.jr-testimonials-stack__item:first-child .jr-testimonial--swiss {
+  padding-top: 0;
+}
+
+.jr-testimonials-stack__item:last-child .jr-testimonial--swiss {
+  padding-bottom: 0;
+}
+
+.jr-testimonial--swiss .jr-testimonial__quote {
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  border: 0;
+}
+
+.jr-testimonial--swiss .jr-testimonial__quote p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--text-primary);
+  font-size: var(--text-body);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.jr-testimonial--swiss .jr-testimonial__cite {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+}
+
+.jr-testimonial--swiss .jr-testimonial__logo {
+  width: auto;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.jr-testimonial--swiss .jr-testimonial__logo--placeholder {
+  display: none;
+}
+
+.jr-testimonial--swiss .jr-testimonial__attribution {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+
+.jr-testimonial--swiss .jr-testimonial__name {
+  font-size: var(--text-meta);
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}
+
+.jr-testimonial--swiss .jr-testimonial__title,
+.jr-testimonial--swiss .jr-testimonial__org {
+  margin: 0;
+  font-size: var(--text-meta);
+  font-weight: 400;
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-muted);
+}
+
+.jr-testimonial--swiss .jr-testimonial__title::before {
+  content: "— ";
+}
+
+@media (max-width: 1080px) {
+  .jr-clients-panel__inner {
+    padding: var(--section-y) var(--space-8);
+  }
+}
+
+@media (max-width: 780px) {
+  .jr-section--clients {
+    padding-block: var(--section-y);
+  }
+
+  .jr-clients-split {
+    grid-template-columns: 1fr;
+    position: relative;
+    min-height: auto;
+  }
+
+  .jr-clients-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: 12rem 12rem;
+    background-position: left bottom;
+  }
+
+  .jr-clients-pattern__index {
+    display: none;
+  }
+
+  .jr-clients-panel {
+    position: relative;
+    z-index: 1;
+    border-left: none;
+    background: transparent;
+    padding: var(--page-pad);
+  }
+
+  .jr-clients-panel__inner {
+    padding: var(--space-8);
+    background: var(--surface-card);
+  }
+
+  .jr-clients-panel .jr-section-heading__index {
+    display: block;
+  }
+
+  .jr-testimonial--swiss {
+    padding: var(--space-6) 0;
+  }
+
+  .jr-testimonials-stack__item:first-child .jr-testimonial--swiss {
+    padding-top: 0;
+  }
+}

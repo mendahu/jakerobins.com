@@ -1,0 +1,13 @@
+.jr-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-rule);
+  padding: var(--card-pad);
+}
+
+.jr-card--offset {
+  box-shadow: 6px 6px 0 0 var(--ink-950);
+}
+
+.jr-card--sunken {
+  background: var(--surface-sunken);
+}

@@ -1,0 +1,31 @@
+---
+import { siteConfig } from "../../config";
+import { landing } from "../../content/landing";
+import EdgeNumeral from "../decorative/EdgeNumeral.astro";
+import Button from "../ui/Button.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { contact } = landing;
+const headingId = "contact-heading";
+---
+
+<section class="jr-section" id="contact" aria-labelledby={headingId}>
+  <EdgeNumeral numeral="06" />
+
+  <div class="jr-container jr-section__inner">
+    <SectionHeading index="06" title={contact.heading} id={headingId} />
+    <div class="jr-contact-block">
+      <p class="jr-lede">{contact.body}</p>
+      <Button href={siteConfig.socials.email} size="lg" contactCta>
+        Email me
+      </Button>
+      <a
+        class="jr-contact-email"
+        href={siteConfig.socials.email}
+        data-contact-cta
+      >
+        {siteConfig.email}
+      </a>
+    </div>
+  </div>
+</section>

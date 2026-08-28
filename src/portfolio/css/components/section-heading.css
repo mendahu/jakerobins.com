@@ -1,0 +1,14 @@
+.jr-section-heading {
+  margin-bottom: var(--space-8);
+}
+
+.jr-section-heading__index {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--text-muted);
+}
+
+.jr-section-heading__title {
+  font-size: var(--text-h2);
+  max-width: 24ch;
+}

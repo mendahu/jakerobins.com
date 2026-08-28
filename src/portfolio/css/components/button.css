@@ -1,0 +1,102 @@
+.jr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color var(--duration-color) var(--ease-out),
+    background-color var(--duration-color) var(--ease-out),
+    border-color var(--duration-color) var(--ease-out),
+    transform var(--duration-move) var(--ease-out);
+}
+
+.jr-btn:active {
+  transform: translate(1px, 1px);
+}
+
+.jr-btn--sm {
+  min-height: 2.125rem;
+  padding: 0 var(--space-4);
+  font-size: var(--text-meta);
+}
+
+.jr-btn--md {
+  min-height: 2.75rem;
+  padding: 0 var(--space-6);
+  font-size: var(--text-body);
+}
+
+.jr-btn--lg {
+  min-height: 3.5rem;
+  padding: 0 var(--space-8);
+  font-size: var(--text-h4);
+}
+
+.jr-btn--primary {
+  background: var(--claret-500);
+  border-color: var(--claret-500);
+  color: var(--text-inverse);
+}
+
+.jr-btn--primary:hover {
+  background: var(--claret-600);
+  border-color: var(--claret-600);
+  color: var(--text-inverse);
+}
+
+.jr-btn--secondary {
+  background: transparent;
+  border-color: var(--border-rule);
+  color: var(--text-primary);
+}
+
+.jr-btn--secondary:hover {
+  background: var(--ink-950);
+  border-color: var(--ink-950);
+  color: var(--text-inverse);
+}
+
+.jr-btn--inverse {
+  background: var(--paper-000);
+  border-color: var(--paper-000);
+  color: var(--text-primary);
+}
+
+.jr-btn--inverse:hover {
+  background: var(--chartreuse-500);
+  border-color: var(--chartreuse-500);
+  color: var(--text-primary);
+}
+
+.jr-btn--accent {
+  background: var(--chartreuse-500);
+  border-color: var(--chartreuse-500);
+  color: var(--text-primary);
+}
+
+.jr-btn--accent:hover {
+  background: var(--ink-950);
+  border-color: var(--ink-950);
+  color: var(--text-inverse);
+}
+
+.jr-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  min-height: auto;
+  padding: 0;
+}
+
+.jr-btn--ghost:hover {
+  color: var(--text-link-hover);
+}

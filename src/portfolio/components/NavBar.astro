@@ -1,0 +1,24 @@
+---
+import { siteConfig } from "../config";
+import Button from "./ui/Button.astro";
+import Wordmark from "./ui/Wordmark.astro";
+---
+
+<header class="jr-nav">
+  <div class="jr-container jr-nav__inner">
+    <Wordmark />
+    <div class="jr-nav__actions">
+      <ul class="jr-nav__links jr-nav__links--desktop">
+        <li>
+          <a class="jr-nav__link" href="#value-props">Work</a>
+        </li>
+        <li>
+          <a class="jr-nav__link" href="#expertise">Background</a>
+        </li>
+      </ul>
+      <Button href={siteConfig.socials.email} variant="secondary" size="sm" contactCta>
+        Email
+      </Button>
+    </div>
+  </div>
+</header>

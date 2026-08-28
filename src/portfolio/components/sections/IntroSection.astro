@@ -1,0 +1,66 @@
+---
+import { siteConfig } from "../../config";
+import { landing } from "../../content/landing";
+import GeometricFigure from "../decorative/GeometricFigure.astro";
+import EdgeNumeral from "../decorative/EdgeNumeral.astro";
+import Button from "../ui/Button.astro";
+
+const { intro } = landing;
+const headingId = "intro-heading";
+---
+
+<section
+  class="jr-section jr-section--intro"
+  id="intro"
+  aria-labelledby={headingId}
+>
+  <GeometricFigure variant="ring" />
+  <EdgeNumeral numeral="01" />
+
+  <div class="jr-container jr-section__inner">
+    <div class="jr-split jr-split--hero">
+      <div class="jr-hero-copy">
+        <h1 class="jr-display" id={headingId}>
+          {intro.headline}
+        </h1>
+        <p class="jr-lede">
+          {intro.lede}
+        </p>
+        <p class="jr-hero-audience">
+          {intro.audienceLine}
+        </p>
+
+        <div class="jr-hero-cta">
+          <span class="jr-mono-label">Contact</span>
+          <hr class="jr-hero-cta__rule jr-hero-cta__rule--accent" />
+          <Button href={siteConfig.socials.email} contactCta> Email me </Button>
+        </div>
+      </div>
+
+      <div class="jr-hero-visual">
+        <div class="jr-hero-visual__frame">
+          {
+            siteConfig.portraitSrc ? (
+              <img
+                src={siteConfig.portraitSrc}
+                alt="Jake Robins"
+                width={320}
+                height={427}
+                style="width: 100%; border: 2px solid var(--border-rule);"
+              />
+            ) : (
+              <div
+                class="jr-portrait-placeholder"
+                aria-label="Portrait placeholder"
+              >
+                <span class="jr-portrait-placeholder__label jr-mono-label">
+                  Photo
+                </span>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

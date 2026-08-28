@@ -1,0 +1,13 @@
+.jr-wordmark {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.jr-wordmark:hover {
+  color: var(--text-primary);
+}

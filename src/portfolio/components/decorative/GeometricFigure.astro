@@ -1,0 +1,12 @@
+---
+interface Props {
+  variant?: "ring";
+}
+
+const { variant = "ring" } = Astro.props;
+---
+
+<div
+  class={`jr-geometric-figure jr-geometric-figure--${variant} jr-decorative-hide-mobile`}
+  aria-hidden="true"
+/>

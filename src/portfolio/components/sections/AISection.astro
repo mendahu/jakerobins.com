@@ -1,0 +1,24 @@
+---
+import { landing } from "../../content/landing";
+import StatementBand from "../decorative/StatementBand.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const { ai } = landing;
+const headingId = "ai-heading";
+---
+
+<section class="jr-section" id="ai" aria-labelledby={headingId}>
+  <div class="jr-container jr-section__inner">
+    <SectionHeading index="05" title="AI in the workflow and the product" id={headingId} />
+
+    <StatementBand text={ai.bandText} />
+
+    <div class="jr-grid-2">
+      {
+        ai.paragraphs.map((paragraph) => (
+          <p class="jr-lede">{paragraph}</p>
+        ))
+      }
+    </div>
+  </div>
+</section>

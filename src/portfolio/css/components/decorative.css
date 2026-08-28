@@ -1,0 +1,100 @@
+.jr-decorative-hide-mobile {
+  display: block;
+}
+
+@media (max-width: 780px) {
+  .jr-decorative-hide-mobile {
+    display: none;
+  }
+}
+
+.jr-edge-numeral {
+  position: absolute;
+  top: var(--space-8);
+  right: -0.15em;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 18vw, 12rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: var(--tracking-display);
+  color: transparent;
+  -webkit-text-stroke: 2px var(--border-hairline);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.jr-geometric-figure {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.jr-geometric-figure--ring {
+  width: min(28rem, 55vw);
+  height: min(28rem, 55vw);
+  border: 2.5rem solid var(--claret-500);
+  border-radius: 50%;
+  top: -4rem;
+  right: -6rem;
+  opacity: 0.9;
+}
+
+.jr-statement-band {
+  position: relative;
+  margin-block: var(--space-8);
+  padding: var(--space-12) var(--page-pad);
+  background: var(--surface-block-bright);
+  color: var(--text-primary);
+  transform: rotate(-1.5deg);
+  margin-inline: calc(-1 * var(--page-pad));
+}
+
+.jr-statement-band__inner {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  transform: rotate(1.5deg);
+}
+
+.jr-statement-band__text {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  max-width: 42ch;
+  line-height: var(--leading-heading);
+}
+
+.jr-portrait-placeholder {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  background: var(--surface-block-deep);
+  border: 2px solid var(--border-rule);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+}
+
+.jr-portrait-placeholder__label {
+  color: var(--text-inverse);
+}
+
+.jr-contact-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.jr-contact-email {
+  font-family: var(--font-mono);
+  font-size: var(--text-h4);
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 4px solid var(--claret-500);
+  padding-bottom: var(--space-1);
+}
+
+.jr-contact-email:hover {
+  color: var(--claret-500);
+}

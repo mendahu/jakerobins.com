@@ -1,12 +1,18 @@
 ---
 import Layout from "../portfolio/layouts/Layout.astro";
+import AISection from "../portfolio/components/sections/AISection.astro";
+import ClientsSection from "../portfolio/components/sections/ClientsSection.astro";
+import ContactSection from "../portfolio/components/sections/ContactSection.astro";
+import ExpertiseSection from "../portfolio/components/sections/ExpertiseSection.astro";
+import IntroSection from "../portfolio/components/sections/IntroSection.astro";
+import ValuePropsSection from "../portfolio/components/sections/ValuePropsSection.astro";
 ---
 
 <Layout>
-  <main>
-    <h1>Jake Robins</h1>
-    <p>Freelance developer. This site will be the professional home for client work.</p>
-    <p>Writing stays on the blog.</p>
-    <p><a href="/blog">Read the blog</a></p>
-  </main>
+  <IntroSection />
+  <ClientsSection />
+  <ValuePropsSection />
+  <ExpertiseSection />
+  <AISection />
+  <ContactSection />
 </Layout>

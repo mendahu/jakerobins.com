@@ -1,0 +1,41 @@
+---
+import type { Testimonial } from "../../content/landing";
+
+interface Props extends Testimonial {
+  id: string;
+}
+
+const {
+  id,
+  quote,
+  personName,
+  personTitle,
+  organization,
+  logoSrc,
+  logoAlt,
+} = Astro.props;
+---
+
+<figure class="jr-testimonial jr-testimonial--swiss">
+  <blockquote class="jr-testimonial__quote">
+    <p>{quote}</p>
+  </blockquote>
+  <figcaption class="jr-testimonial__cite">
+    {
+      logoSrc && (
+        <img
+          class="jr-testimonial__logo"
+          src={logoSrc}
+          alt={logoAlt}
+          width={80}
+          height={20}
+        />
+      )
+    }
+    <div class="jr-testimonial__attribution">
+      <cite class="jr-testimonial__name" id={id}>{personName}</cite>
+      <p class="jr-testimonial__title">{personTitle}</p>
+      <p class="jr-testimonial__org">{organization}</p>
+    </div>
+  </figcaption>
+</figure>

@@ -1,0 +1,27 @@
+---
+import { landing } from "../../content/landing";
+import EdgeNumeral from "../decorative/EdgeNumeral.astro";
+import SectionHeading from "../ui/SectionHeading.astro";
+import ServiceCard from "../ui/ServiceCard.astro";
+
+const { valueProps } = landing;
+const headingId = "value-props-heading";
+---
+
+<section class="jr-section" id="value-props" aria-labelledby={headingId}>
+  <EdgeNumeral numeral="03" />
+
+  <div class="jr-container jr-section__inner">
+    <SectionHeading index="03" title="What I take on" id={headingId} />
+    <p class="jr-lede" style="margin-bottom: var(--space-8);">
+      Hooks for the kind of work that is appealing and on offer — partnership, not staff augmentation by default.
+    </p>
+    <div class="jr-service-grid">
+      {
+        valueProps.map((prop) => (
+          <ServiceCard title={prop.title} body={prop.body} tone={prop.tone} />
+        ))
+      }
+    </div>
+  </div>
+</section>

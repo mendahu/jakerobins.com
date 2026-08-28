@@ -1,0 +1,22 @@
+---
+interface Props {
+  offset?: boolean;
+  sunken?: boolean;
+  class?: string;
+}
+
+const { offset = false, sunken = false, class: className = "" } = Astro.props;
+
+const classes = [
+  "jr-card",
+  offset && "jr-card--offset",
+  sunken && "jr-card--sunken",
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<div class={classes}>
+  <slot />
+</div>

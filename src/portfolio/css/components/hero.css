@@ -1,0 +1,104 @@
+.jr-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.jr-hero-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jr-hero-visual__frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.jr-hero-visual__frame::before,
+.jr-hero-visual__frame::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  pointer-events: none;
+}
+
+.jr-hero-visual__frame::before {
+  top: calc(-1 * var(--space-3));
+  left: calc(-1 * var(--space-3));
+  border-top: 2px solid var(--border-rule);
+  border-left: 2px solid var(--border-rule);
+}
+
+.jr-hero-visual__frame::after {
+  right: calc(-1 * var(--space-3));
+  bottom: calc(-1 * var(--space-3));
+  border-right: 2px solid var(--border-rule);
+  border-bottom: 2px solid var(--border-rule);
+}
+
+.jr-hero-cta {
+  margin-top: var(--space-8);
+  display: grid;
+  gap: var(--space-4);
+  max-width: 24rem;
+}
+
+.jr-hero-cta__rule {
+  width: 100%;
+  height: 2px;
+  margin: 0;
+  border: 0;
+  background: var(--border-rule);
+}
+
+.jr-hero-cta__rule--accent {
+  width: 4rem;
+  background: var(--claret-500);
+}
+
+.jr-hero-copy .jr-lede:first-of-type {
+  margin-top: var(--space-6);
+}
+
+.jr-hero-copy .jr-hero-audience {
+  margin-top: var(--space-4);
+  max-width: 62ch;
+  color: var(--text-secondary);
+}
+
+.jr-hero-copy .jr-display {
+  margin-top: var(--space-8);
+}
+
+/* Large ring: deliberately bleeds off the top-right, clipped by the section. */
+.jr-section--intro > .jr-geometric-figure--ring {
+  width: min(32rem, 52vw);
+  height: min(32rem, 52vw);
+  border-width: 2.75rem;
+  top: -2rem;
+  right: -6rem;
+  left: auto;
+  transform: none;
+  opacity: 1;
+  z-index: 0;
+}
+
+@media (min-width: 781px) and (max-width: 1080px) {
+  .jr-section--intro > .jr-geometric-figure--ring {
+    width: min(26rem, 45vw);
+    height: min(26rem, 45vw);
+    right: -4rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .jr-hero-visual {
+    justify-content: flex-start;
+    margin-top: var(--space-8);
+  }
+}

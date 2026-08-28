@@ -1,0 +1,16 @@
+---
+type Tone = "paper" | "deep" | "warm" | "claret";
+
+interface Props {
+  title: string;
+  body: string;
+  tone?: Tone;
+}
+
+const { title, body, tone = "paper" } = Astro.props;
+---
+
+<article class={`jr-service-card jr-service-card--${tone}`}>
+  <h3 class="jr-service-card__title">{title}</h3>
+  <p class="jr-service-card__body">{body}</p>
+</article>

@@ -1,0 +1,37 @@
+---
+type Variant = "primary" | "secondary" | "inverse" | "accent" | "ghost";
+type Size = "sm" | "md" | "lg";
+
+interface Props {
+  href: string;
+  variant?: Variant;
+  size?: Size;
+  class?: string;
+  contactCta?: boolean;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  contactCta = false,
+} = Astro.props;
+
+const classes = [
+  "jr-btn",
+  `jr-btn--${variant}`,
+  `jr-btn--${size}`,
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+<a
+  class={classes}
+  href={href}
+  {...contactCta ? { "data-contact-cta": true } : {}}
+>
+  <slot />
+</a>

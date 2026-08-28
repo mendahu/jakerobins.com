@@ -1,0 +1,39 @@
+---
+import { landing } from "../../content/landing";
+import SectionHeading from "../ui/SectionHeading.astro";
+import TestimonialCard from "../ui/TestimonialCard.astro";
+
+const { testimonials } = landing;
+const headingId = "clients-heading";
+---
+
+<section
+  class="jr-section jr-section--clients"
+  id="clients"
+  aria-labelledby={headingId}
+>
+  <div class="jr-clients-split">
+    <div class="jr-clients-pattern" aria-hidden="true">
+      <span class="jr-clients-pattern__index jr-mono-label">02</span>
+    </div>
+
+    <div class="jr-clients-panel">
+      <div class="jr-clients-panel__inner">
+        <SectionHeading index="02" title="Testimonials" id={headingId} />
+
+        <ul class="jr-testimonials-stack">
+          {
+            testimonials.map((testimonial, index) => (
+              <li class="jr-testimonials-stack__item">
+                <TestimonialCard
+                  id={`testimonial-cite-${index + 1}`}
+                  {...testimonial}
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

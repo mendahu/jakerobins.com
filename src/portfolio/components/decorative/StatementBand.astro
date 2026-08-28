@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<aside class="jr-statement-band" aria-hidden="true">
+  <div class="jr-statement-band__inner">
+    <p class="jr-statement-band__text">{text}</p>
+  </div>
+</aside>

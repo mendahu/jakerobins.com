@@ -2,12 +2,28 @@
 import { siteConfig } from "../config";
 ---
 
-<footer aria-labelledby="footer-heading">
-  <h2 id="footer-heading">Contact</h2>
-  <ul>
-    <li><a href={siteConfig.socials.github}>GitHub</a></li>
-    <li><a href={siteConfig.socials.linkedIn}>LinkedIn</a></li>
-    <li><a href={siteConfig.socials.email}>Email</a></li>
-    <li><a href="/blog">Writing</a></li>
-  </ul>
+<footer class="jr-footer">
+  <div class="jr-container jr-footer__inner">
+    <p class="jr-footer__copy">Jake Robins · Freelance developer</p>
+    <ul class="jr-footer__links">
+      <li>
+        <a class="jr-footer__link" href={siteConfig.socials.github}>GitHub</a>
+      </li>
+      <li>
+        <a class="jr-footer__link" href={siteConfig.socials.linkedIn}>LinkedIn</a>
+      </li>
+      <li>
+        <a
+          class="jr-footer__link"
+          href={siteConfig.socials.email}
+          data-contact-cta
+        >
+          Email
+        </a>
+      </li>
+      <li>
+        <a class="jr-footer__link" href="/blog">Writing</a>
+      </li>
+    </ul>
+  </div>
 </footer>

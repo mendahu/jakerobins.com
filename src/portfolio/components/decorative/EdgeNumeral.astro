@@ -1,0 +1,11 @@
+---
+interface Props {
+  numeral: string;
+}
+
+const { numeral } = Astro.props;
+---
+
+<div class="jr-edge-numeral jr-decorative-hide-mobile" aria-hidden="true">
+  {numeral}
+</div>
