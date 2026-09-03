@@ -22,22 +22,22 @@ export const landing = {
   testimonials: [
     {
       quote:
-        "Placeholder testimonial about owning the problem end to end — from unclear requirements through a system we could actually run in production.",
-      personName: "First name Last name",
-      personTitle: "Title, Department",
-      organization: "Organization A",
+        "Jake Robins is the kind of technology leader who can help organizations bridge the gap between ambition and execution. He understands how businesses operate, where technology can create leverage, and how to turn complex problems into clear, actionable solutions.",
+      personName: "Chris Sallans",
+      personTitle: "Vice President, Retail Operaations",
+      organization: "Best Buy Canada",
       logoSrc: null,
-      logoAlt: "Organization A",
+      logoAlt: "Best Buy Canada",
       tone: "paper" as TestimonialTone,
     },
     {
       quote:
-        "Placeholder testimonial about moving faster without sacrificing judgment — prototypes turned into real product work, not a separate throwaway phase.",
-      personName: "First name Last name",
-      personTitle: "Title, Department",
-      organization: "Organization B",
+        "Jake's dedication to the quality of his work and the craft of building software exceptional. He's a clear communicator and key collaborator. Even at a part-time capacity, he makes a full-time impact.",
+      personName: "Brett Chalupa",
+      personTitle: "Engineering Lead",
+      organization: "Baymard Institute",
       logoSrc: null,
-      logoAlt: "Organization B",
+      logoAlt: "Baymard Institute",
       tone: "deep" as TestimonialTone,
     },
     {
