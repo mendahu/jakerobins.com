@@ -28,7 +28,7 @@ The page should make the **scale and complexity** of the intended work obvious s
 
 ## Value propositions (use these on the page)
 
-These map to the hooks / expertise / AI sections. Exact copy TBD; claims should stay faithful to this list.
+These map onto the design-brief sections: **What I take on** (2, 4–7), **Why Jake** (1, 7), **How I work** (3, 4). Exact copy TBD; claims should stay faithful to this list.
 
 1. **Business + engineering.** Rare among freelance developers. Can talk to stakeholders and still ship.
 2. **Web products, especially larger and more technical ones.** Strong at building websites and web systems that are more than a single marketing URL.
@@ -43,7 +43,7 @@ These map to the hooks / expertise / AI sections. Exact copy TBD; claims should 
 - Complexity, systems, and product—not “pretty landing pages.”
 - Partnership and ownership, not staff-aug “ticket closer” (unless that is a deliberate secondary offer later).
 - AI as **leverage** (speed + product capability), not as a buzzword strip.
-- Evidence later (clients, specifics) should support **this** audience, not a grab-bag of small local businesses.
+- Evidence later should support **this** audience: three client testimonials (logo + title + quote), not a grab-bag of small local businesses.
 
 ## What the site should not emphasize
 
