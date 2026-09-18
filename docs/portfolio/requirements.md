@@ -1,6 +1,6 @@
 # Portfolio — page requirements
 
-Granular requirements for the freelance landing page at `/`. Product intent lives in [objectives.md](./objectives.md). Copy, client names, and design artifacts will be filled in later; this file is the checklist of what the page must contain and how success is measured.
+Granular requirements for the freelance landing page at `/`. Product intent lives in [objectives.md](./objectives.md). Section jobs and design constraints live in [design-brief.md](./design-brief.md). Copy and real testimonials will be filled in later; this file is the checklist of what the page must contain and how success is measured.
 
 ## Shape
 
@@ -11,13 +11,13 @@ Quiet **Writing** → `/blog` may stay in the footer. It is not a primary sectio
 
 ## Sections (in order)
 
-Order can flex slightly in design, but these blocks must exist:
+Order can flex slightly in design, but these blocks must exist. Detail and constraints: [design-brief.md](./design-brief.md).
 
-1. **Identity / intro** — Name, photo, and enough context that a cold visitor knows who this is for (freelance developer, hireable).
-2. **Previous clients** — A list of past clients (logos and/or names; exact treatment TBD with design).
-3. **Value propositions** — Hooks: types of work that are appealing and on offer (the “why talk to me / what I take on” layer).
-4. **Expertise and experience** — A section that states background, depth, and relevant experience.
-5. **AI** — How Jake uses AI, and how that helps clients.
+1. **Hero** — Name, photo, positioning, primary email CTA. Cold visitor knows who this is and that Jake is hireable.
+2. **What I take on** — Work types on offer, plus who it’s for / not for (substantial products; not brochure sites).
+3. **Why Jake** — Differentiator: business + engineering, ops background, partnership / product ownership.
+4. **How I work** — Method and AI as leverage (workflow speed and AI in products)—not a standalone buzzword strip.
+5. **Proof** — Exactly **three** client anchors: logo, person name + job title, and testimonial each. No invented quotes or brands.
 6. **Contact** — Direct **email** only. No form, no calendar, no “book a time.” The contact control is the conversion target (see Analytics).
 
 ## Contact behavior
@@ -60,3 +60,4 @@ Unchanged from objectives: professional metadata, clear headings that match thes
 - Additional routes (`/work`, case-study pages) unless we reopen this file
 - Contact forms, Calendly, chat widgets
 - Cookie banners and ad-tech
+- Invented clients, testimonials, metrics, or service packages in design mocks

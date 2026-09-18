@@ -46,11 +46,7 @@ Static Astro pages under `src/portfolio/` remain the implementation home. Sectio
 
 ## Design direction
 
-Visual work will be driven by artifacts supplied separately. The intended vibe:
-
-- Modern and professional
-- Bold color and theme so it is not generic
-- **Not** a blue-and-white SaaS marketing site
+Visual system lives in the existing Claude Design kit. Page structure and funnel assembly: [design-brief.md](./design-brief.md).
 
 The portfolio must not reuse the blog’s design system.
 
