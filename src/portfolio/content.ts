@@ -7,7 +7,7 @@ export const hero = {
   eyebrow: "Freelance developer · Product partner",
   positioning:
     "End-to-end technical partner for people building real products.",
-  lede: "I take on the big, connected ones — several moving parts, real data, AI where it earns its place — and stay with it from the business problem through to what ships.",
+  lede: "Bring me on to build, repair, or scale, whatever it is you need to grow.",
 };
 
 /* The portrait for the hero. Set `src` once the photograph is supplied: a hard,
@@ -36,13 +36,13 @@ export const offer = {
       index: "03",
       field: "warm",
       title: "AI inside the product",
-      body: "AI pointed at the places it pays for itself — the slow judgement calls, the backlog nobody gets to — built into your product with guardrails and an audit trail.",
+      body: "AI-powered products that deliver real value, not just bolted-on chat assistants.",
     },
     {
       index: "04",
       field: "accent",
-      title: "Software layered into how your team already works",
-      body: "Software that slots into the workflows your team already has and takes the blockers out of them, so the same people deliver more without learning a new way to work.",
+      title: "Software for how your team already works",
+      body: "Solutions that slot into the workflows your team already has and unblocks them from their full potential.",
     },
   ],
 } as const;
@@ -50,7 +50,7 @@ export const offer = {
 export const why = {
   index: "02",
   eyebrow: "Why Jake",
-  title: "I have sat on both sides of the table",
+  title: "I've sat on both sides of the table",
   lede: "Eighteen years experience across retail operations management, technical leadership and software development. I can take your product across the finish line, whether the needs are in my job title or not.",
   body: "I can sit with any stakeholder or decision maker and help them decide what to build, what to buy, and what to stop. I can help decide which features can be descoped to ensure we sprint to delivery.",
   stat: {
@@ -76,8 +76,8 @@ export const method = {
     },
     {
       index: "02",
-      title: "AI-powered products, shipped",
-      body: "I have built AI features clients’ own users rely on — not just AI in my workflow. Real implementation experience, with guardrails and an audit trail.",
+      title: "Proven slop-free",
+      body: "Through context engineering and thorough review, I keep the speed of AI without the long-term tech debt.",
     },
     {
       index: "03",
