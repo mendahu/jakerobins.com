@@ -1,0 +1,44 @@
+---
+import { why } from "../../content";
+import SectionHeading from "../SectionHeading.astro";
+import StatBlock from "../StatBlock.astro";
+---
+
+<section
+  id="why"
+  class="section section--inverse why"
+  aria-labelledby="why-heading"
+>
+  <!-- Two stack breakers, no more: the edge numeral and one cropped circle. -->
+  <span class="figure why__numeral jr-hide-sm" aria-hidden="true">02</span>
+  <span class="figure figure--circle why__circle" aria-hidden="true"></span>
+  <div class="container section__stack">
+    <SectionHeading
+      index={why.index}
+      eyebrow={why.eyebrow}
+      title={why.title}
+      tone="inverse"
+      id="why-heading"
+    />
+    <div class="jr-split">
+      <div class="why__prose">
+        <p class="why__lede">{why.lede}</p>
+        <p class="why__body">{why.body}</p>
+      </div>
+      <div class="why__aside">
+        <StatBlock
+          value={why.stat.value}
+          label={why.stat.label}
+          tone="inverse"
+        />
+        <div class="why__strengths">
+          {
+            why.strengths.map((strength) => (
+              <span class="why__strength">{strength}</span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

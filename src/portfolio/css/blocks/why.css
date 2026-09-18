@@ -1,0 +1,58 @@
+/* Section 03: the differentiator, on the page's ink band. Two stack-breaking
+   devices only — the edge numeral and one claret circle cut by the top edge. */
+
+.why__numeral {
+  right: -0.1em;
+  bottom: -70px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: 380px;
+  line-height: 0.72;
+  letter-spacing: -0.06em;
+  color: var(--ink-800);
+}
+
+.why__circle {
+  left: 44%;
+  top: -110px;
+  width: 220px;
+  height: 220px;
+  background: var(--claret-500);
+}
+
+.why__lede {
+  font-size: var(--size-h3);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-heading);
+  max-width: 44ch;
+}
+
+.why__body {
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  color: var(--ink-300);
+  max-width: 52ch;
+}
+
+.why__aside {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.why__strengths {
+  display: grid;
+}
+
+.why__strength {
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  border-top: var(--rule-hairline) solid var(--border-inverse);
+  padding-block: var(--space-3);
+}
+
+.why__prose {
+  display: grid;
+  gap: var(--space-5);
+}

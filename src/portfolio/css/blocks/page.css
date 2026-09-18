@@ -1,0 +1,59 @@
+/* The page shell. The design system's base.css already sets the page colours
+   and type; this adds the funnel page's own containment and rhythm. */
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--page-pad);
+}
+
+.section {
+  position: relative;
+  /* Every section clips its own geometry — the hard crop is the Swiss move. */
+  overflow: hidden;
+  padding-block: var(--section-y);
+}
+
+/* Heading, then content — the section rhythm inside a container. Relative so a
+   section's decoration sits behind its own copy. */
+.section__stack {
+  position: relative;
+  display: grid;
+  gap: var(--space-7);
+}
+
+.section--inverse {
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+}
+
+/* Flat geometric decoration: circles, thick rings and 45° squares that bleed
+   off the section edge. Always decorative, always hidden below 780px via the
+   design system's .jr-figure-cell / .jr-hide-sm utilities. */
+.figure {
+  position: absolute;
+  pointer-events: none;
+}
+
+.figure--circle,
+.figure--ring {
+  border-radius: 50%;
+}
+
+.figure--square {
+  transform: rotate(45deg);
+}
+
+.visually-hidden {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

@@ -1,0 +1,23 @@
+---
+/* Design system: components/core/Button.jsx. Only the primary variant ships on
+   this page — email is the single conversion product, so nothing competes. */
+interface Props {
+  href: string;
+  size?: "sm" | "md" | "lg";
+  trailingGlyph?: string;
+  class?: string;
+}
+
+const { href, size = "md", trailingGlyph, class: className } = Astro.props;
+---
+
+<a href={href} class:list={["button", className]} data-size={size}>
+  <span><slot /></span>
+  {
+    trailingGlyph && (
+      <span class="button__glyph" aria-hidden="true">
+        {trailingGlyph}
+      </span>
+    )
+  }
+</a>

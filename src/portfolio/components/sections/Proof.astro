@@ -1,0 +1,44 @@
+---
+import { proof } from "../../content";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="proof" class="section proof" aria-labelledby="proof-heading">
+  <div class="proof__rail jr-hide-sm" aria-hidden="true">
+    <span>{proof.rail}</span>
+  </div>
+  <div class="container section__stack">
+    <SectionHeading
+      index={proof.index}
+      eyebrow={proof.eyebrow}
+      title={proof.title}
+      id="proof-heading"
+    />
+    <div class="jr-grid-3 jr-collapse-rules">
+      {
+        proof.testimonials.map((testimonial) => (
+          <figure class="testimonial" data-rule={testimonial.rule}>
+            <blockquote class="testimonial__quote">
+              {testimonial.quote}
+            </blockquote>
+            <figcaption class="testimonial__attribution">
+              <img
+                class="testimonial__logo"
+                src={testimonial.logo.src}
+                alt={testimonial.logo.alt}
+                width="72"
+                height="72"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="testimonial__person">
+                <span>{testimonial.name}</span>
+                <span class="testimonial__role">{testimonial.role}</span>
+              </div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

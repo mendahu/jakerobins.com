@@ -1,0 +1,21 @@
+---
+/* Design system: components/core/SectionHeading.jsx. The headings deliberately
+   name the section's job — they are what a crawler or an agent reads first. */
+interface Props {
+  index: string;
+  eyebrow: string;
+  title: string;
+  tone?: "ink" | "inverse";
+  id?: string;
+}
+
+const { index, eyebrow, title, tone = "ink", id } = Astro.props;
+---
+
+<header class="section-heading" data-tone={tone}>
+  <div class="section-heading__meta">
+    <span class="section-heading__index">{index}</span>
+    <span>{eyebrow}</span>
+  </div>
+  <h2 class="section-heading__title" id={id}>{title}</h2>
+</header>

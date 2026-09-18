@@ -1,0 +1,86 @@
+/* Section 02: what the work actually is, and who it is not for. Four fields in
+   the band rhythm — petrol, bone, blush, claret — sharing their rules, with one
+   hard offset block under the grid. */
+
+.offer__grid {
+  box-shadow: var(--shadow-offset);
+}
+
+.offer-card {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  padding: 40px var(--block-pad);
+  min-height: 260px;
+  background: var(--surface-card);
+  border: var(--rule-hairline) solid var(--border-strong);
+  border-bottom: var(--rule-block) solid var(--ink-900);
+}
+
+.offer-card__index {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+}
+
+.offer-card__title {
+  font-size: var(--size-h3);
+  max-width: 22ch;
+}
+
+.offer-card__body {
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  max-width: 46ch;
+}
+
+.offer-card[data-field="deep"] {
+  background: var(--petrol-600);
+  color: var(--paper-000);
+  border-color: var(--petrol-600);
+  border-bottom-color: var(--chartreuse-500);
+}
+
+.offer-card[data-field="deep"] .offer-card__index {
+  color: var(--chartreuse-500);
+}
+
+.offer-card[data-field="deep"] .offer-card__body {
+  color: var(--petrol-100);
+}
+
+.offer-card[data-field="paper"] {
+  border-bottom-color: var(--claret-500);
+}
+
+.offer-card[data-field="paper"] .offer-card__index {
+  color: var(--claret-500);
+}
+
+.offer-card[data-field="warm"] {
+  background: var(--blush-300);
+}
+
+.offer-card[data-field="warm"] .offer-card__index {
+  color: var(--ink-900);
+}
+
+.offer-card[data-field="warm"] .offer-card__body {
+  color: var(--ink-700);
+}
+
+.offer-card[data-field="accent"] {
+  background: var(--claret-500);
+  color: var(--paper-000);
+  border-color: var(--claret-500);
+}
+
+.offer-card[data-field="accent"] .offer-card__index {
+  color: var(--chartreuse-500);
+}
+
+.offer-card[data-field="accent"] .offer-card__body {
+  color: var(--claret-100);
+}
