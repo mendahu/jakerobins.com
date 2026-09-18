@@ -1,0 +1,90 @@
+/* Section 01 of the funnel: who, hireable, and how to start — inside five
+   seconds. Name and portrait carry the identity; one email CTA, nothing else. */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--rule-medium) solid var(--border-rule);
+}
+
+.hero__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  /* The portrait plane runs to the right edge, so only the left side is padded. */
+  padding-left: var(--page-pad);
+  align-items: stretch;
+  gap: 0;
+}
+
+.hero__copy {
+  display: grid;
+  gap: var(--space-6);
+  align-content: center;
+  padding-block: var(--space-9);
+  padding-right: var(--page-pad);
+}
+
+.hero__eyebrow {
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-display-1);
+  line-height: 0.86;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+.hero__positioning {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--size-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  max-width: 24ch;
+}
+
+.hero__lede {
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* The portrait sits on a solid petrol field, cropped hard by the section edge,
+   with a chartreuse ring biting into the bottom-left corner. */
+.hero__portrait {
+  position: relative;
+  overflow: hidden;
+  background: var(--petrol-600);
+  min-height: 520px;
+}
+
+.hero__portrait-ring {
+  left: -90px;
+  bottom: -90px;
+  width: 260px;
+  height: 260px;
+  border: 38px solid var(--chartreuse-500);
+  z-index: 2;
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

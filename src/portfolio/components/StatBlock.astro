@@ -1,0 +1,15 @@
+---
+/* Design system: components/core/StatBlock.jsx. */
+interface Props {
+  value: string;
+  label: string;
+  tone?: "ink" | "inverse";
+}
+
+const { value, label, tone = "ink" } = Astro.props;
+---
+
+<div class="stat-block" data-tone={tone}>
+  <span class="stat-block__value">{value}</span>
+  <span class="stat-block__label">{label}</span>
+</div>

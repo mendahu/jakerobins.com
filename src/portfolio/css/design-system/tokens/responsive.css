@@ -1,0 +1,139 @@
+/* Breakpoints: 1080 (laptop), 780 (tablet), 520 (phone).
+   Components style from tokens, so the tokens themselves shrink here —
+   plus a small set of layout utilities that collapse multi-column grids. */
+
+.jr-grid-2,
+.jr-grid-3,
+.jr-grid-4 {
+  display: grid;
+  gap: var(--gutter);
+}
+.jr-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.jr-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.jr-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.jr-collapse-rules {
+  gap: 0;
+}
+.jr-collapse-rules > * + * {
+  margin-left: -1px;
+}
+.jr-split {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+}
+.jr-split-wide {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+}
+.jr-split-even {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.jr-figure-cell {
+  position: relative;
+}
+.jr-footer-grid {
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 1.4fr) repeat(auto-fit, minmax(140px, 1fr));
+}
+.jr-case-row {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: stretch;
+}
+.jr-case-row-flip {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 260px minmax(0, 1fr);
+  align-items: stretch;
+}
+.jr-nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --size-display-1: 76px;
+    --size-display-2: 56px;
+    --size-display-3: 44px;
+    --size-h1: 34px;
+    --size-h2: 28px;
+    --container-max: 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  :root {
+    --size-display-1: 52px;
+    --size-display-2: 42px;
+    --size-display-3: 34px;
+    --size-h1: 30px;
+    --size-h2: 25px;
+    --size-h3: 21px;
+    --size-body-lg: 17px;
+    --page-pad: var(--page-pad-sm);
+    --section-y: var(--space-8);
+    --block-pad: var(--space-5);
+    --gutter: 16px;
+  }
+  .jr-grid-3,
+  .jr-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .jr-split,
+  .jr-split-wide,
+  .jr-split-even {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .jr-collapse-rules > * + * {
+    margin-left: 0;
+    margin-top: -1px;
+  }
+  .jr-figure-cell {
+    display: none;
+  }
+  .jr-hide-sm {
+    display: none !important;
+  }
+  .jr-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .jr-case-row,
+  .jr-case-row-flip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .jr-case-row-flip > *:first-child {
+    order: 2;
+  }
+  .jr-nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --size-display-1: 40px;
+    --size-display-2: 34px;
+    --size-display-3: 29px;
+    --size-h1: 26px;
+    --size-h2: 22px;
+  }
+  .jr-grid-2,
+  .jr-grid-3,
+  .jr-grid-4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

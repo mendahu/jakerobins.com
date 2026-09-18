@@ -1,0 +1,43 @@
+/* Section 06: conversion. One email control, the same destination as the header
+   and the footer. No form, no calendar, no booking widget. */
+
+.contact__content {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  max-width: 40ch;
+  border-top: var(--rule-block) solid var(--surface-accent);
+  padding-top: var(--space-5);
+}
+
+.contact__title {
+  font-size: var(--size-display-2);
+  line-height: 0.98;
+  letter-spacing: var(--tracking-display);
+}
+
+.contact__body {
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+}
+
+.contact .button {
+  justify-self: start;
+}
+
+.contact__ring {
+  right: -70px;
+  top: -70px;
+  width: 300px;
+  height: 300px;
+  border: 40px solid var(--blush-500);
+}
+
+.contact__square {
+  right: 16%;
+  bottom: -50px;
+  width: 120px;
+  height: 120px;
+  background: var(--petrol-600);
+}

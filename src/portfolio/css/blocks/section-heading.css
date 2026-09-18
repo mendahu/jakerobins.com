@@ -1,0 +1,43 @@
+/* Design system: components/core/SectionHeading.jsx — a 2px rule, a mono index
+   and eyebrow, then the heading. Every funnel section is introduced this way so
+   the section jobs stay legible to people and crawlers alike. */
+
+.section-heading {
+  display: grid;
+  gap: var(--space-4);
+  border-top: var(--rule-medium) solid var(--border-rule);
+  padding-top: var(--space-4);
+}
+
+.section-heading__meta {
+  display: flex;
+  gap: var(--space-4);
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.section-heading__index {
+  color: var(--text-accent);
+}
+
+.section-heading__title {
+  font-size: var(--size-display-3);
+  letter-spacing: var(--tracking-display);
+  max-width: 20ch;
+}
+
+/* On an ink band the rule and the mono row invert. */
+.section-heading[data-tone="inverse"] {
+  border-top-color: var(--border-inverse);
+}
+
+.section-heading[data-tone="inverse"] .section-heading__meta {
+  color: var(--ink-400);
+}
+
+.section-heading[data-tone="inverse"] .section-heading__index {
+  color: var(--chartreuse-500);
+}

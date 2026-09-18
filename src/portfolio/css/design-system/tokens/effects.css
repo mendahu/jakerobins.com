@@ -1,0 +1,22 @@
+:root {
+  /* Corners stay square. The pill exists only for tags/counters. */
+  --radius-none: 0px;
+  --radius-pill: 999px;
+
+  /* No soft drop shadows in this system. Depth is offset-block (hard shadow) only. */
+  --shadow-none: none;
+  --shadow-offset: 6px 6px 0 0 var(--ink-900);
+  --shadow-offset-accent: 6px 6px 0 0 var(--claret-500);
+  --shadow-inset-rule: inset 0 -1px 0 0 var(--ink-900);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 180ms; /* @kind other */
+  --duration-slow: 320ms; /* @kind other */
+
+  --overlay-scrim: rgba(14, 14, 13, 0.72);
+  --overlay-blur: blur(6px); /* @kind other */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}

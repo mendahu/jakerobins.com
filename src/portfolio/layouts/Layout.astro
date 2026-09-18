@@ -1,12 +1,14 @@
 ---
 // No imports from src/blog. Funnel UI lives only in src/portfolio/.
 import Footer from "../components/Footer.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import Head from "../components/Head/Head.astro";
 import {
   defaultHeadConfig,
   type HeadConfig,
 } from "../components/Head/headConfig";
-import "../css/holding.css";
+import "../css/styles.css";
+import "../css/cube.css";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 
 interface Props {
@@ -25,6 +27,7 @@ const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
     <Head {...headConfig} />
   </head>
   <body>
+    <SiteHeader />
     <slot />
     <Footer />
   </body>

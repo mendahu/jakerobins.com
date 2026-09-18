@@ -1,0 +1,41 @@
+:root {
+  /* Sizes — Swiss scale, tight and geometric */
+  --size-display-1: 96px;
+  --size-display-2: 72px;
+  --size-display-3: 56px;
+  --size-h1: 40px;
+  --size-h2: 32px;
+  --size-h3: 24px;
+  --size-h4: 20px;
+  --size-body-lg: 19px;
+  --size-body: 16px;
+  --size-body-sm: 14px;
+  --size-meta: 12px;
+  --size-micro: 10px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-tight: 0.94;
+  --leading-display: 1.02;
+  --leading-heading: 1.1;
+  --leading-body: 1.5;
+  --leading-loose: 1.62;
+
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.02em;
+  --tracking-body: -0.005em;
+  --tracking-label: 0.08em;
+  --tracking-meta: 0.14em;
+
+  /* semantic roles */
+  --text-display: var(--weight-semibold)
+    var(--size-display-1)/var(--leading-tight) var(--font-display);
+  --text-heading: var(--weight-semibold) var(--size-h2)/var(--leading-heading)
+    var(--font-display);
+  --text-copy: var(--weight-regular) var(--size-body)/var(--leading-body)
+    var(--font-body);
+  --text-label: var(--weight-medium) var(--size-meta)/1.2 var(--font-meta);
+}

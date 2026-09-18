@@ -1,0 +1,28 @@
+---
+import { offer } from "../../content";
+import SectionHeading from "../SectionHeading.astro";
+---
+
+<section id="offer" class="section offer" aria-labelledby="offer-heading">
+  <div class="container section__stack">
+    <SectionHeading
+      index={offer.index}
+      eyebrow={offer.eyebrow}
+      title={offer.title}
+      id="offer-heading"
+    />
+    <div class="jr-grid-2 jr-collapse-rules offer__grid">
+      {
+        offer.items.map((item) => (
+          <article class="offer-card" data-field={item.field}>
+            <span class="offer-card__index" aria-hidden="true">
+              {item.index}
+            </span>
+            <h3 class="offer-card__title">{item.title}</h3>
+            <p class="offer-card__body">{item.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

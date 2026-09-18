@@ -1,0 +1,30 @@
+/* Sticky wordmark + the one CTA. The header is the only fixed thing in the
+   system, and the bar wraps rather than shrinking the button. */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--surface-page);
+  border-bottom: var(--rule-medium) solid var(--border-rule);
+}
+
+.site-header__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  min-height: 72px;
+}
+
+.site-header__wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-h4);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+.site-header .button {
+  margin-left: auto;
+}

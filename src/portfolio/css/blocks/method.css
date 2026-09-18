@@ -1,0 +1,93 @@
+/* Section 04: method and AI leverage. The tilted chartreuse band is the page's
+   one tilt — the band rotates, its content counter-rotates, and the section
+   clips the overhang. Below it, three plain rules carry the detail. */
+
+.method__band {
+  position: relative;
+  overflow: hidden;
+  background: var(--chartreuse-500);
+  color: var(--ink-900);
+  transform: rotate(-2.5deg) scale(1.08);
+}
+
+.method__band-inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: calc(var(--page-pad) + 6%);
+  align-items: center;
+  transform: rotate(2.5deg);
+}
+
+.method__statement {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--space-9);
+}
+
+.method__meta {
+  display: flex;
+  gap: var(--space-4);
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+}
+
+.method__title {
+  font-size: var(--size-display-2);
+  line-height: 0.98;
+  letter-spacing: var(--tracking-display);
+}
+
+.method__figures {
+  align-self: stretch;
+}
+
+.method__circle {
+  left: 40px;
+  top: -70px;
+  width: 240px;
+  height: 240px;
+  background: var(--claret-500);
+}
+
+.method__ring {
+  left: -40px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  border: 44px solid var(--ink-900);
+}
+
+.method__detail {
+  position: relative;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-y-tight) var(--page-pad) var(--section-y);
+}
+
+.method-step {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  border-top: var(--rule-medium) solid var(--border-rule);
+  padding-top: var(--space-3);
+}
+
+.method-step__index {
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.method-step__title {
+  font-size: var(--size-h4);
+}
+
+.method-step__body {
+  color: var(--text-secondary);
+  font-size: var(--size-body-sm);
+  line-height: var(--leading-body);
+}
