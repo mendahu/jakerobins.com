@@ -1,0 +1,59 @@
+/* Section 05: three clients, their words. No logo wall, no star ratings, no
+   case-study routes — the quote, the person, and the mark they work for. */
+
+.testimonial {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--block-pad) var(--card-pad);
+  background: var(--surface-card);
+  border: var(--rule-hairline) solid var(--border-strong);
+  border-top: var(--rule-heavy) solid var(--ink-900);
+}
+
+.testimonial[data-rule="deep"] {
+  border-top-color: var(--petrol-600);
+}
+
+.testimonial[data-rule="accent"] {
+  border-top-color: var(--claret-500);
+}
+
+.testimonial__quote {
+  margin: 0;
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+}
+
+.testimonial__attribution {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  border-top: var(--rule-hairline) solid var(--border-hairline);
+  padding-top: var(--space-4);
+  /* Quotes vary in length; the attributions still line up across the row. */
+  margin-top: auto;
+}
+
+.testimonial__logo {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.testimonial__person {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+  font-family: var(--font-meta);
+  font-size: var(--size-meta);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.testimonial__role {
+  color: var(--text-muted);
+}

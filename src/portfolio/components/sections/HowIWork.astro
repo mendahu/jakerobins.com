@@ -1,0 +1,38 @@
+---
+import { method } from "../../content";
+---
+
+<section id="how" class="method" aria-labelledby="how-heading">
+  <!-- The page's single tilt: the band rotates, its content counter-rotates,
+       and the section clips the overhang. -->
+  <div class="method__band">
+    <div class="jr-split method__band-inner">
+      <div class="method__statement">
+        <div class="method__meta">
+          <span>{method.index}</span>
+          <span>{method.eyebrow}</span>
+        </div>
+        <h2 class="method__title" id="how-heading">{method.title}</h2>
+      </div>
+      <div class="jr-figure-cell method__figures" aria-hidden="true">
+        <span class="figure figure--circle method__circle"></span>
+        <span class="figure figure--ring method__ring"></span>
+      </div>
+    </div>
+  </div>
+  <div class="method__detail">
+    <div class="jr-grid-3">
+      {
+        method.steps.map((step) => (
+          <article class="method-step">
+            <span class="method-step__index" aria-hidden="true">
+              {step.index}
+            </span>
+            <h3 class="method-step__title">{step.title}</h3>
+            <p class="method-step__body">{step.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

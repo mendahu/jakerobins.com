@@ -1,0 +1,60 @@
+/* Design system: components/core/Button.jsx. Primary variant only is in use on
+   this page — email is the single conversion product. */
+
+.button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-body);
+  border-radius: var(--radius-none);
+  text-decoration: none;
+  /* base.css underlines every anchor; controls are the exception. */
+  border-bottom-style: none;
+  cursor: pointer;
+  background: var(--surface-accent);
+  color: var(--paper-000);
+  border: var(--rule-medium) solid var(--surface-accent);
+  transition:
+    background var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.button:hover {
+  background: var(--claret-600);
+  border-color: var(--claret-600);
+  color: var(--paper-000);
+}
+
+/* Press is a 1px nudge down-right. Never a scale, never a bounce. */
+.button:active {
+  transform: translate(1px, 1px);
+}
+
+.button__glyph {
+  font-family: var(--font-meta);
+}
+
+.button[data-size="sm"] {
+  height: var(--control-h-sm);
+  padding-inline: var(--space-3);
+  font-size: var(--size-body-sm);
+}
+
+.button[data-size="md"] {
+  height: var(--control-h-md);
+  padding-inline: var(--space-5);
+  font-size: var(--size-body);
+}
+
+.button[data-size="lg"] {
+  height: var(--control-h-lg);
+  padding-inline: var(--space-6);
+  font-size: var(--size-body-lg);
+}

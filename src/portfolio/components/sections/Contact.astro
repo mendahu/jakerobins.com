@@ -1,0 +1,27 @@
+---
+import { siteConfig } from "../../config";
+import { contact } from "../../content";
+import Button from "../Button.astro";
+---
+
+<section id="contact" class="section contact" aria-labelledby="contact-heading">
+  <span
+    class="figure figure--ring contact__ring jr-figure-cell"
+    aria-hidden="true"></span>
+  <span
+    class="figure figure--square contact__square jr-figure-cell"
+    aria-hidden="true"></span>
+  <div class="container">
+    <div class="contact__content">
+      <div class="section-heading__meta">
+        <span class="section-heading__index">{contact.index}</span>
+        <span>{contact.eyebrow}</span>
+      </div>
+      <h2 class="contact__title" id="contact-heading">{contact.title}</h2>
+      <p class="contact__body">{contact.body}</p>
+      <Button href={siteConfig.socials.email} size="lg" trailingGlyph="→">
+        {siteConfig.email}
+      </Button>
+    </div>
+  </div>
+</section>

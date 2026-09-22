@@ -1,0 +1,16 @@
+/* Jake Robins design system — vendored from Claude Design
+   (jake-robins-design-system-b16032c6-5128-4805-bceb-f945b113bcf6).
+
+   Treat everything in this folder as a copy of an upstream artefact: change it
+   only to re-sync with the design system, and put site-specific styling in
+   ../blocks/ instead. The one deliberate divergence is how tokens/fonts.css
+   loads the webfonts — it is documented in that file. */
+
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/layout.css";
+@import "tokens/effects.css";
+@import "tokens/base.css";
+@import "tokens/responsive.css";

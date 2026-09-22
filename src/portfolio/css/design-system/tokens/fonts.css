@@ -1,0 +1,17 @@
+/* Core grotesque: Archivo (Helvetica Neue substitute — see the design system's
+   readme, "Font substitution"). Mono: JetBrains Mono.
+
+   Vendored change: the design system loads both with an `@import` from Google
+   Fonts. Here the stylesheet is linked from the document head instead (see
+   src/portfolio/components/Head/Head.astro) so the font request is not chained
+   behind the CSS. The tokens below are unchanged. */
+
+:root {
+  --font-grotesque: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+  /* semantic */
+  --font-display: var(--font-grotesque);
+  --font-body: var(--font-grotesque);
+  --font-ui: var(--font-grotesque);
+  --font-meta: var(--font-mono);
+}

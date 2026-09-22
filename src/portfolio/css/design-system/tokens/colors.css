@@ -1,0 +1,74 @@
+:root {
+  /* Ink — warm near-blacks */
+  --ink-900: #14120f;
+  --ink-800: #221f1b;
+  --ink-700: #322e28;
+  --ink-500: #5c564c;
+  --ink-400: #877f72;
+  --ink-300: #b3ab9d;
+  --ink-200: #d8d1c4;
+  --ink-100: #e8e2d6;
+
+  /* Paper — bone off-whites */
+  --paper-000: #ffffff;
+  --paper-100: #f5f1e8;
+  --paper-200: #ede7da;
+  --paper-300: #e3dccb;
+
+  /* Claret — primary signal */
+  --claret-700: #4c0d1a;
+  --claret-600: #5d1122;
+  --claret-500: #74162b;
+  --claret-400: #9a2e45;
+  --claret-100: #eedcdf;
+
+  /* Petrol — deep teal block */
+  --petrol-700: #082a31;
+  --petrol-600: #0e3a42;
+  --petrol-500: #17545e;
+  --petrol-100: #d2e1e1;
+
+  /* Chartreuse — bright accent */
+  --chartreuse-600: #a9c63a;
+  --chartreuse-500: #c8e262;
+  --chartreuse-100: #edf5ce;
+
+  /* Blush — warm tertiary block */
+  --blush-500: #e0c7b8;
+  --blush-300: #efdfd5;
+
+  /* ---------- Semantic aliases ---------- */
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--ink-500);
+  --text-muted: var(--ink-400);
+  --text-inverse: var(--paper-100);
+  --text-accent: var(--claret-500);
+  --text-link: var(--claret-500);
+  --text-link-hover: var(--ink-900);
+
+  --surface-page: var(--paper-100);
+  --surface-card: var(--paper-000);
+  --surface-sunken: var(--paper-200);
+  --surface-inverse: var(--ink-900);
+  --surface-accent: var(--claret-500);
+  --surface-accent-quiet: var(--claret-100);
+  --surface-block-deep: var(--petrol-600);
+  --surface-block-bright: var(--chartreuse-500);
+  --surface-block-warm: var(--blush-500);
+
+  /* Borders — rules carry structure in place of shadows, so these are
+     deliberately dark: --border-rule is near-black for the 2px structural
+     rules, --border-strong is the visible edge on cards and controls,
+     --border-hairline is the quietest divider inside a block. */
+  --border-rule: var(--ink-900);
+  --border-strong: var(--ink-300);
+  --border-hairline: var(--ink-200);
+  --border-inverse: var(--ink-700);
+
+  --focus-ring: var(--petrol-600);
+
+  --status-success: #1f6b4f;
+  --status-warning: var(--chartreuse-600);
+  --status-error: var(--claret-500);
+  --status-info: var(--petrol-600);
+}

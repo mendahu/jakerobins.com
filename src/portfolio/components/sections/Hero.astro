@@ -1,0 +1,28 @@
+---
+import { siteConfig } from "../../config";
+import { hero, portrait } from "../../content";
+import Button from "../Button.astro";
+---
+
+<section id="hero" class="hero" aria-labelledby="hero-name">
+  <div class="jr-split hero__inner">
+    <div class="hero__copy">
+      <span class="hero__eyebrow">{hero.eyebrow}</span>
+      <h1 class="hero__name" id="hero-name">Jake<br />Robins</h1>
+      <p class="hero__positioning">{hero.positioning}</p>
+      <p class="hero__lede">{hero.lede}</p>
+      <div class="hero__actions">
+        <Button href={siteConfig.socials.email} size="lg" trailingGlyph="→">
+          {siteConfig.email}
+        </Button>
+      </div>
+    </div>
+    <div class="hero__portrait">
+      {
+        portrait && (
+          <img src={portrait.src} alt={portrait.alt} width="720" height="900" />
+        )
+      }
+    </div>
+  </div>
+</section>

@@ -1,12 +1,23 @@
 ---
 import Layout from "../portfolio/layouts/Layout.astro";
+import Hero from "../portfolio/components/sections/Hero.astro";
+import Offer from "../portfolio/components/sections/Offer.astro";
+import WhyJake from "../portfolio/components/sections/WhyJake.astro";
+import HowIWork from "../portfolio/components/sections/HowIWork.astro";
+import Proof from "../portfolio/components/sections/Proof.astro";
+import Contact from "../portfolio/components/sections/Contact.astro";
 ---
 
 <Layout>
   <main>
-    <h1>Jake Robins</h1>
-    <p>Freelance developer. This site will be the professional home for client work.</p>
-    <p>Writing stays on the blog.</p>
-    <p><a href="/blog">Read the blog</a></p>
+    {
+      /* Funnel order: qualify lightly, offer, differentiate, method, proof, convert. */
+    }
+    <Hero />
+    <Offer />
+    <WhyJake />
+    <HowIWork />
+    <Proof />
+    <Contact />
   </main>
 </Layout>

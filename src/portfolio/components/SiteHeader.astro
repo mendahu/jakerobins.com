@@ -1,0 +1,16 @@
+---
+import { siteConfig } from "../config";
+import Button from "./Button.astro";
+---
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <!-- The wordmark is the mark; there is no drawn logo and no menu of routes
+         that do not exist. Contact is the only control up here. Full-bleed bar
+         so the sticky chrome reaches the viewport edges. -->
+    <span class="site-header__wordmark">Jake Robins</span>
+    <Button href={siteConfig.socials.email} size="sm" trailingGlyph="→">
+      Email me
+    </Button>
+  </div>
+</header>

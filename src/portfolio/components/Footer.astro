@@ -1,13 +1,38 @@
 ---
 import { siteConfig } from "../config";
+import { footer } from "../content";
+
+const year = new Date().getFullYear();
 ---
 
-<footer aria-labelledby="footer-heading">
-  <h2 id="footer-heading">Contact</h2>
-  <ul>
-    <li><a href={siteConfig.socials.github}>GitHub</a></li>
-    <li><a href={siteConfig.socials.linkedIn}>LinkedIn</a></li>
-    <li><a href={siteConfig.socials.email}>Email</a></li>
-    <li><a href="/blog">Writing</a></li>
-  </ul>
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="visually-hidden">Contact and site links</h2>
+  <span class="figure figure--ring site-footer__ring" aria-hidden="true"></span>
+  <div class="container site-footer__content">
+    <div class="jr-footer-grid">
+      <div class="site-footer__brand">
+        <span class="site-footer__wordmark">Jake<br />Robins</span>
+        <a class="site-footer__email" href={siteConfig.socials.email}>
+          {siteConfig.email}
+        </a>
+        <p class="site-footer__blurb">{footer.blurb}</p>
+      </div>
+      <nav class="site-footer__group" aria-label="This page">
+        <span class="site-footer__group-label">This page</span>
+        {footer.thisPage.map((link) => <a href={link.href}>{link.label}</a>)}
+      </nav>
+      <nav
+        class="site-footer__group site-footer__group--quiet"
+        aria-label="Elsewhere"
+      >
+        <span class="site-footer__group-label">Elsewhere</span>
+        <!-- The one exit off the funnel. Writing is never a peer of Contact. -->
+        <a href="/blog">Writing</a>
+      </nav>
+    </div>
+    <div class="site-footer__legal">
+      <span>© {year} Jake Robins</span>
+      <span>{footer.legal}</span>
+    </div>
+  </div>
 </footer>

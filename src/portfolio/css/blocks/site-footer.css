@@ -1,0 +1,102 @@
+/* The quiet end of the funnel: the same email again, in-page links, and the one
+   exit to the blog. Writing is never a peer of Contact. */
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-inverse);
+  color: var(--text-inverse);
+  padding: var(--section-y) 0 var(--space-6);
+}
+
+.site-footer__ring {
+  right: -80px;
+  top: -80px;
+  width: 300px;
+  height: 300px;
+  border: 40px solid var(--petrol-600);
+}
+
+.site-footer__content {
+  position: relative;
+  display: grid;
+  gap: var(--space-8);
+}
+
+.site-footer__brand {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--size-h2);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  line-height: 0.86;
+}
+
+.site-footer__email {
+  justify-self: start;
+  font-size: var(--size-body-lg);
+  color: var(--chartreuse-500);
+  border-bottom-color: var(--chartreuse-500);
+}
+
+.site-footer__email:hover {
+  color: var(--paper-000);
+  border-bottom-color: var(--paper-000);
+}
+
+.site-footer__blurb {
+  max-width: 34ch;
+  color: var(--ink-300);
+  font-size: var(--size-body-sm);
+  line-height: var(--leading-body);
+}
+
+.site-footer__group {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  border-top: var(--rule-hairline) solid var(--ink-700);
+  padding-top: var(--space-3);
+}
+
+.site-footer__group-label {
+  font-family: var(--font-meta);
+  font-size: var(--size-micro);
+  letter-spacing: var(--tracking-meta);
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+.site-footer__group a {
+  justify-self: start;
+  font-size: var(--size-body-sm);
+  color: var(--paper-100);
+}
+
+.site-footer__group--quiet a {
+  color: var(--ink-300);
+}
+
+.site-footer__group a:hover {
+  color: var(--chartreuse-500);
+  border-bottom-color: var(--chartreuse-500);
+}
+
+.site-footer__legal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  border-top: var(--rule-hairline) solid var(--ink-700);
+  padding-top: var(--space-4);
+  font-family: var(--font-meta);
+  font-size: var(--size-micro);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-400);
+}

@@ -1,0 +1,16 @@
+:root {
+  --grid-columns: 12; /* @kind other */
+  --container-max: 1320px;
+  --container-narrow: 760px;
+  --page-pad: 32px;
+  --page-pad-sm: 20px;
+
+  --control-h-sm: 34px;
+  --control-h-md: 44px;
+  --control-h-lg: 56px;
+
+  --rule-hairline: 1px;
+  --rule-medium: 2px;
+  --rule-heavy: 4px;
+  --rule-block: 8px;
+}
