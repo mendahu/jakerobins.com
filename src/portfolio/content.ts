@@ -5,20 +5,22 @@
 
 export const hero = {
   eyebrow: "Freelance developer · Product partner",
-  positioning: "End-to-end technical partner for companies ready to level up.",
+  positioning:
+    "End-to-end technical partner for companies with real products.",
   lede: "Bring me on board to build, repair or scale whatever it is you need to grow.",
 };
 
 /* Hero portrait: hard crop on the petrol field. Path is under public/. */
 export const portrait: { src: string; alt: string } = {
   src: "/portfolio/portrait_jake_robins.jpg",
-  alt: "Jake Robins",
+  alt: "Jake Robins, freelance developer and product partner",
 };
 
 export const offer = {
   index: "01",
   eyebrow: "What I can help you with",
   title: "Complexity is the interesting part",
+  lede: "Substantial web products and systems—platforms, apps, and fractional CTO work—not one-page brochure sites.",
   items: [
     {
       index: "01",
@@ -68,6 +70,7 @@ export const method = {
   index: "03",
   eyebrow: "How I work",
   title: "AI velocity. Human expertise.",
+  lede: "AI accelerates the workflow and ships inside the product; I own the judgement and the delivery.",
   steps: [
     {
       index: "01",
@@ -136,6 +139,7 @@ export const footer = {
     { href: "#offer", label: "What I take on" },
     { href: "#why", label: "Why Jake" },
     { href: "#how", label: "How I work" },
+    { href: "#proof", label: "Proof" },
     { href: "#contact", label: "Contact" },
   ],
   legal: "🇨🇦 Made in Canada - Perfeccionado en México 🇲🇽",
