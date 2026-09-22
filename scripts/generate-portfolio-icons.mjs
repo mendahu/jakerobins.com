@@ -28,26 +28,14 @@ const colorMark = (size) => `<?xml version="1.0" encoding="UTF-8"?>
   <rect x="156" y="380" width="200" height="18" fill="${chartreuse}"/>
 </svg>`;
 
-/* Safari pinned-tab / mask icon — single-color JR mark on transparent.
-   Geometric paths only (no <text>): Safari mask icons skip SVG text. */
+/* Safari pinned-tab / mask icon — single-color JR from Arial Bold outlines
+   (y-down path data, padded so nothing clips). No <text>: Safari mask icons
+   ignore SVG text nodes. */
 const maskSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- diamond accent -->
-  <path fill="#000" d="M398 48l40 40-40 40-40-40z"/>
-  <!-- J: top bar -->
-  <rect fill="#000" x="96" y="132" width="152" height="56"/>
-  <!-- J: right stem -->
-  <rect fill="#000" x="192" y="132" width="56" height="220"/>
-  <!-- J: bottom hook to the left -->
-  <rect fill="#000" x="96" y="332" width="152" height="56"/>
-  <!-- R: stem -->
-  <rect fill="#000" x="284" y="132" width="56" height="256"/>
-  <!-- R: bowl with counter cut out -->
-  <path fill="#000" fill-rule="evenodd" d="M340 132h72c52 0 88 32 88 84s-36 84-88 84h-72V132zm72 56h-72v56h72c22 0 36-12 36-28s-14-28-36-28z"/>
-  <!-- R: leg -->
-  <path fill="#000" d="M372 300l92 88h-64l-72-88z"/>
-  <!-- baseline accent -->
-  <rect fill="#000" x="156" y="420" width="200" height="22"/>
+  <path fill="#000" d="M404 78l24 24-24 24-24-24z"/>
+  <path fill="#000" d="M178.00 260.44L178.00 145.57L213.79 145.57L213.79 258.14Q213.79 280.22 209.90 292.10L209.90 292.10Q204.69 307.63 190.98 317.03Q177.27 326.43 154.83 326.43L154.83 326.43Q128.51 326.43 114.31 311.70Q100.12 296.96 100.00 268.45L100.00 268.45L133.84 264.57Q134.45 279.85 138.33 286.16L138.33 286.16Q144.16 295.74 156.04 295.74L156.04 295.74Q168.05 295.74 173.03 288.89Q178.00 282.04 178.00 260.44L178.00 260.44M288.02 323.40L252.12 323.40L252.12 145.57L327.69 145.57Q356.20 145.57 369.12 150.36Q382.04 155.15 389.80 167.40Q397.56 179.65 397.56 195.42L397.56 195.42Q397.56 215.44 385.80 228.48Q374.03 241.52 350.62 244.92L350.62 244.92Q362.26 251.71 369.85 259.84Q377.43 267.96 390.29 288.71L390.29 288.71L412.00 323.40L369.06 323.40L343.10 284.70Q329.27 263.96 324.17 258.56Q319.08 253.16 313.38 251.16Q307.68 249.16 295.30 249.16L295.30 249.16L288.02 249.16L288.02 323.40M288.02 175.65L288.02 220.78L314.59 220.78Q340.43 220.78 346.86 218.59Q353.29 216.41 356.93 211.07Q360.57 205.73 360.57 197.73L360.57 197.73Q360.57 188.75 355.77 183.23Q350.98 177.71 342.25 176.26L342.25 176.26Q337.88 175.65 316.05 175.65L316.05 175.65L288.02 175.65"/>
+  <rect fill="#000" x="120" y="356" width="260" height="16"/>
 </svg>`;
 
 /* Scalable favicon for modern browsers (matches color mark). */
