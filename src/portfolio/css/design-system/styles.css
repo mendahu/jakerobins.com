@@ -3,8 +3,8 @@
 
    Treat everything in this folder as a copy of an upstream artefact: change it
    only to re-sync with the design system, and put site-specific styling in
-   ../blocks/ instead. The one deliberate divergence is how tokens/fonts.css
-   loads the webfonts — it is documented in that file. */
+   ../blocks/ instead. The deliberate divergence is tokens/fonts.css +
+   tokens/font-faces.css (self-hosted latin woff2 instead of Google Fonts). */
 
 @import "tokens/fonts.css";
 @import "tokens/colors.css";

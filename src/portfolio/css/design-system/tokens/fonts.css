@@ -1,10 +1,11 @@
 /* Core grotesque: Archivo (Helvetica Neue substitute — see the design system's
    readme, "Font substitution"). Mono: JetBrains Mono.
 
-   Vendored change: the design system loads both with an `@import` from Google
-   Fonts. Here the stylesheet is linked from the document head instead (see
-   src/portfolio/components/Head/Head.astro) so the font request is not chained
-   behind the CSS. The tokens below are unchanged. */
+   Vendored change: webfonts are self-hosted under public/portfolio/fonts/ via
+   font-faces.css (latin woff2 subsets). Head preloads Archivo 700 for the hero
+   name. Do not reintroduce a Google Fonts stylesheet here. */
+
+@import "./font-faces.css";
 
 :root {
   --font-grotesque: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
