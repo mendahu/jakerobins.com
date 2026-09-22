@@ -2,6 +2,13 @@
 import { siteConfig } from "../../config";
 import { hero, portrait } from "../../content";
 import Button from "../Button.astro";
+
+const webpSrcset = portrait.widths
+  .map((w) => `${portrait.dir}/jake-${w}.webp ${w}w`)
+  .join(", ");
+const jpegSrcset = portrait.widths
+  .map((w) => `${portrait.dir}/jake-${w}.jpg ${w}w`)
+  .join(", ");
 ---
 
 <section id="hero" class="hero" aria-labelledby="hero-name">
@@ -18,11 +25,20 @@ import Button from "../Button.astro";
       </div>
     </div>
     <div class="hero__portrait">
-      {
-        portrait && (
-          <img src={portrait.src} alt={portrait.alt} width="720" height="900" />
-        )
-      }
+      <picture>
+        <source type="image/webp" srcset={webpSrcset} sizes={portrait.sizes} />
+        <source type="image/jpeg" srcset={jpegSrcset} sizes={portrait.sizes} />
+        <img
+          src={portrait.src}
+          srcset={jpegSrcset}
+          sizes={portrait.sizes}
+          alt={portrait.alt}
+          width={portrait.width}
+          height={portrait.height}
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
     </div>
   </div>
 </section>

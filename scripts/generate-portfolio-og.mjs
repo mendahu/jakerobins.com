@@ -13,7 +13,7 @@ import { hero } from "../src/portfolio/content.ts";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const portraitPath = path.join(
   root,
-  "public/portfolio/portrait_jake_robins.jpg",
+  "src/portfolio/assets/portrait_jake_robins.jpg",
 );
 const outPath = path.join(root, "public/portfolio/opengraph_banner.jpg");
 

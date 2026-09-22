@@ -11,6 +11,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "generate:portfolio-portrait": "node scripts/generate-portfolio-portrait.mjs",
+    "generate:portfolio-og": "node --experimental-strip-types scripts/generate-portfolio-og.mjs",
     "pull-components": "storyblok pull-components --space 1018994",
     "generate-sb-types": "storyblok-generate-ts source=./components.1018994.json target=./component-types-sb"
   },
