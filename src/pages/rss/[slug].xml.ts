@@ -1,15 +1,13 @@
 import rss from "@astrojs/rss";
 import { siteConfig } from "../../blog/config/config";
-import { useStoryblokApi } from "@storyblok/astro";
 import type {
   CategoryStoryblok,
   PostStoryblok,
 } from "../../../component-types-sb";
+import { storyblokGet } from "../../blog/storyblok/utils";
 
 export async function getStaticPaths() {
-  const sbApi = useStoryblokApi();
-
-  const { data } = await sbApi.get("cdn/stories/", {
+  const { data } = await storyblokGet("cdn/stories/", {
     content_type: "category",
     version: import.meta.env.DEV ? "draft" : "published",
   });
@@ -25,9 +23,7 @@ export async function getStaticPaths() {
 }
 
 export async function GET(context: any) {
-  const sbApi = useStoryblokApi();
-
-  const { data } = await sbApi.get("cdn/stories/", {
+  const { data } = await storyblokGet("cdn/stories/", {
     content_type: "post",
     filter_query: {
       category: {

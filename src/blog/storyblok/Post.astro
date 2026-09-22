@@ -4,7 +4,7 @@ import Byline from "../components/Byline.astro";
 import Blockquote from "../storyblok/Blockquote.astro";
 import BlogImage from "../storyblok/BlogImage.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { storyblokEditable, useStoryblokApi } from "@storyblok/astro";
+import { storyblokEditable } from "@storyblok/astro";
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import type { Props as RTProps } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { Code } from "astro:components";
@@ -12,6 +12,7 @@ import Blogtable from "./Blogtable.astro";
 import Blogvideo from "./Blogvideo.astro";
 import SVGMap from "../demos/SVGMap.astro";
 import SeriesNavigator from "../components/SeriesNavigator.astro";
+import { storyblokGet } from "./utils";
 
 // These are mapping for live demo components used in one off blog posts
 // The key will come in as content from the CMS, and the value is the component
@@ -96,12 +97,10 @@ const richTextProps = {
   class: "[ flow ]",
 };
 
-const sbApi = useStoryblokApi();
-
 let seriesPosts = [];
 
 if (Astro.props.story.content.series?.uuid) {
-  const { data } = await sbApi.get(`cdn/stories/`, {
+  const { data } = await storyblokGet(`cdn/stories/`, {
     content_type: "post",
     filter_query: {
       series: {

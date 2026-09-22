@@ -1,5 +1,4 @@
 ---
-import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../blog/layouts/Layout.astro";
 import Post from "../../blog/storyblok/Post.astro";
 import {
@@ -8,25 +7,30 @@ import {
 } from "../../blog/components/Head/headConfig";
 import { siteConfig } from "../../blog/config/config";
 import { fetchAllPosts } from "../../blog/storyblok/utils";
+import type { PostStoryblok } from "../../../component-types-sb";
 
 export async function getStaticPaths() {
-  const stories = await fetchAllPosts();
+  /* One paginated list (throttled) with relations resolved — avoids an extra
+     Storyblok GET per post while Astro renders pages in parallel. */
+  const stories = await fetchAllPosts({
+    resolve_relations: ["post.category", "post.series"],
+  });
 
   return stories.map((story) => {
     return {
       params: { slug: story.slug },
+      props: { story },
     };
   });
 }
 
-const sbApi = useStoryblokApi();
-const { slug } = Astro.params;
-const { data } = await sbApi.get(`cdn/stories/blog/${slug}`, {
-  resolve_relations: ["post.category", "post.series"],
-  version: import.meta.env.DEV ? "draft" : "published",
-});
+interface Props {
+  story: PostStoryblok & {
+    content: NonNullable<PostStoryblok["content"]>;
+  };
+}
 
-const story = data.story;
+const { story } = Astro.props;
 
 // Facebook blocks a-us so we need to replace it with a2-us
 // Big tech for the win
