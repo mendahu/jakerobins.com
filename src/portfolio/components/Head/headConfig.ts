@@ -3,6 +3,7 @@ import { siteConfig } from "../../config";
 export type HeadConfig = {
   title: string;
   description: string;
+  canonical: string;
   meta: {
     charset: string;
     viewport: string;
@@ -38,6 +39,7 @@ export type HeadConfig = {
     openGraph: {
       url: string;
       type: string;
+      siteName: string;
       article?: { type: string; value: string }[];
       image: {
         url: string;
@@ -51,9 +53,12 @@ export type HeadConfig = {
   };
 };
 
+const pageUrl = `${siteConfig.host}/`;
+
 export const defaultHeadConfig: HeadConfig = {
   title: siteConfig.title,
   description: siteConfig.description,
+  canonical: pageUrl,
   meta: {
     charset: "utf-8",
     viewport: "width=device-width, initial-scale=1",
@@ -84,7 +89,7 @@ export const defaultHeadConfig: HeadConfig = {
   social: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: siteConfig.host,
+    url: pageUrl,
     twitter: {
       card: "summary",
       site: "@jakerobins",
@@ -93,8 +98,9 @@ export const defaultHeadConfig: HeadConfig = {
       alt: "Jake Robins, freelance developer and product partner",
     },
     openGraph: {
-      url: siteConfig.host,
+      url: pageUrl,
       type: "website",
+      siteName: "Jake Robins",
       image: {
         url: "http" + siteConfig.host.slice(5) + "/opengraph_banner.jpg",
         secure_url: siteConfig.host + "/opengraph_banner.jpg",

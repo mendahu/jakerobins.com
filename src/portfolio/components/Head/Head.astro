@@ -6,6 +6,7 @@ type Props = HeadConfig;
 
 <title>{Astro.props.title}</title>
 <meta name="description" content={Astro.props.description} />
+<link rel="canonical" href={Astro.props.canonical} />
 <meta charset={Astro.props.meta.charset} />
 <meta name="viewport" content={Astro.props.meta.viewport} />
 
@@ -51,6 +52,10 @@ type Props = HeadConfig;
 <meta property="og:url" content={Astro.props.social.openGraph.url} />
 <meta property="og:title" content={Astro.props.social.title} />
 <meta property="og:type" content={Astro.props.social.openGraph.type} />
+<meta
+  property="og:site_name"
+  content={Astro.props.social.openGraph.siteName}
+/>
 {
   Astro.props.social.openGraph.article &&
     Astro.props.social.openGraph.article.map((t) => (
@@ -59,6 +64,10 @@ type Props = HeadConfig;
 }
 <meta property="og:locale" content="en-CA" />
 <meta property="og:description" content={Astro.props.social.description} />
+<meta
+  property="og:image"
+  content={Astro.props.social.openGraph.image.secure_url}
+/>
 <meta
   property="og:image:url"
   content={Astro.props.social.openGraph.image.url}
