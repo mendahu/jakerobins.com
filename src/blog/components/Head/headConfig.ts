@@ -84,7 +84,7 @@ export const defaultHeadConfig: HeadConfig = {
   social: {
     title: siteConfig.title,
     description: "Personal website for Jake Robins",
-    url: siteConfig.host,
+    url: siteConfig.host + "/blog",
     twitter: {
       card: "summary",
       site: "@jakerobins",
@@ -93,7 +93,7 @@ export const defaultHeadConfig: HeadConfig = {
       alt: "A picture of Jake's Head floating in a space nebula.",
     },
     openGraph: {
-      url: siteConfig.host,
+      url: siteConfig.host + "/blog",
       type: "website",
       image: {
         url: "http" + siteConfig.host.slice(5) + "/opengraph_banner.jpg",

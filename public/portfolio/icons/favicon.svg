@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#0e3a42"/>
+  <rect x="392" y="56" width="64" height="64" fill="#74162b" transform="rotate(45 424 88)"/>
+  <text x="256" y="318" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="220" font-weight="700" fill="#f5f1e8" letter-spacing="-8">JR</text>
+  <rect x="156" y="380" width="200" height="18" fill="#c8e262"/>
+</svg>

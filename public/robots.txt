@@ -1,58 +1,107 @@
-# AI Blocking Robots.txt courtesy of Matt Wilcox: https://github.com/MattWilcox/native-base/blob/main/robots.txt
+# Path-aware AI policy for the two-site apex:
+# - Portfolio (/ and /portfolio/*): allow major AI / retrieval bots so Jake can
+#   surface as a hireable developer (see docs/portfolio/objectives.md).
+# - Blog (/blog, /rss): keep blocked from training and agent scrapers.
+#
+# Search crawlers (Googlebot, Bingbot, etc.) are not listed below and remain
+# unrestricted. Sitemap is shared.
+#
+# Allow/Disallow pattern uses "/$" so the homepage is allowed without opening
+# every path under "/". Major bots that honor Google's robots.txt syntax
+# understand "$" as end-of-URL.
 
-# There is no search benefit to any AI models scraping sites - all they do is steal content for their own profit, attribution free, which leads to them serving our content without ever sending users to us.
-# Reference: https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
-
-## https://commoncrawl.org/faq - Has been used by ChatGPT, Bard, and others for training a number of models.
 User-agent: CCBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## The bot used when a ChatGPT user instructs it to reference your website.
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## The bot that OpenAI uses to collect bulk training data for ChatGPT.
 User-agent: GPTBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## Block Google from scraping your site for Bard and VertexAI.
 User-agent: Google-Extended
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## Omgili sell data they scrape to others for their AI training.
 User-agent: Omgilibot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
+
 User-agent: Omgili
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## Meta’s bot that crawls public web pages to improve language models for their speech recognition technology.
 User-agent: FacebookBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## Apple very kindly told us how to block their scraper AFTER they'd scraped everything.
 User-agent: Applebot-Extended
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## is used by used by Anthropic to gather data for their “AI” products, such as Claude
 User-agent: anthropic-ai
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## is another agent used by Anthropic that is more specifically related to Claude
 User-agent: ClaudeBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-# is a somewhat dishonest scraping bot used to collect data to train LLMs. This is their default user-agent, but they make it easy for their clients to change it to something else and ignore your wishes
 User-agent: Diffbot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
 
-## This is just getting stupid and I hope governments step in.
 User-agent: Bytespider
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
+
 User-agent: ImagesiftBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
+
 User-agent: PerplexityBot
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
+
 User-agent: cohere-ai
-Disallow: /
+Allow: /$
+Allow: /portfolio/
+Disallow: /blog
+Disallow: /rss
+
+# Everyone else (including Googlebot / Bingbot): crawl freely.
+User-agent: *
+Allow: /
 
 Sitemap: https://jakerobins.com/sitemap-index.xml

@@ -9,16 +9,25 @@ export const hero = {
   lede: "Bring me on board to build, repair or scale whatever it is you need to grow.",
 };
 
-/* Hero portrait: hard crop on the petrol field. Path is under public/. */
-export const portrait: { src: string; alt: string } = {
-  src: "/portfolio/portrait_jake_robins.jpg",
-  alt: "Jake Robins",
+/* Hero portrait: source lives in src/portfolio/assets/; derivatives are built
+   into public/portfolio/portrait/ by scripts/generate-portfolio-portrait.mjs.
+   sizes matches .jr-split: full width below 780px, ~43vw in the portrait column. */
+export const portrait = {
+  dir: "/portfolio/portrait",
+  widths: [480, 720, 960, 1200, 1440, 1800] as const,
+  /* Default / JSON-LD fallback — mid desktop 1×. */
+  src: "/portfolio/portrait/jake-720.jpg",
+  width: 720,
+  height: 900,
+  sizes: "(max-width: 780px) 100vw, 43vw",
+  alt: "Jake Robins, freelance developer and product partner",
 };
 
 export const offer = {
   index: "01",
   eyebrow: "What I can help you with",
   title: "Complexity is the interesting part",
+  lede: "Substantial web products and systems—platforms, apps, and fractional CTO work—not one-page brochure sites.",
   items: [
     {
       index: "01",
@@ -68,6 +77,7 @@ export const method = {
   index: "03",
   eyebrow: "How I work",
   title: "AI velocity. Human expertise.",
+  lede: "AI accelerates the workflow and ships inside the product; I own the judgement and the delivery.",
   steps: [
     {
       index: "01",
@@ -136,6 +146,7 @@ export const footer = {
     { href: "#offer", label: "What I take on" },
     { href: "#why", label: "Why Jake" },
     { href: "#how", label: "How I work" },
+    { href: "#proof", label: "Proof" },
     { href: "#contact", label: "Contact" },
   ],
   legal: "🇨🇦 Made in Canada - Perfeccionado en México 🇲🇽",

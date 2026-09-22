@@ -1,22 +1,31 @@
 ---
 import type { HeadConfig } from "./headConfig";
+import JsonLd from "./JsonLd.astro";
 
 type Props = HeadConfig;
 ---
 
 <title>{Astro.props.title}</title>
 <meta name="description" content={Astro.props.description} />
+<link rel="canonical" href={Astro.props.canonical} />
 <meta charset={Astro.props.meta.charset} />
 <meta name="viewport" content={Astro.props.meta.viewport} />
 
-<!-- Archivo (the licensed Helvetica Neue substitute) and JetBrains Mono. The
-     design system loads these with an @import; linking them here keeps the font
-     request from being chained behind the stylesheet. -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Self-hosted Archivo + JetBrains Mono (see tokens/font-faces.css). Preload
+     the hero name weight so LCP text is not blocked on the stylesheet. -->
 <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="preload"
+  href="/portfolio/fonts/archivo-latin-700.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/portfolio/fonts/archivo-latin-400.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
 />
 <link
   rel="apple-touch-icon"
@@ -24,19 +33,28 @@ type Props = HeadConfig;
   href={Astro.props.favicon.appleTouch.href}
 />
 {
+  Astro.props.favicon.svg && (
+    <link rel="icon" type="image/svg+xml" href={Astro.props.favicon.svg} />
+  )
+}
+{
+  Astro.props.favicon.ico && (
+    <link rel="icon" href={Astro.props.favicon.ico} sizes="any" />
+  )
+}
+{
   Astro.props.favicon.defaults.map((f) => (
     <link rel="icon" type="image/png" sizes={f.sizes} href={f.href} />
   ))
 }
 <link rel="manifest" href={Astro.props.favicon.manifest} />
-<link
-  rel="mask-icon"
-  href={Astro.props.favicon.safari.href}
-  color={Astro.props.favicon.safari.color}
-/>
 <meta
   name="msapplication-TileColor"
   content={Astro.props.favicon.msTileColor}
+/>
+<meta
+  name="msapplication-config"
+  content="/portfolio/icons/browserconfig.xml"
 />
 <meta name="theme-color" content={Astro.props.favicon.themeColor} />
 
@@ -51,6 +69,10 @@ type Props = HeadConfig;
 <meta property="og:url" content={Astro.props.social.openGraph.url} />
 <meta property="og:title" content={Astro.props.social.title} />
 <meta property="og:type" content={Astro.props.social.openGraph.type} />
+<meta
+  property="og:site_name"
+  content={Astro.props.social.openGraph.siteName}
+/>
 {
   Astro.props.social.openGraph.article &&
     Astro.props.social.openGraph.article.map((t) => (
@@ -59,6 +81,10 @@ type Props = HeadConfig;
 }
 <meta property="og:locale" content="en-CA" />
 <meta property="og:description" content={Astro.props.social.description} />
+<meta
+  property="og:image"
+  content={Astro.props.social.openGraph.image.secure_url}
+/>
 <meta
   property="og:image:url"
   content={Astro.props.social.openGraph.image.url}
@@ -91,3 +117,6 @@ type Props = HeadConfig;
     />
   )
 }
+
+<JsonLd />
+

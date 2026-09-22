@@ -39,6 +39,12 @@
   letter-spacing: var(--tracking-display);
 }
 
+.method__lede {
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  max-width: 42ch;
+}
+
 .method__figures {
   align-self: stretch;
 }

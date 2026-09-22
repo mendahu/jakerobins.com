@@ -5,12 +5,13 @@ import Button from "./Button.astro";
 
 <header class="site-header">
   <div class="site-header__bar">
-    <!-- The wordmark is the mark; there is no drawn logo and no menu of routes
-         that do not exist. Contact is the only control up here. Full-bleed bar
+    <!-- Wordmark links home; Contact is the only other control. Full-bleed bar
          so the sticky chrome reaches the viewport edges. -->
-    <span class="site-header__wordmark">Jake Robins</span>
-    <Button href={siteConfig.socials.email} size="sm" trailingGlyph="→">
-      Email me
-    </Button>
+    <nav class="site-header__nav" aria-label="Primary">
+      <a class="site-header__wordmark" href="/">Jake Robins</a>
+      <Button href={siteConfig.socials.email} size="sm" trailingGlyph="→">
+        {siteConfig.email}
+      </Button>
+    </nav>
   </div>
 </header>

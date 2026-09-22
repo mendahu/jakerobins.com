@@ -1,14 +1,12 @@
 ---
 import Layout from "../../blog/layouts/Layout.astro";
-import { useStoryblokApi } from "@storyblok/astro";
 import Breadcrumbs from "../../blog/components/Breadcrumbs.astro";
 import { mergeHeadConfig } from "../../blog/components/Head/headConfig";
 import { siteConfig } from "../../blog/config/config";
 import type { CategoryStoryblok } from "../../../component-types-sb";
+import { storyblokGet } from "../../blog/storyblok/utils";
 
-const sbApi = useStoryblokApi();
-
-const { data } = await sbApi.get("cdn/stories/", {
+const { data } = await storyblokGet("cdn/stories/", {
   content_type: "category",
   version: import.meta.env.DEV ? "draft" : "published",
 });

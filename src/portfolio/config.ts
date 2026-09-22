@@ -1,8 +1,8 @@
 export const siteConfig = {
   host: "https://jakerobins.com",
-  title: "Jake Robins — freelance developer",
+  title: "Jake Robins — freelance developer & product partner",
   description:
-    "Freelance software development for the web. Client work, not a personal blog.",
+    "End-to-end technical partner for companies with real web products—fractional CTO, product ownership, and AI in the workflow and the product. Email to start.",
   /* Email is the page's only conversion product: the address is shown as the
      label, the mailto is the destination, and both are the same everywhere. */
   email: "me@jakerobins.com",

@@ -2,6 +2,18 @@
    the band rhythm — petrol, bone, blush, claret — sharing their rules, with one
    hard offset block under the grid. */
 
+.offer__intro {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.offer__lede {
+  font-size: var(--size-body-lg);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
 .offer__grid {
   box-shadow: var(--shadow-offset);
 }
