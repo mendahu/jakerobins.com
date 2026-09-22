@@ -47,17 +47,17 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${W}" height="${H}" fill="${petrol}"/>
   <rect x="${COPY_RIGHT}" y="0" width="10" height="${H}" fill="${chartreuse}"/>
-  <rect x="78" y="78" width="26" height="26" fill="${claret}" transform="rotate(45 91 91)"/>
-  <text x="${PAD_X}" y="160" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="${chartreuse}">
+  <rect x="78" y="64" width="28" height="28" fill="${claret}" transform="rotate(45 92 78)"/>
+  <text x="${PAD_X}" y="148" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" fill="${chartreuse}">
     <tspan x="${PAD_X}" dy="0">${eyebrowLead}</tspan>
-    <tspan x="${PAD_X}" dy="26">${eyebrowTrail}</tspan>
+    <tspan x="${PAD_X}" dy="36">${eyebrowTrail}</tspan>
   </text>
   <text x="68" y="320" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="96" font-weight="700" letter-spacing="-3" fill="${paper}">Jake Robins</text>
-  <text x="${PAD_X}" y="390" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="400" fill="${paper}">
+  <text x="${PAD_X}" y="392" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="400" fill="${paper}">
     <tspan x="${PAD_X}" dy="0">${positioningLine1}</tspan>
-    <tspan x="${PAD_X}" dy="38">${positioningLine2}</tspan>
+    <tspan x="${PAD_X}" dy="46">${positioningLine2}</tspan>
   </text>
-  <rect x="${PAD_X}" y="${H - 52}" width="140" height="7" fill="${chartreuse}"/>
+  <rect x="${PAD_X}" y="${H - 52}" width="140" height="8" fill="${chartreuse}"/>
 </svg>`;
 
 const base = await sharp(Buffer.from(svg)).png().toBuffer();
