@@ -90,7 +90,7 @@ export const defaultHeadConfig: HeadConfig = {
       site: "@jakerobins",
       creator: "@jakerobins",
       image: siteConfig.host + "/twitter_summary.jpg",
-      alt: "Jake Robins, freelance developer",
+      alt: "Jake Robins, freelance developer and product partner",
     },
     openGraph: {
       url: siteConfig.host,
@@ -99,7 +99,7 @@ export const defaultHeadConfig: HeadConfig = {
         url: "http" + siteConfig.host.slice(5) + "/opengraph_banner.jpg",
         secure_url: siteConfig.host + "/opengraph_banner.jpg",
         type: "image/jpeg",
-        alt: "Jake Robins, freelance developer",
+        alt: "Jake Robins, freelance developer and product partner",
         width: 600,
         height: 300,
       },
