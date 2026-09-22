@@ -5,7 +5,6 @@ import type { HeadConfig } from "../components/Head/headConfig";
 import Head from "../components/Head/Head.astro";
 import "../css/styles.css";
 import "../css/cube.css";
-import GoogleAnalytics from "./GoogleAnalytics.astro";
 
 interface Props {
   headConfig?: HeadConfig;
@@ -20,7 +19,6 @@ const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/omo5gfi.css" />
-    <GoogleAnalytics />
     <slot name="title" />
     <Head {...headConfig} />
   </head>

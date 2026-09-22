@@ -150,5 +150,5 @@ export const footer = {
     { href: "#contact", label: "Contact" },
   ],
   legal: "🇨🇦 Made in Canada - Perfeccionado en México 🇲🇽",
-  privacy: "Analytics via GoatCounter (cookieless; no consent banner).",
+  privacy: "This site uses cookieless anonymous analytics for traffic measuring.",
 } as const;

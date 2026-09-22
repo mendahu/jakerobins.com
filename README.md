@@ -16,7 +16,7 @@ Running this site locally will be problematic for you unless you have a [Storybl
 
 This site is built using [Astro](https://astro.build). My goal was to produce the most basic and simple content site with very few bells and whistles. The design is meant to be elegant, straightward, performant, accessible, and leveraging web standards.
 
-The built site is generally just HTML and CSS. Astro adds some JavaScript for some pre-fetching functionality for better internal link performance. Google Analytics is also running so I can see if anyone actually reads this (they do, so far).
+The built site is generally just HTML and CSS. Astro adds some JavaScript for some pre-fetching functionality for better internal link performance. The portfolio uses cookieless GoatCounter for traffic measurement.
 
 ## Styles
 

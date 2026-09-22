@@ -78,7 +78,7 @@ src/
 
 The current `src/components`, `src/layouts`, `src/css`, `src/design-tokens`, `src/storyblok`, and `src/config` all belong to the blog. After the move they live under `src/blog/`. Duplicate a `<head>` helper or analytics include under `src/portfolio/` rather than extracting a “common” package. The Head markup today is blog-flavored (Twitter/OG defaults, favicons). The portfolio will want different metadata and likely different icons.
 
-`GoogleAnalytics.astro` is the same kind of thing: copy it into each layout tree (or use two measurement IDs later). Do not keep a root `src/layouts` that both sites import.
+Analytics snippets are the same kind of thing: each site owns its own include under its layout tree (portfolio: GoatCounter). Do not keep a root `src/layouts` that both sites import.
 
 ## CSS isolation (this is the part that actually leaks)
 

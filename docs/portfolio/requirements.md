@@ -40,7 +40,7 @@ Order can flex slightly in design, but these blocks must exist. Detail and const
 - No tracking that depends on storing personal data or non-essential cookies without consent (typical default **Google Analytics / gtag** setups fall here).
 - No remarketing, ads pixels, or fingerprinting “to make up for” no cookies.
 
-**Vendor:** Hosted [GoatCounter](https://www.goatcounter.com/) at `jakerobins.goatcounter.com` (portfolio only). Default count URL `https://jakerobins.goatcounter.com/count` (optional override: `PUBLIC_GOATCOUNTER_ENDPOINT`). Blog analytics remain a separate decision (still Google Analytics today).
+**Vendor:** Hosted [GoatCounter](https://www.goatcounter.com/) at `jakerobins.goatcounter.com` (portfolio only). Default count URL `https://jakerobins.goatcounter.com/count` (optional override: `PUBLIC_GOATCOUNTER_ENDPOINT`). The blog has no analytics snippet.
 
 **Conversion:** `Contact Click` events ÷ pageviews on `/`. Every hire mailto (header, hero, contact, footer) sends the GoatCounter event path `Contact Click` via `data-goatcounter-click`.
 
