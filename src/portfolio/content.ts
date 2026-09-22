@@ -5,8 +5,7 @@
 
 export const hero = {
   eyebrow: "Freelance developer · Product partner",
-  positioning:
-    "End-to-end technical partner for companies with real products.",
+  positioning: "End-to-end technical partner for companies ready to level up.",
   lede: "Bring me on board to build, repair or scale whatever it is you need to grow.",
 };
 
@@ -20,7 +19,6 @@ export const offer = {
   index: "01",
   eyebrow: "What I can help you with",
   title: "Complexity is the interesting part",
-  lede: "Substantial web products and systems—platforms, apps, and fractional CTO work—not one-page brochure sites.",
   items: [
     {
       index: "01",
@@ -70,7 +68,6 @@ export const method = {
   index: "03",
   eyebrow: "How I work",
   title: "AI velocity. Human expertise.",
-  lede: "AI accelerates the workflow and ships inside the product; I own the judgement and the delivery.",
   steps: [
     {
       index: "01",
