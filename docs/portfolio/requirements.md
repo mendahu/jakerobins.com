@@ -40,14 +40,16 @@ Order can flex slightly in design, but these blocks must exist. Detail and const
 - No tracking that depends on storing personal data or non-essential cookies without consent (typical default **Google Analytics / gtag** setups fall here).
 - No remarketing, ads pixels, or fingerprinting “to make up for” no cookies.
 
-**Implication for this repo:** The portfolio layout currently loads the same Google Analytics snippet as the blog (`G-RKSHXBHGHW`). That is the wrong default for a **no-banner** portfolio. Replace it on the portfolio with a **cookieless, privacy-first** analytics tool (examples: Plausible, Fathom, Simple Analytics, or a self-hosted Umami/GoatCounter configured without identifying cookies). Keep blog analytics as a separate decision; do not force the writing site onto the same tool unless we choose to.
+**Vendor:** Hosted [GoatCounter](https://www.goatcounter.com/) at `jakerobins.goatcounter.com` (portfolio only). Default count URL `https://jakerobins.goatcounter.com/count` (optional override: `PUBLIC_GOATCOUNTER_ENDPOINT`). Blog analytics remain a separate decision (still Google Analytics today).
 
-**Implementation bar for the chosen tool**
+**Conversion:** `Contact Click` events ÷ pageviews on `/`. Every hire mailto (header, hero, contact, footer) sends the GoatCounter event path `Contact Click` via `data-goatcounter-click`.
+
+**Implementation bar**
 
 - Count page views on `/`.
 - Count Contact clicks as a goal/event (mailto or labeled contact link).
 - Record source/medium (referrer + UTM) without identifying individuals.
-- Document in this folder (or env/config comments) which vendor and what “conversion” means: `contact_clicks / visits` on `/`.
+- Document which vendor and what “conversion” means (this section).
 
 IP anonymization and a published privacy note that the portfolio uses cookieless analytics are enough for this product; a consent modal is out of scope.
 
