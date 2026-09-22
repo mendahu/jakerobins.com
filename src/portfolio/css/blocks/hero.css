@@ -88,3 +88,20 @@
   min-height: inherit;
   object-fit: cover;
 }
+
+/* Mobile: stack is one column. The desktop left-pad would inset the portrait
+   on one side only — move padding onto the copy and keep the photo full-bleed
+   and face-centered. */
+@media (max-width: 780px) {
+  .hero__inner {
+    padding-left: 0;
+  }
+
+  .hero__copy {
+    padding-inline: var(--page-pad);
+  }
+
+  .hero__portrait img {
+    object-position: center top;
+  }
+}
