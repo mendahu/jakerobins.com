@@ -29,6 +29,10 @@ Client logos are in `public/portfolio/logos/`.
 - **Portrait of Jake.** `portrait` in `src/portfolio/content.ts` is `null`, so the
   hero shows its petrol plane and ring without a photograph. Requirements ask for
   a photo on the page; setting `portrait` to a `{ src, alt }` is the whole change.
-- **Cookieless analytics.** `/` still loads the blog's Google Analytics snippet.
-  See [requirements.md](./requirements.md) — the portfolio is meant to run a
-  cookieless tool with a Contact-click goal and no consent banner.
+
+## Analytics
+
+Hosted GoatCounter on `/` only (`src/portfolio/layouts/GoatCounter.astro`).
+Default endpoint is `https://jakerobins.goatcounter.com/count` (override with
+`PUBLIC_GOATCOUNTER_ENDPOINT` in `.env` if needed). Conversion is
+`Contact Click` events ÷ pageviews on `/`. See [requirements.md](./requirements.md).

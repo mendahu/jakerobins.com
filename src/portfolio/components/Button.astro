@@ -9,9 +9,15 @@ interface Props {
 }
 
 const { href, size = "md", trailingGlyph, class: className } = Astro.props;
+const isMailto = href.startsWith("mailto:");
 ---
 
-<a href={href} class:list={["button", className]} data-size={size}>
+<a
+  href={href}
+  class:list={["button", className]}
+  data-size={size}
+  data-goatcounter-click={isMailto ? "Contact Click" : undefined}
+>
   <span><slot /></span>
   {
     trailingGlyph && (

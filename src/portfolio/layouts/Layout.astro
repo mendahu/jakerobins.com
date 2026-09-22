@@ -9,7 +9,7 @@ import {
 } from "../components/Head/headConfig";
 import "../css/styles.css";
 import "../css/cube.css";
-import GoogleAnalytics from "./GoogleAnalytics.astro";
+import GoatCounter from "./GoatCounter.astro";
 
 interface Props {
   headConfig?: HeadConfig;
@@ -23,7 +23,7 @@ const headConfig: HeadConfig = Astro.props.headConfig || defaultHeadConfig;
   <head>
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <GoogleAnalytics />
+    <GoatCounter />
     <Head {...headConfig} />
   </head>
   <body>

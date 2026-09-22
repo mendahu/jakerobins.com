@@ -12,7 +12,11 @@ const year = new Date().getFullYear();
     <div class="jr-footer-grid">
       <div class="site-footer__brand">
         <span class="site-footer__wordmark">Jake<br />Robins</span>
-        <a class="site-footer__email" href={siteConfig.socials.email}>
+        <a
+          class="site-footer__email"
+          href={siteConfig.socials.email}
+          data-goatcounter-click="Contact Click"
+        >
           {siteConfig.email}
         </a>
         <p class="site-footer__blurb">{footer.blurb}</p>
@@ -33,6 +37,7 @@ const year = new Date().getFullYear();
     <div class="site-footer__legal">
       <span>© {year} Jake Robins</span>
       <span>{footer.legal}</span>
+      <span>{footer.privacy}</span>
     </div>
   </div>
 </footer>

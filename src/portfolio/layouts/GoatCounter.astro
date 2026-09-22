@@ -1,0 +1,17 @@
+---
+/* Hosted GoatCounter for the portfolio only. Endpoint is public in HTML.
+   Override with PUBLIC_GOATCOUNTER_ENDPOINT if needed.
+   Conversion: Contact Click events ÷ pageviews on /. */
+const endpoint =
+  (import.meta.env.PUBLIC_GOATCOUNTER_ENDPOINT as string | undefined) ||
+  "https://jakerobins.goatcounter.com/count";
+const settings = import.meta.env.DEV ? '{"allow_local":true}' : undefined;
+---
+
+<script
+  data-goatcounter={endpoint}
+  data-goatcounter-settings={settings}
+  async
+  src="https://gc.zgo.at/count.js"
+  is:inline
+/>

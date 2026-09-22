@@ -7,7 +7,8 @@ This is my blog, feel free to look around if you're interested in how I put it t
 Running this site locally will be problematic for you unless you have a [Storyblok](https://www.storyblok.com) account, which is my CMS provider. You'd also need some kind of schema setup to match this one's if you want to see blog posts live. I presume you don't want to do that, and so here we are. Maybe one day I'll create some mock data to fallback to, but that's a pretty low value add. That being said, if you did all that, the app setup is quite straightforward:
 
 1. Clone to your machine
-2. Create `.env` file with `STORYBLOK_TOKEN` var matching your Storyblok stoken.
+2. Create `.env` file with `STORYBLOK_TOKEN` (blog CMS) and, for the portfolio,
+   `PUBLIC_GOATCOUNTER_ENDPOINT=https://jakerobins.goatcounter.com/count`.
 3. `npm install`
 4. `npm start`
 
@@ -15,7 +16,7 @@ Running this site locally will be problematic for you unless you have a [Storybl
 
 This site is built using [Astro](https://astro.build). My goal was to produce the most basic and simple content site with very few bells and whistles. The design is meant to be elegant, straightward, performant, accessible, and leveraging web standards.
 
-The built site is generally just HTML and CSS. Astro adds some JavaScript for some pre-fetching functionality for better internal link performance. Google Analytics is also running so I can see if anyone actually reads this (they do, so far).
+The built site is generally just HTML and CSS. Astro adds some JavaScript for some pre-fetching functionality for better internal link performance. The portfolio uses cookieless GoatCounter for traffic measurement.
 
 ## Styles
 
