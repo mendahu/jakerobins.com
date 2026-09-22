@@ -5,15 +5,15 @@
 
 export const hero = {
   eyebrow: "Freelance developer · Product partner",
-  positioning:
-    "End-to-end technical partner for people building real products.",
-  lede: "Bring me on to build, repair, or scale, whatever it is you need to grow.",
+  positioning: "End-to-end technical partner for companies ready to level up.",
+  lede: "Bring me on board to build, repair or scale whatever it is you need to grow.",
 };
 
-/* The portrait for the hero. Set `src` once the photograph is supplied: a hard,
-   intentional crop on a solid field, not soft stock. Until then the hero shows
-   the petrol plane and its ring on their own. */
-export const portrait: { src: string; alt: string } | null = null;
+/* Hero portrait: hard crop on the petrol field. Path is under public/. */
+export const portrait: { src: string; alt: string } = {
+  src: "/portfolio/portrait_jake_robins.jpg",
+  alt: "Jake Robins",
+};
 
 export const offer = {
   index: "01",
@@ -24,7 +24,7 @@ export const offer = {
       index: "01",
       field: "deep",
       title: "Web, mobile and product systems",
-      body: "Platforms, portals, mobile apps and services that have to talk to each other. I can build distributed systems shaped around how your business actually runs.",
+      body: "Distributed systems customized to your business needs, including platforms, portals, mobile apps and more.",
     },
     {
       index: "02",
@@ -36,13 +36,13 @@ export const offer = {
       index: "03",
       field: "warm",
       title: "AI inside the product",
-      body: "AI-powered products that deliver real value, not just bolted-on chat assistants.",
+      body: "AI-powered products that deliver real value, beyond generic chat assistants.",
     },
     {
       index: "04",
       field: "accent",
-      title: "Software for how your team already works",
-      body: "Solutions that slot into the workflows your team already has and unblocks them from their full potential.",
+      title: "Purpose-built software",
+      body: "Integrated customer-facing products and internal solutions for your teams.",
     },
   ],
 } as const;
@@ -51,8 +51,8 @@ export const why = {
   index: "02",
   eyebrow: "Why Jake",
   title: "I've sat on both sides of the table",
-  lede: "Eighteen years experience across retail operations management, technical leadership and software development. I can take your product across the finish line, whether the needs are in my job title or not.",
-  body: "I can sit with any stakeholder or decision maker and help them decide what to build, what to buy, and what to stop. I can help decide which features can be descoped to ensure we sprint to delivery.",
+  lede: "Eighteen years experience across retail operations management, technical leadership and software development. I can take your product across the finish line, whatever it takes to get there.",
+  body: "I can help any stakeholder or decision maker decide what to build, what to buy, and what to bury. Fully fluent in corporate jargon.",
   stat: {
     value: "18 yrs",
     label: "Operations, technical leadership and software development",
@@ -67,22 +67,22 @@ export const why = {
 export const method = {
   index: "03",
   eyebrow: "How I work",
-  title: "AI brings the velocity. I bring the taste.",
+  title: "AI velocity. Human expertise.",
   steps: [
     {
       index: "01",
       title: "Prototypes in days",
-      body: "My process is fully AI-assisted, letting us prototype and retire risk quickly in order to make better decisions for the business.",
+      body: "A fully AI-assisted process works quickly to prototype and retire risk.",
     },
     {
       index: "02",
-      title: "Proven slop-free",
-      body: "Through context engineering and thorough review, I keep the speed of AI without the long-term tech debt.",
+      title: "Built without compromise",
+      body: "Context engineering and thorough review prevents long-term tech debt and AI-slop.",
     },
     {
       index: "03",
-      title: "Judgement stays human",
-      body: "While AI accelerates the slow parts, I stay at the centre of the decision-making and stay accountable for my work.",
+      title: "Human judgement",
+      body: "AI accelerates the work while I make decisions and take accountability for the outcome.",
     },
   ],
 } as const;
@@ -91,7 +91,6 @@ export const proof = {
   index: "04",
   eyebrow: "Proof",
   title: "What my clients say",
-  rail: "Three clients · words are theirs",
   testimonials: [
     {
       rule: "ink",
@@ -139,5 +138,5 @@ export const footer = {
     { href: "#how", label: "How I work" },
     { href: "#contact", label: "Contact" },
   ],
-  legal: "Web products · AI · product ownership",
+  legal: "🇨🇦 Made in Canada - Perfeccionado en México 🇲🇽",
 } as const;

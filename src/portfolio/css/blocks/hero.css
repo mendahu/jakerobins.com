@@ -8,9 +8,11 @@
 }
 
 .hero__inner {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  /* The portrait plane runs to the right edge, so only the left side is padded. */
+  /* Full viewport width so the portrait reaches the right edge; only the copy
+     column is padded. Do not max-width this or the hero looks narrower than the
+     sticky header. */
+  width: 100%;
+  margin-inline: 0;
   padding-left: var(--page-pad);
   align-items: stretch;
   gap: 0;
@@ -64,22 +66,12 @@
   gap: var(--space-4);
 }
 
-/* The portrait sits on a solid petrol field, cropped hard by the section edge,
-   with a chartreuse ring biting into the bottom-left corner. */
+/* The portrait sits on a solid petrol field, cropped hard by the section edge. */
 .hero__portrait {
   position: relative;
   overflow: hidden;
   background: var(--petrol-600);
   min-height: 520px;
-}
-
-.hero__portrait-ring {
-  left: -90px;
-  bottom: -90px;
-  width: 260px;
-  height: 260px;
-  border: 38px solid var(--chartreuse-500);
-  z-index: 2;
 }
 
 .hero__portrait img {

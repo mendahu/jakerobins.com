@@ -1,28 +1,6 @@
 /* Section 05: three clients, their words. No logo wall, no star ratings, no
    case-study routes — the quote, the person, and the mark they work for. */
 
-/* A rotated mono label running up the section edge, so the composition has a
-   margin voice. Decorative: hidden below 780px. */
-.proof__rail {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.proof__rail span {
-  writing-mode: vertical-rl;
-  font-family: var(--font-meta);
-  font-size: var(--size-micro);
-  letter-spacing: var(--tracking-meta);
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
 .testimonial {
   margin: 0;
   display: flex;
