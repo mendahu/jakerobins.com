@@ -20,10 +20,6 @@ export type HeadConfig = {
       sizes: string;
       href: string;
     };
-    safari: {
-      href: string;
-      color: string;
-    };
     msTileColor: string;
     themeColor: string;
   };
@@ -83,10 +79,6 @@ export const defaultHeadConfig: HeadConfig = {
         href: "/portfolio/icons/favicon-32x32.png",
       },
     ],
-    safari: {
-      href: "/portfolio/icons/safari-pinned-tab.svg",
-      color: "#0e3a42",
-    },
     msTileColor: "#0e3a42",
     themeColor: "#0e3a42",
   },
