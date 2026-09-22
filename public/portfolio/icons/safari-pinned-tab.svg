@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect x="362" y="56" width="72" height="72" transform="rotate(45 398 92)" fill="#000"/>
-  <path fill="#000" d="M140 150h70v212h-70V150zm148 0c58 0 96 32 96 86 0 38-20 64-56 78l48 48h-82l-40-44h-36v44h-70V150h140zm0 64h-70v52h70c22 0 36-12 36-26s-14-26-36-26z"/>
-  <rect x="156" y="400" width="200" height="22" fill="#000"/>
+  <!-- diamond accent -->
+  <path fill="#000" d="M398 48l40 40-40 40-40-40z"/>
+  <!-- J: top bar -->
+  <rect fill="#000" x="96" y="132" width="152" height="56"/>
+  <!-- J: right stem -->
+  <rect fill="#000" x="192" y="132" width="56" height="220"/>
+  <!-- J: bottom hook to the left -->
+  <rect fill="#000" x="96" y="332" width="152" height="56"/>
+  <!-- R: stem -->
+  <rect fill="#000" x="284" y="132" width="56" height="256"/>
+  <!-- R: bowl with counter cut out -->
+  <path fill="#000" fill-rule="evenodd" d="M340 132h72c52 0 88 32 88 84s-36 84-88 84h-72V132zm72 56h-72v56h72c22 0 36-12 36-28s-14-28-36-28z"/>
+  <!-- R: leg -->
+  <path fill="#000" d="M372 300l92 88h-64l-72-88z"/>
+  <!-- baseline accent -->
+  <rect fill="#000" x="156" y="420" width="200" height="22"/>
 </svg>
