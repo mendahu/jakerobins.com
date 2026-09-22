@@ -10,6 +10,8 @@ export type HeadConfig = {
   };
   favicon: {
     manifest: string;
+    svg?: string;
+    ico?: string;
     defaults: {
       sizes: string;
       href: string;
@@ -64,27 +66,29 @@ export const defaultHeadConfig: HeadConfig = {
     viewport: "width=device-width, initial-scale=1",
   },
   favicon: {
-    manifest: "/site.webmanifest",
+    manifest: "/portfolio/icons/site.webmanifest",
+    svg: "/portfolio/icons/favicon.svg",
+    ico: "/portfolio/icons/favicon.ico",
     appleTouch: {
-      sizes: "120x120",
-      href: "/apple-touch-icon.png",
+      sizes: "180x180",
+      href: "/portfolio/icons/apple-touch-icon.png",
     },
     defaults: [
       {
         sizes: "16x16",
-        href: "/favicon-16x16.png",
+        href: "/portfolio/icons/favicon-16x16.png",
       },
       {
         sizes: "32x32",
-        href: "/favicon-32x32.png",
+        href: "/portfolio/icons/favicon-32x32.png",
       },
     ],
     safari: {
-      href: "/safari-pinned-tab.svg",
-      color: "#2b5797",
+      href: "/portfolio/icons/safari-pinned-tab.svg",
+      color: "#0e3a42",
     },
-    msTileColor: "#2b5797",
-    themeColor: "#ffffff",
+    msTileColor: "#0e3a42",
+    themeColor: "#0e3a42",
   },
   social: {
     title: siteConfig.title,

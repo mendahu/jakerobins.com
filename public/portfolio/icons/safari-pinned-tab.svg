@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect x="362" y="56" width="72" height="72" transform="rotate(45 398 92)" fill="#000"/>
+  <path fill="#000" d="M140 150h70v212h-70V150zm148 0c58 0 96 32 96 86 0 38-20 64-56 78l48 48h-82l-40-44h-36v44h-70V150h140zm0 64h-70v52h70c22 0 36-12 36-26s-14-26-36-26z"/>
+  <rect x="156" y="400" width="200" height="22" fill="#000"/>
+</svg>

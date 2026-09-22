@@ -26,6 +26,16 @@ type Props = HeadConfig;
   href={Astro.props.favicon.appleTouch.href}
 />
 {
+  Astro.props.favicon.svg && (
+    <link rel="icon" type="image/svg+xml" href={Astro.props.favicon.svg} />
+  )
+}
+{
+  Astro.props.favicon.ico && (
+    <link rel="icon" href={Astro.props.favicon.ico} sizes="any" />
+  )
+}
+{
   Astro.props.favicon.defaults.map((f) => (
     <link rel="icon" type="image/png" sizes={f.sizes} href={f.href} />
   ))
@@ -39,6 +49,10 @@ type Props = HeadConfig;
 <meta
   name="msapplication-TileColor"
   content={Astro.props.favicon.msTileColor}
+/>
+<meta
+  name="msapplication-config"
+  content="/portfolio/icons/browserconfig.xml"
 />
 <meta name="theme-color" content={Astro.props.favicon.themeColor} />
 
