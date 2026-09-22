@@ -95,7 +95,7 @@ export const proof = {
     {
       rule: "ink",
       quote:
-        "Jake Robins is the kind of technology leader who can help organizations bridge the gap between ambition and execution. He understands how businesses operate, where technology can create leverage, and how to turn complex problems into clear, actionable solutions.",
+        "Jake is the kind of technology leader who can help organizations bridge the gap between ambition and execution. He understands how businesses operate, where technology can create leverage, and how to turn complex problems into clear, actionable solutions.",
       name: "Chris Sallans",
       role: "VP Retail Operations, Best Buy Canada",
       logo: { src: "/portfolio/logos/best-buy.webp", alt: "Best Buy" },
