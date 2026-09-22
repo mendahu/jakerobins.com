@@ -1,0 +1,48 @@
+---
+import { siteConfig } from "../../config";
+import { portrait } from "../../content";
+
+const pageUrl = `${siteConfig.host}/`;
+const personId = `${siteConfig.host}/#person`;
+const serviceId = `${siteConfig.host}/#service`;
+const websiteId = `${siteConfig.host}/#website`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: "Jake Robins",
+      url: pageUrl,
+      email: `mailto:${siteConfig.email}`,
+      jobTitle: "Freelance developer and product partner",
+      image: `${siteConfig.host}${portrait.src}`,
+      sameAs: [siteConfig.socials.linkedIn, siteConfig.socials.github],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": serviceId,
+      name: siteConfig.title,
+      description: siteConfig.description,
+      url: pageUrl,
+      provider: { "@id": personId },
+      areaServed: ["Canada", "Mexico"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: pageUrl,
+      name: "Jake Robins",
+      description: siteConfig.description,
+      publisher: { "@id": personId },
+    },
+  ],
+};
+---
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(jsonLd)}
+/>
